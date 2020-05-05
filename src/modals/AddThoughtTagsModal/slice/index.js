@@ -12,34 +12,24 @@ const AddThoughtTagsModalSlice = createSlice({
 });
 
 export const {
-  showAddThoughtTagsModal,
-  hideAddThoughtTagsModal,
-
-  focusThoughtTagsSearch,
-  blurThoughtTagsSearch,
-
   changeThoughtTagsSearchText,
   changeThoughtTagsSearchResults,
 
-  startThoughtTagsEditMode,
-  cancelThoughtTagsEditMode,
-  finishThoughtTagsEditMode,
+  setThoughtInEditDraft,
+  addTagToThoughtInEditDraft,
+  removeTagFromThoughtInEditDraft,
 
-  addTagToThoughtDraft,
-  removeTagFromThoughtDraft
+  setThoughtInEdit
 } = AddThoughtTagsModalSlice.actions;
 
 export const {
-  isVisibleSelector,
-  isThoughtTagsSearchFocusedSelector,
-
   doesThoughtTagsSearchHasExactMatchResultSelector,
-  doesThoughtDraftHasTagSelector,
+  doesThoughtInEditDraftHasTagSelector,
 
   thoughtTagsSearchTextSelector,
   thoughtTagsSearchResultsSelector,
 
-  thoughtDraftTagsSelector,
+  thoughtInEditDraftTagsSelector,
   thoughtInEditIdSelector
 } = selectors;
 

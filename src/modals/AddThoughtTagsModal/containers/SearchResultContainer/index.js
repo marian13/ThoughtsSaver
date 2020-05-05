@@ -1,20 +1,18 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import SearchResult from '@modals/AddThoughtTagsModal/components/SearchResultsSection/SearchResultList/SearchResult';
+import SearchResult from '@modals/AddThoughtTagsModal/components/SearchResults/SearchResult';
 
-import {
-  doesThoughtDraftHasTagSelector
-} from '@modals/AddThoughtTagsModal/slice';
+import { doesThoughtInEditDraftHasTagSelector } from '@modals/AddThoughtTagsModal/slice';
 
-import thoughtDraftTagsChangeThunk from '@modals/AddThoughtTagsModal/thunks/thoughtDraftTagsChangeThunk';
+import changeThoughtInEditDraftTagsThunk from '@modals/AddThoughtTagsModal/thunks/changeThoughtInEditDraftTagsThunk';
 
-const SearchResultContainer = ({ searchResult, ...rest }) => {
+const SearchResultContainer = ({ searchResult }) => {
   const dispatch = useDispatch();
 
-  const doesThoughtDraftHasTag = useSelector(doesThoughtDraftHasTagSelector({ tag: searchResult }));
+  const doesThoughtDraftHasTag = useSelector(doesThoughtInEditDraftHasTagSelector({ tag: searchResult }));
 
-  const handleThoughtDraftTagsChange = () => dispatch(thoughtDraftTagsChangeThunk({
+  const handleThoughtDraftTagsChange = () => dispatch(changeThoughtInEditDraftTagsThunk({
     selected: !doesThoughtDraftHasTag,
     tag: searchResult
   }));
@@ -23,7 +21,7 @@ const SearchResultContainer = ({ searchResult, ...rest }) => {
     <SearchResult
       selected={doesThoughtDraftHasTag}
       tag={searchResult}
-      onThoughtDraftTagsChange={handleThoughtDraftTagsChange}
+      onChangeThoughtInEditDraftTags={handleThoughtDraftTagsChange}
     />
   );
 };

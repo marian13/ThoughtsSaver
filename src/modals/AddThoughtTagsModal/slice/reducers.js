@@ -2,22 +2,6 @@ import { clone, orderBy, remove } from 'lodash';
 
 import initialState from './initialState';
 
-export const showAddThoughtTagsModal = state => {
-  state.isVisible = true;
-};
-
-export const hideAddThoughtTagsModal = state => {
-  state.isVisible = false;
-};
-
-export const focusThoughtTagsSearch = state => {
-  state.focusThoughtTagsSearch = true;
-};
-
-export const blurThoughtTagsSearch = state => {
-  state.focusThoughtTagsSearch = false;
-};
-
 export const changeThoughtTagsSearchText = (state, action) => {
   const { text } = action.payload;
 
@@ -31,41 +15,38 @@ export const changeThoughtTagsSearchResults = (state, action) => {
   state.thoughtTagsSearchResults = results;
 };
 
-export const startThoughtTagsEditMode = (state, action) => {
+export const setThoughtInEditDraft = (state, action) => {
   const { thought } = action.payload;
 
-  state.isThoughtTagsEditMode = true;
+  state.thoughtInEditDraft = clone(thought);
+};
 
-  state.thoughtDraft = clone(thought);
+export const resetThoughtInEditDraft = state => {
+  state.thoughtInEditDraft = initialState.thoughtInEditDraft;
+};
+
+export const addTagToThoughtInEditDraft = (state, action) => {
+  const { tag } = action.payload;
+  const { thoughtInEditDraft } = state;
+
+  thoughtInEditDraft.tags.push(tag);
+
+  thoughtInEditDraft.tags = orderBy(thoughtInEditDraft.tags, 'text');
+};
+
+export const removeTagFromThoughtInEditDraft = (state, action) => {
+  const { tag: { id } } = action.payload;
+  const { thoughtInEditDraft } = state;
+
+  remove(thoughtInEditDraft.tags, { id });
+};
+
+export const setThoughtInEdit = (state, action) => {
+  const { thought } = action.payload;
+
   state.thoughtInEdit = thought;
 };
 
-export const cancelThoughtTagsEditMode = state => {
-  state.isThoughtTagsEditMode = false;
-
-  state.thoughtDraft = initialState.thoughtDraft;
+export const resetThoughtInEdit = state => {
   state.thoughtInEdit = initialState.thoughtInEdit;
-};
-
-export const finishThoughtTagsEditMode = state => {
-  state.isThoughtTagsEditMode = false;
-
-  state.thoughtDraft = initialState.thoughtDraft;
-  state.thoughtInEdit = initialState.thoughtInEdit;
-};
-
-export const addTagToThoughtDraft = (state, action) => {
-  const { tag } = action.payload;
-  const { thoughtDraft } = state;
-
-  thoughtDraft.tags.push(tag);
-
-  thoughtDraft.tags = orderBy(thoughtDraft.tags, 'text');
-};
-
-export const removeTagFromThoughtDraft = (state, action) => {
-  const { tag: { id } } = action.payload;
-  const { thoughtDraft } = state;
-
-  remove(thoughtDraft.tags, { id });
 };

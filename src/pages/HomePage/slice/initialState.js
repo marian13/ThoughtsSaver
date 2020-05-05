@@ -1,8 +1,9 @@
 const initialState = {
-  isThoughtTextEditMode: false,
-  focusThoughtTextInput: false,
-  menuVisibilities: {},
-  thoughtDraft: {},
+  isCreateThoughtMode: false,
+  isEditThoughtTextMode: false,
+
+  thoughtInCreateDraft: {},
+  thoughtInEditDraft: {},
   thoughtInEdit: {}
 };
 

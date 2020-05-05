@@ -1,8 +1,5 @@
 const initialState = {
-  isVisible: false,
-  isThoughtTagsEditMode: false,
-  focusThoughtTagsSearch: false,
-  thoughtDraft: {},
+  thoughtInEditDraft: {},
   thoughtInEdit: {},
   thoughtTagsSearchText: '',
   thoughtTagsSearchExactMatchResult: {},

@@ -14,27 +14,30 @@ const HomePageSlice = createSlice({
 });
 
 export const {
-  resetThoughtDraft,
+  startCreateThoughtMode,
+  finishCreateThoughtMode,
 
-  focusThoughtTextInput,
-  blurThoughtTextInput,
+  startEditThoughtTextMode,
+  finishEditThoughtTextMode,
 
-  changeThoughtDraftText,
+  resetThoughtInCreateDraft,
+  changeThoughtInCreateDraftText,
 
-  startThoughtTextEditMode,
-  cancelThoughtTextEditMode,
-  finishThoughtTextEditMode,
+  resetThoughtInEditDraft,
+  changeThoughtInEditDraftText,
 
-  showThoughtMenu,
-  hideThoughtMenu,
+  setThoughtInEdit,
+  resetThoughtInEdit,
 } = HomePageSlice.actions;
 
 export const {
-  isThoughtTextInputFocusedSelector,
-  isThougthTextEditModeSelector,
-  isThoughtMenuVisibleSelector,
+  isCreateThoughtModeSelector,
+  isEditThoughtTextModeSelector,
 
-  thoughtDraftTextSelector,
+  thoughtInCreateDraftTextSelector,
+
+  thoughtInEditDraftTextSelector,
+
   thoughtInEditIdSelector,
   thoughtInEditTextSelector
 } = selectors;

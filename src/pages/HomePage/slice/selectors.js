@@ -4,35 +4,28 @@ const createHomePageSelector = selector => (
   createSelector(state => state.HomePage, selector)
 );
 
-export const isThoughtTextInputFocusedSelector = createHomePageSelector(state => {
-  const { focusThoughtTextInput } = state;
+export const isCreateThoughtModeSelector = createHomePageSelector(state => {
+  const { isCreateThoughtMode } = state;
 
-  return focusThoughtTextInput;
+  return isCreateThoughtMode;
 });
 
-export const isThougthTextEditModeSelector = createHomePageSelector(state => {
-  const { isThoughtTextEditMode } = state;
+export const isEditThoughtTextModeSelector = createHomePageSelector(state => {
+  const { isEditThoughtTextMode } = state;
 
-  return isThoughtTextEditMode;
+  return isEditThoughtTextMode;
 });
 
-export const isThoughtMenuVisibleSelector = params => createHomePageSelector(state => {
-  const { id } = params;
-  const { menuVisibilities } = state;
+export const thoughtInCreateDraftTextSelector = createHomePageSelector(state => {
+  const { thoughtInCreateDraft } = state;
 
-  return menuVisibilities[id];
+  return thoughtInCreateDraft.text;
 });
 
-export const isAddThoughtTagsModalVisibleSelector = createHomePageSelector(state => {
-  const { showAddThoughtTagsModal } = state;
+export const thoughtInEditDraftTextSelector = createHomePageSelector(state => {
+  const { thoughtInEditDraft } = state;
 
-  return showAddThoughtTagsModal;
-});
-
-export const thoughtDraftTextSelector = createHomePageSelector(state => {
-  const { thoughtDraft } = state;
-
-  return thoughtDraft.text;
+  return thoughtInEditDraft.text;
 });
 
 export const thoughtInEditIdSelector = createHomePageSelector(state => {

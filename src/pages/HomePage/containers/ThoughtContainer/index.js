@@ -1,28 +1,26 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Thought from '@pages/HomePage/components/ThoughtStreamSection/ThoughtList/Thought';
+import Thought from '@pages/HomePage/components/Thought';
 
-import {
-  isThoughtMenuVisibleSelector,
-  showThoughtMenu,
-  hideThoughtMenu,
-} from '@pages/HomePage/slice';
+import ThoughtMenuOptionsContainer from '@pages/HomePage/containers/ThoughtMenuOptionsContainer';
 
-const ThoughtContainer = ({ thought, ...rest }) => {
+import { isVisibleSelector, show, hide } from '@modules/VisibilitiesModule/slice';
+
+const ThoughtContainer = ({ thought }) => {
   const dispatch = useDispatch();
-  const isThoughtMenuVisible = useSelector(isThoughtMenuVisibleSelector({ id: thought.id }));
+  const isThoughtMenuVisible = useSelector(isVisibleSelector(`thoughtMenu${thought.id}`));
 
-  const handleContentPress = () => dispatch(showThoughtMenu({ id: thought.id }));
-  const handleMenuBackdropPress = () => dispatch(hideThoughtMenu({ id: thought.id} ));
+  const handleContentPress = () => dispatch(show(`thoughtMenu${thought.id}`));
+  const handleMenuBackdropPress = () => dispatch(hide(`thoughtMenu${thought.id}`));
 
   return (
     <Thought
-      {...rest}
-      thought={thought}
       isMenuVisible={isThoughtMenuVisible}
+      thought={thought}
       onContentPress={handleContentPress}
       onMenuBackdropPress={handleMenuBackdropPress}
+      ThoughtMenuOptionsContainer={ThoughtMenuOptionsContainer}
     />
   );
 };

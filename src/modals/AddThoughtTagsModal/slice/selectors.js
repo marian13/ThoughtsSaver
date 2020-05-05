@@ -24,11 +24,11 @@ export const doesThoughtTagsSearchHasExactMatchResultSelector = createAddThought
   return some(thoughtTagsSearchExactMatchResult);
 });
 
-export const doesThoughtDraftHasTagSelector = params => createAddThoughtTagsModalSelector(state => {
+export const doesThoughtInEditDraftHasTagSelector = params => createAddThoughtTagsModalSelector(state => {
   const { tag: { id } } = params;
-  const { thoughtDraft } = state;
+  const { thoughtInEditDraft } = state;
 
-  return find(thoughtDraft.tags, { id });
+  return find(thoughtInEditDraft.tags, { id });
 });
 
 export const thoughtTagsSearchTextSelector = createAddThoughtTagsModalSelector(state => {
@@ -43,10 +43,10 @@ export const thoughtTagsSearchResultsSelector = createAddThoughtTagsModalSelecto
   return thoughtTagsSearchResults;
 });
 
-export const thoughtDraftTagsSelector = createAddThoughtTagsModalSelector(state => {
-  const { thoughtDraft } = state;
+export const thoughtInEditDraftTagsSelector = createAddThoughtTagsModalSelector(state => {
+  const { thoughtInEditDraft } = state;
 
-  return thoughtDraft.tags;
+  return thoughtInEditDraft.tags;
 });
 
 export const thoughtInEditIdSelector = createAddThoughtTagsModalSelector(state => {

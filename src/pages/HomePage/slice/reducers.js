@@ -1,57 +1,49 @@
-import { clone } from 'lodash';
-
 import initialState from './initialState';
 
-export const resetThoughtDraft = state => {
-  state.thoughtDraft = initialState.thoughtDraft;
+export const startCreateThoughtMode = state => {
+  state.isCreateThoughtMode = true;
 };
 
-export const focusThoughtTextInput = state => {
-  state.focusThoughtTextInput = true;
+export const finishCreateThoughtMode = state => {
+  state.isCreateThoughtMode = false;
 };
 
-export const blurThoughtTextInput = state => {
-  state.focusThoughtTextInput = false;
+export const startEditThoughtTextMode = state => {
+  state.isEditThoughtTextMode = true;
 };
 
-export const changeThoughtDraftText = (state, action) => {
+export const finishEditThoughtTextMode = state => {
+  state.isEditThoughtTextMode = false;
+};
+
+export const resetThoughtInCreateDraft = state => {
+  state.thoughtInCreateDraft = initialState.thoughtInCreateDraft;
+};
+
+export const changeThoughtInCreateDraftText = (state, action) => {
   const { text } = action.payload;
-  const { thoughtDraft } = state;
+  const { thoughtInCreateDraft } = state;
 
-  thoughtDraft.text = text;
+  thoughtInCreateDraft.text = text;
 };
 
-export const startThoughtTextEditMode = (state, action) => {
+export const resetThoughtInEditDraft = state => {
+  state.thoughtInEditDraft = initialState.thoughtInEditDraft;
+};
+
+export const changeThoughtInEditDraftText = (state, action) => {
+  const { text } = action.payload;
+  const { thoughtInEditDraft } = state;
+
+  thoughtInEditDraft.text = text;
+};
+
+export const setThoughtInEdit = (state, action) => {
   const { thought } = action.payload;
 
-  state.isThoughtTextEditMode = true;
-
-  state.thoughtDraft = clone(thought);
   state.thoughtInEdit = thought;
 };
 
-export const cancelThoughtTextEditMode = state => {
-  state.isThoughtTextEditMode = false;
-
-  state.thoughtDraft = initialState.thoughtDraft;
+export const resetThoughtInEdit = state => {
   state.thoughtInEdit = initialState.thoughtInEdit;
-};
-
-export const finishThoughtTextEditMode = state => {
-  state.isThoughtTextEditMode = false;
-
-  state.thoughtDraft = initialState.thoughtDraft;
-  state.thoughtInEdit = initialState.thoughtInEdit;
-};
-
-export const showThoughtMenu = (state, action) => {
-  const { id } = action.payload;
-
-  state.menuVisibilities[id] = true;
-};
-
-export const hideThoughtMenu = (state, action) => {
-  const { id } = action.payload;
-
-  state.menuVisibilities[id] = false;
 };
