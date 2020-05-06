@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
-
+import { StyleSheet } from 'react-native';
 import { Icon } from 'react-native-elements';
 
+import Text from '@components/Text';
 import CenteredView from '@components/CenteredView';
 import OverlayMenuOption from '@components/OverlayMenuOption';
 
@@ -14,9 +14,6 @@ const styles = StyleSheet.create({
   iconContainer: {
     justifyContent: 'center',
     padding: 10
-  },
-  text: {
-    fontSize: 20
   }
 });
 
@@ -31,7 +28,7 @@ const ThoughtMenuOption = ({ text, iconName, iconType, onPress, ...rest }) => (
     />
 
     <CenteredView>
-      <Text style={styles.text}>{text}</Text>
+      <Text large>{text}</Text>
     </CenteredView>
   </OverlayMenuOption>
 );

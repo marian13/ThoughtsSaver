@@ -3,8 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import InteractionArea from '@components/InteractionArea';
 
-import BoldText from '@components/BoldText';
-import ReducedText from '@components/ReducedText';
+import Text from '@components/Text';
 
 const styles = StyleSheet.create({
   interactionArea: {
@@ -19,8 +18,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     justifyContent: 'flex-end'
   },
-  boldText: {
-    fontSize: 14,
+  text: {
     position: 'absolute',
     top: 3,
     left: 0
@@ -30,19 +28,19 @@ const styles = StyleSheet.create({
 const renderContent = ({ thoughtInEditText }) => {
   // WARNING fragile code #1
   // HACK
-  // Fixed BoldText inside ScrollView.
+  // Fixed Text inside ScrollView.
   // ThoughtTagsSearchSection Content uses the same hack.
   // As a result, if some styles are changed here, the same changes must be reflected there.
   return (
     <View style={styles.outerView}>
-      <BoldText style={styles.boldText}>
+      <Text bold style={styles.text}>
         Edit Thought
-      </BoldText>
+      </Text>
 
       <View style={styles.innerView}>
-        <ReducedText>
+        <Text reduced>
           {thoughtInEditText}
-        </ReducedText>
+        </Text>
       </View>
     </View>
   );

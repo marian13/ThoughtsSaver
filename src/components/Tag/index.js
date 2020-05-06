@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import { compact } from 'lodash';
 
+import Text from '@components/Text';
 import ShadowView from '@components/ShadowView';
 
 const styles = StyleSheet.create({
@@ -19,19 +20,12 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 2,
     paddingVertical: 1
-  },
-  text: {
-    color: 'white',
-    fontSize: 20
-  },
-  smallText: {
-    fontSize: 12
   }
 });
 
 const Tag = ({ small, text }) => (
   <ShadowView style={compact([styles.view, small && styles.smallView])}>
-    <Text style={compact([styles.text, small && styles.smallText])}>
+    <Text white small={small} large={!small}>
       {text}
     </Text>
   </ShadowView>

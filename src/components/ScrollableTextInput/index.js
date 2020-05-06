@@ -5,6 +5,8 @@ import { Input } from 'react-native-elements';
 
 import IconButton from '@components/IconButton';
 
+import { fontSizes } from '@constants/fonts';
+
 const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
@@ -18,7 +20,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'bottom',
     paddingTop: 8,
     paddingBottom: 10,
-    fontSize: 18
+    fontSize: fontSizes.large
   },
   inputContainerStyle: {
     borderBottomWidth: 0

@@ -1,20 +1,16 @@
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
+
+import Text from '@components/Text';
 
 import { splitTextIntoWords } from '@utils/text';
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 20
-  }
-});
 
 const ThoughtText = ({ text }) => {
   if (!text) return null;
 
   return splitTextIntoWords(text).map((word, index) => (
     <View key={index}>
-      <Text style={styles.text}>
+      <Text large>
         {word}
       </Text>
     </View>

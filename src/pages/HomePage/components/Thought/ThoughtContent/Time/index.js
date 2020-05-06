@@ -1,17 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+
+import Text from '@components/Text';
 
 import { hoursAndMinutes } from '@utils/dates';
 
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 12
-  }
-});
-
 const Time = ({ createdAt, style }) => (
   <View style={style}>
-    <Text style={styles.text}>
+    <Text small>
       {hoursAndMinutes(createdAt)}
     </Text>
   </View>

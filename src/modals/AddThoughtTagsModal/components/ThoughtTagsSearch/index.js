@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView, View } from 'react-native';
 
 import { size } from 'lodash';
 
-import BoldText from '@components/BoldText';
+import Text from '@components/Text';
 import InteractionArea from '@components/InteractionArea';
 import TagList from '@components/TagList';
 
@@ -22,8 +22,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     paddingLeft: 2
   },
-  boldText: {
-    fontSize: 14,
+  text: {
     position: 'absolute',
     top: 3,
     left: 0
@@ -33,15 +32,15 @@ const styles = StyleSheet.create({
 const renderContent = ({ thoughtInEditDraftTags }) => {
   // WARNING fragile code #1
   // HACK
-  // Fixed BoldText inside ScrollView.
+  // Fixed Text inside ScrollView.
   // ThoughtTagsSearch Content uses the same hack.
   // As a result, if some styles are changed here, the same changes must be reflected there.
 
   return (
     <View style={styles.outerView}>
-      <BoldText style={styles.boldText}>
+      <Text bold style={styles.text}>
         Already Added Tags ({size(thoughtInEditDraftTags)})
-      </BoldText>
+      </Text>
 
       <ScrollView horizontal>
         <View style={styles.innerView}>

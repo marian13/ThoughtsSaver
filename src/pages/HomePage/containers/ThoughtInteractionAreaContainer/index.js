@@ -12,6 +12,7 @@ const ThoughtInteractionAreaContainer = () => {
 
   if (isCreateThoughtMode) return <CreateThoughtInteractionAreaContainer />;
   if (isEditThoughtTextMode) return <EditThoughtTextInteractionAreaContainer />;
+  // if (isSearchThoughtMode) return <SearchThoughtInteractionAreaContainer />
 
   return null;
 };
