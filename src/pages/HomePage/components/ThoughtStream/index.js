@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import VerticalFlatList from '@components/VerticalFlatList';
+import FlatList from '@components/FlatList';
 
 const styles = StyleSheet.create({
   view: {
@@ -15,7 +15,7 @@ const ThoughtStream = ({ thoughts, ThoughtContainer }) => {
 
   return (
     <View style={styles.view}>
-      <VerticalFlatList
+      <FlatList
         scrollToBottomOnChange
         items={thoughts}
         renderItem={renderThought}

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList as NativeFlatList } from 'react-native';
 
-const VerticalFlatList = ({
+const FlatList = ({
   scrollToBottomOnChange,
   items,
   keyName,
@@ -17,7 +17,7 @@ const VerticalFlatList = ({
   // IMPORTANT <View> is mandatory here. Parent 'justifyContent' is not working without it.
   return (
     <View>
-      <FlatList
+      <NativeFlatList
         ref={scrollViewRef}
         onContentSizeChange={handleContentSizeChange}
         data={items}
@@ -29,4 +29,4 @@ const VerticalFlatList = ({
   );
 };
 
-export default VerticalFlatList;
+export default FlatList;
