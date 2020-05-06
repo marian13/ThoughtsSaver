@@ -5,7 +5,7 @@ import Tag from '@components/Tag';
 import IconButton from '@components/IconButton';
 import CheckBoxButton from '@components/CheckBoxButton';
 
-import BorderedView from '@components/BorderedView';
+import View from '@components/View';
 import TouchableWithoutFeedbackView from '@components/TouchableWithoutFeedbackView';
 
 const styles = StyleSheet.create({
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
 
 const SearchResult = ({ tag, selected, onChangeThoughtInEditDraftTags }) => {
   return (
-    <BorderedView hasTopBorder style={styles.view}>
+    <View hasTopBorder style={styles.view}>
       <IconButton
         iconName="more-vert"
         iconType="material"
@@ -42,7 +42,7 @@ const SearchResult = ({ tag, selected, onChangeThoughtInEditDraftTags }) => {
           onPress={onChangeThoughtInEditDraftTags}
         />
       </TouchableWithoutFeedbackView>
-    </BorderedView>
+    </View>
   );
 };
 

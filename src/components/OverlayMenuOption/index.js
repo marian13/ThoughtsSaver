@@ -1,6 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, View, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
+import { TouchableOpacity } from 'react-native';
+
+import View from '@components/View';
 
 const OverlayMenuOption = ({ onPress, children, style }) => {
   return (
@@ -15,7 +17,7 @@ const OverlayMenuOption = ({ onPress, children, style }) => {
 OverlayMenuOption.propTypes = {
   onPress: PropTypes.func,
   children: PropTypes.node,
-  style: ViewPropTypes.style
+  style: View.propTypes.style
 };
 
 OverlayMenuOption.defaultProps = {

@@ -1,8 +1,7 @@
 import React from 'react';
-import { ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 
-import KeyboardAvoidingView from '@components/KeyboardAvoidingView';
+import View from '@components/View';
 
 import TopRow from './TopRow';
 import BottomRow from './BottomRow';
@@ -31,7 +30,7 @@ const InteractionArea = ({
   style,
   contentContainerStyle
 }) => (
-  <KeyboardAvoidingView style={style}>
+  <View avoidKeyboard style={style}>
     <TopRow
       isVisible={isTopVisible}
       leftButtonIconName={leftTopButtonIconName}
@@ -58,7 +57,7 @@ const InteractionArea = ({
       onLeftButtonPress={onLeftBottomButtonPress}
       onRightButtonPress={onRightBottomButtonPress}
     />
-  </KeyboardAvoidingView>
+  </View>
 );
 
 InteractionArea.propTypes = {
@@ -82,8 +81,8 @@ InteractionArea.propTypes = {
   onLeftBottomButtonPress: PropTypes.func,
   onRightBottomButtonPress: PropTypes.func,
   renderContent: PropTypes.func,
-  style: ViewPropTypes.style,
-  contentContainerStyle: ViewPropTypes.style
+  style: View.propTypes.style,
+  contentContainerStyle: View.propTypes.style
 };
 
 InteractionArea.defaultProps = {

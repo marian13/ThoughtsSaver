@@ -1,6 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-
 import { Input } from 'react-native-elements';
 
 import IconButton from '@components/IconButton';

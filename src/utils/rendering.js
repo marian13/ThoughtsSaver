@@ -1,5 +1,6 @@
 import React from 'react';
-import { View } from 'react-native';
+
+import View from '@components/View';
 
 import { flatten } from 'lodash';
 

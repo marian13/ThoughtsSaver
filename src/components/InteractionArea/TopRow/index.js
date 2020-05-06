@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
+import { StyleSheet } from 'react-native';
 
-import BorderedView from '@components/BorderedView';
+import View from '@components/View';
 import IconButton from '@components/IconButton';
 
 const styles = StyleSheet.create({
-  borderedView: {
+  view: {
     justifyContent: 'flex-end'
   },
   outerView: {
@@ -33,7 +33,7 @@ const TopRow = ({
   if (!isVisible) return null;
 
   return (
-    <BorderedView hasTopBorder style={styles.borderedView}>
+    <View hasTopBorder style={styles.view}>
       <View style={styles.outerView}>
         <IconButton
           iconName={leftButtonIconName}
@@ -51,7 +51,7 @@ const TopRow = ({
           onPress={onRightButtonPress}
         />
       </View>
-    </BorderedView>
+    </View>
   );
 };
 
@@ -64,7 +64,7 @@ TopRow.propTypes = {
   onLeftButtonPress: PropTypes.func,
   onRightButtonPress: PropTypes.func,
   renderContent: PropTypes.func,
-  contentContainerStyle: ViewPropTypes.style
+  contentContainerStyle: View.propTypes.style
 };
 
 TopRow.defaultProps = {

@@ -1,18 +1,17 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
+import View from '@components/View';
+import Text from '@components/Text';
 import IconButton from '@components/IconButton';
 
-import BorderedView from '@components/BorderedView';
-import Text from '@components/Text';
-
 const styles = StyleSheet.create({
-  borderedView: {
+  outerView: {
     flexDirection: 'row',
     alignItems: 'center',
     height: 50
   },
-  view: {
+  innerView: {
     flexDirection: 'row',
     flex: 1,
     justifyContent: 'space-between',
@@ -22,10 +21,10 @@ const styles = StyleSheet.create({
 
 const NoExactMatchSearchResult = ({ searchText, onCreateTagButtonPress }) => {
   return (
-    <BorderedView hasTopBorder style={styles.borderedView}>
+    <View hasTopBorder style={styles.outerView}>
       <IconButton iconName="more-vert" iconColor="#bfbfbf" />
 
-      <View style={styles.view}>
+      <View style={styles.innerView}>
         <View>
           <Text>Exact match not found.</Text>
           <Text reduced>Create `{searchText.trim()}`</Text>
@@ -34,7 +33,7 @@ const NoExactMatchSearchResult = ({ searchText, onCreateTagButtonPress }) => {
 
         <IconButton iconName="add" onPress={onCreateTagButtonPress} />
       </View>
-    </BorderedView>
+    </View>
   );
 };
 

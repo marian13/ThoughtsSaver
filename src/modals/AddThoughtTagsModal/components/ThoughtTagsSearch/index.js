@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, ScrollView, View } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 
 import { size } from 'lodash';
 
+import View from '@components/View';
 import Text from '@components/Text';
 import InteractionArea from '@components/InteractionArea';
 import TagList from '@components/TagList';

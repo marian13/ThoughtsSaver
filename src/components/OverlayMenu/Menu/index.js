@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
+import { StyleSheet } from 'react-native';
 
-import ShadowView from '@components/ShadowView';
+import View from '@components/View';
 
 const styles = StyleSheet.create({
   view: {
@@ -13,16 +13,16 @@ const styles = StyleSheet.create({
 const Menu = ({ renderOptions, style }) => {
   return (
     <View style={[styles.view, style]}>
-      <ShadowView>
+      <View hasShadow>
         {renderOptions()}
-      </ShadowView>
+      </View>
     </View>
   );
 };
 
 Menu.propTypes = {
   renderOptions: PropTypes.func,
-  style: ViewPropTypes.style
+  style: View.propTypes.style
 };
 
 Menu.defaultProps = {

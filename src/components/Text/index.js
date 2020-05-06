@@ -45,7 +45,9 @@ Text.propTypes = {
   reduced: PropTypes.bool,
   small: PropTypes.bool,
   medium: PropTypes.bool,
-  large: PropTypes.bool
+  large: PropTypes.bool,
+  children: PropTypes.node,
+  style: NativeText.propTypes.style
 };
 
 Text.defaultProps = {
@@ -54,7 +56,9 @@ Text.defaultProps = {
   reduced: false,
   small: false,
   medium: true,
-  large: false
+  large: false,
+  children: null,
+  style: {}
 };
 
 export default Text;

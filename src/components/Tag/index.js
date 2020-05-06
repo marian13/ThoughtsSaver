@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 
 import { compact } from 'lodash';
 
+import View from '@components/View';
 import Text from '@components/Text';
-import ShadowView from '@components/ShadowView';
 
 const styles = StyleSheet.create({
   view: {
@@ -24,11 +24,11 @@ const styles = StyleSheet.create({
 });
 
 const Tag = ({ small, text }) => (
-  <ShadowView style={compact([styles.view, small && styles.smallView])}>
+  <View hasShadow style={compact([styles.view, small && styles.smallView])}>
     <Text white small={small} large={!small}>
       {text}
     </Text>
-  </ShadowView>
+  </View>
 );
 
 export default Tag;

@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
-
+import { StyleSheet } from 'react-native';
 import { Icon } from 'react-native-elements';
+
+import View from '@components/View';
 
 const styles = StyleSheet.create({
   view: {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { StyleSheet } from 'react-native';
 
-import BorderedView from '@components/BorderedView';
+import View from '@components/View';
 import IconButton from '@components/IconButton';
 import ScrollableTextInput from '@components/ScrollableTextInput';
 
@@ -33,7 +33,7 @@ const BottomRow = ({
 }) => {
   return (
     <View style={styles.outerView}>
-      <BorderedView hasTopBorder style={styles.innerView}>
+      <View hasTopBorder style={styles.innerView}>
         <IconButton
           iconName={leftButtonIconName}
           iconType={leftButtonIconType}
@@ -54,7 +54,7 @@ const BottomRow = ({
           iconType={rightButtonIconType}
           onPress={onRightButtonPress}
         />
-      </BorderedView>
+      </View>
     </View>
   );
 };
