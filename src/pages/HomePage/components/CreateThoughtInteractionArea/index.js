@@ -1,13 +1,8 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 
-import InteractionArea from '@components/InteractionArea';
-
-const styles = StyleSheet.create({
-  interactionArea: {
-    justifyContent: 'flex-end'
-  }
-});
+import InteractionRow from '@components/InteractionRow';
+import IconButton from '@components/IconButton';
+import TextInput from '@components/TextInput';
 
 const CreateThoughtInteractionArea = ({
   isCreateThoughtTextInputFocused,
@@ -15,22 +10,29 @@ const CreateThoughtInteractionArea = ({
   onCreateThoughtTextInputChange,
   onCreateThoughtTextInputFocus,
   onCreateThoughtTextInputBlur,
-  onCreateThoughtButtonPress,
+  onCreateThoughtButtonPress
 }) => (
-  <InteractionArea
-    isTopVisible={false}
-    isInputFocused={isCreateThoughtTextInputFocused}
-    inputText={thoughtInCreateDraftText}
-    inputPlaceholder="Save a new thought..."
-    leftBottomButtonIconName="emoticon-outline"
-    leftBottomButtonIconType="material-community"
-    rightBottomButtonIconName="send"
-    onInputTextChange={onCreateThoughtTextInputChange}
-    onInputFocus={onCreateThoughtTextInputFocus}
-    onInputBlur={onCreateThoughtTextInputBlur}
-    onRightBottomButtonPress={onCreateThoughtButtonPress}
-    style={styles.interactionArea}
-  />
+  <InteractionRow>
+    <IconButton
+      iconName="emoticon-outline"
+      iconType="material-community"
+    />
+
+    <TextInput
+      isFocused={isCreateThoughtTextInputFocused}
+      autoResise
+      text={thoughtInCreateDraftText}
+      placeholder="Save a new thought..."
+      onFocus={onCreateThoughtTextInputFocus}
+      onBlur={onCreateThoughtTextInputBlur}
+      onTextChange={onCreateThoughtTextInputChange}
+    />
+
+    <IconButton
+      iconName="send"
+      onPress={onCreateThoughtButtonPress}
+    />
+  </InteractionRow>
 );
 
 export default CreateThoughtInteractionArea;
