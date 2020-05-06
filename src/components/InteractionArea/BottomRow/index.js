@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 
 import View from '@components/View';
 import IconButton from '@components/IconButton';
-import ScrollableTextInput from '@components/ScrollableTextInput';
+import TextInput from '@components/TextInput';
 
 const styles = StyleSheet.create({
   outerView: {
@@ -40,8 +40,9 @@ const BottomRow = ({
           onPress={onLeftButtonPress}
         />
 
-        <ScrollableTextInput
+        <TextInput
           isFocused={isInputFocused}
+          autoResise
           text={inputText}
           placeholder={inputPlaceholder}
           onFocus={onInputFocus}

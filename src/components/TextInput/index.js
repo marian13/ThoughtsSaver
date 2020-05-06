@@ -33,8 +33,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const ScrollableTextInput = ({
+const TextInput = ({
   isFocused,
+  autoResise,
   text,
   placeholder,
   onFocus,
@@ -55,7 +56,7 @@ const ScrollableTextInput = ({
     <ScrollView style={styles.scrollView} keyboardShouldPersistTaps="always">
       <Input
         ref={inputRef}
-        multiline
+        multiline={autoResise}
         textAlignVertical='top'
         value={text}
         placeholder={placeholder}
@@ -80,4 +81,4 @@ const ScrollableTextInput = ({
   );
 };
 
-export default ScrollableTextInput;
+export default TextInput;
