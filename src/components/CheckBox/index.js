@@ -2,7 +2,7 @@ import React from 'react';
 
 import IconButton from '@components/IconButton';
 
-const CheckBoxButton = ({ checked, onPress }) => (
+const CheckBox = ({ checked, onPress }) => (
   <IconButton
     iconName={checked ? 'check' : 'panorama-fish-eye'}
     iconType="material"
@@ -11,4 +11,4 @@ const CheckBoxButton = ({ checked, onPress }) => (
   />
 );
 
-export default CheckBoxButton;
+export default CheckBox;

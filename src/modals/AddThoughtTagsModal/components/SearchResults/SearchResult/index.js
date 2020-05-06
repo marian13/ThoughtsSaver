@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 import Tag from '@components/Tag';
 import IconButton from '@components/IconButton';
-import CheckBoxButton from '@components/CheckBoxButton';
+import CheckBox from '@components/CheckBox';
 
 import View from '@components/View';
 import TouchableWithoutFeedbackView from '@components/TouchableWithoutFeedbackView';
@@ -37,7 +37,7 @@ const SearchResult = ({ tag, selected, onChangeThoughtInEditDraftTags }) => {
       >
         <Tag text={tag.text} />
 
-        <CheckBoxButton
+        <CheckBox
           checked={selected}
           onPress={onChangeThoughtInEditDraftTags}
         />
