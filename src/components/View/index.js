@@ -6,9 +6,10 @@ import {
   View as NativeView,
   ViewPropTypes
 } from 'react-native';
-import PropTypes from 'prop-types';
 
 import { compact } from 'lodash';
+
+import { createPropTypes, PropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
   topBorder: {
@@ -72,22 +73,13 @@ const View = ({
   );
 };
 
-View.propTypes = {
+[View.propTypes, View.defaultProps] = createPropTypes({
   hasTopBorder: PropTypes.bool,
   hasBottomBorder: PropTypes.bool,
   hasShadow: PropTypes.bool,
   centered: PropTypes.bool,
   children: PropTypes.node,
   style: ViewPropTypes.style
-};
-
-View.defaultProps = {
-  hasTopBorder: false,
-  hasBottomBorder: false,
-  hasShadow: false,
-  centered: false,
-  children: null,
-  style: {}
-};
+});
 
 export default View;

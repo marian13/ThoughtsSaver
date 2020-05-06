@@ -1,10 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { StyleSheet, Text as NativeText } from 'react-native';
 
 import { compact } from 'lodash';
 
 import { fontSizes } from '@constants/fonts';
+
+import { createPropTypes, PropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
   white: { color: 'white' },
@@ -39,26 +40,15 @@ const Text = ({
   </NativeText>
 );
 
-Text.propTypes = {
+[Text.propTypes, Text.defaultProps] = createPropTypes({
   white: PropTypes.bool,
   bold: PropTypes.bool,
   reduced: PropTypes.bool,
   small: PropTypes.bool,
-  medium: PropTypes.bool,
+  medium: [PropTypes.bool, true],
   large: PropTypes.bool,
   children: PropTypes.node,
   style: NativeText.propTypes.style
-};
-
-Text.defaultProps = {
-  white: false,
-  bold: false,
-  reduced: false,
-  small: false,
-  medium: true,
-  large: false,
-  children: null,
-  style: {}
-};
+});
 
 export default Text;
