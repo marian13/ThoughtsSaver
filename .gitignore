@@ -21,3 +21,6 @@ meta/
 
 # yarn
 yarn-error.log
+
+# Expo detox
+bin/Exponent.app

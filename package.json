@@ -5,6 +5,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "test": "node_modules/.bin/jest test/**/*.spec.js",
     "eject": "expo eject"
   },
   "dependencies": {
@@ -27,7 +28,24 @@
     "@babel/core": "^7.8.6",
     "@expo/webpack-config": "^0.11.19",
     "babel-plugin-module-resolver": "^4.0.0",
-    "babel-preset-expo": "~8.1.0"
+    "babel-preset-expo": "~8.1.0",
+    "detox": "^16.4.1",
+    "detox-expo-helpers": "^0.6.0",
+    "expo-detox-hook": "^1.0.10",
+    "jest-expo": "^37.0.0"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "detox": {
+    "test-runner": "jest",
+    "configurations": {
+      "ios.sim": {
+        "binaryPath": "bin/Exponent.app",
+        "type": "ios.simulator",
+        "name": "iPhone 11 Pro"
+      }
+    }
   },
   "private": true
 }
