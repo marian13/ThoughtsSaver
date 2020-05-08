@@ -1,9 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-import View from '@components/View';
+import TouchableWithoutFeedbackView from '@components/TouchableWithoutFeedbackView';
+
+import { createPropTypes, PropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
   view: {
@@ -13,6 +14,7 @@ const styles = StyleSheet.create({
 });
 
 const IconButton = ({
+  testID,
   iconName,
   iconType,
   iconColor,
@@ -20,31 +22,27 @@ const IconButton = ({
   onPress,
   style
 }) => (
-  <View style={[styles.view, style]}>
+  <TouchableWithoutFeedbackView
+    testID={testID}
+    style={[styles.view, style]}
+    onPress={onPress}
+  >
     <Icon
       name={iconName}
       type={iconType}
       color={iconColor}
       size={iconSize}
-      onPress={onPress}
     />
-  </View>
+  </TouchableWithoutFeedbackView>
 );
 
-IconButton.propTypes = {
-  iconName: PropTypes.string,
-  iconType: PropTypes.string,
-  iconColor: PropTypes.string,
-  iconSize: PropTypes.number,
+[IconButton.propTypes, IconButton.defaultProps] = createPropTypes({
+  testID: PropTypes.string,
+  iconName: [PropTypes.string, 'web-asset'],
+  iconType: [PropTypes.string, 'material'],
+  iconColor: [PropTypes.string, '#f50'],
+  iconSize: [PropTypes.number, 25],
   onPress: PropTypes.func
-};
-
-IconButton.defaultProps = {
-  iconName: 'web-asset',
-  iconType: 'material',
-  iconColor: '#f50',
-  iconSize: 25,
-  onPress: () => {}
-};
+});
 
 export default IconButton;
