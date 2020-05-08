@@ -77,6 +77,7 @@ const View = ({
   hasTopBorder: PropTypes.bool,
   hasBottomBorder: PropTypes.bool,
   hasShadow: PropTypes.bool,
+  avoidKeyboard: PropTypes.bool,
   centered: PropTypes.bool,
   children: PropTypes.node,
   style: ViewPropTypes.style

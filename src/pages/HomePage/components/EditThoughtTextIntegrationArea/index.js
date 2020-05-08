@@ -3,6 +3,7 @@ import React from 'react';
 import InteractionRow from '@components/InteractionRow';
 import IconButton from '@components/IconButton';
 import TextInput from '@components/TextInput';
+import View from '@components/View';
 
 import Info from './Info';
 
@@ -16,7 +17,7 @@ const EditThoughtTextInteractionArea = ({
   onCancelEditThoughtTextModeButtonPress,
   onFinishEditThoughtTextModeButtonPress
 }) => (
-  <>
+  <View avoidKeyboard>
     <InteractionRow>
       <IconButton iconName="edit" />
 
@@ -49,7 +50,7 @@ const EditThoughtTextInteractionArea = ({
         onPress={onFinishEditThoughtTextModeButtonPress}
       />
     </InteractionRow>
-  </>
+  </View>
 );
 
 export default EditThoughtTextInteractionArea;

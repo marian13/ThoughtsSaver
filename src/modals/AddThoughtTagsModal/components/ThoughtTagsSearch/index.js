@@ -3,6 +3,7 @@ import React from 'react';
 import InteractionRow from '@components/InteractionRow';
 import IconButton from '@components/IconButton';
 import TextInput from '@components/TextInput';
+import View from '@components/View';
 
 import Info from './Info';
 
@@ -16,7 +17,7 @@ const ThoughtTagsSearch = ({
   onCancelEditThoughtTagsButtonPress,
   onFinishEditThoughtTagsButtonPress
 }) => (
-  <>
+  <View avoidKeyboard>
     <InteractionRow>
       <IconButton iconName="edit" />
 
@@ -46,7 +47,7 @@ const ThoughtTagsSearch = ({
         onPress={onFinishEditThoughtTagsButtonPress}
       />
     </InteractionRow>
-  </>
+  </View>
 );
 
 export default ThoughtTagsSearch;
