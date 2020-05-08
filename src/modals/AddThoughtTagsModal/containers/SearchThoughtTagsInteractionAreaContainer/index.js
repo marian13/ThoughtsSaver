@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import ThoughtTagsSearch from '@modals/AddThoughtTagsModal/components/ThoughtTagsSearch';
+import SearchThoughtTagsInteractionArea from '@modals/AddThoughtTagsModal/components/SearchThoughtTagsInteractionArea';
 
 import { thoughtTagsSearchTextSelector, thoughtInEditDraftTagsSelector } from '@modals/AddThoughtTagsModal/slice';
 
@@ -12,7 +12,7 @@ import changeThoughtTagsSearchThunk from '@modals/AddThoughtTagsModal/thunks/cha
 import cancelEditThoughtTagsThunk from '@modals/AddThoughtTagsModal/thunks/cancelEditThoughtTagsThunk';
 import finishEditThoughtTagsThunk from '@modals/AddThoughtTagsModal/thunks/finishEditThoughtTagsThunk';
 
-const ThoughtTagsSearchContainer = () => {
+const SearchThoughtTagsInteractionAreaContainer = () => {
   const dispatch = useDispatch();
 
   const isThoughtTagsSearchFocused = useSelector(isFocusedSelector('thoughtTagsSearch'));
@@ -29,7 +29,7 @@ const ThoughtTagsSearchContainer = () => {
   const handleFinishEditThoughtTagsButtonPress = () => dispatch(finishEditThoughtTagsThunk());
 
   return (
-    <ThoughtTagsSearch
+    <SearchThoughtTagsInteractionArea
       isThoughtTagsSearchFocused={isThoughtTagsSearchFocused}
       thoughtInEditDraftTags={thoughtInEditDraftTags}
       thoughtTagsSearchText={thoughtTagsSearchText}
@@ -42,4 +42,4 @@ const ThoughtTagsSearchContainer = () => {
   );
 };
 
-export default ThoughtTagsSearchContainer;
+export default SearchThoughtTagsInteractionAreaContainer;

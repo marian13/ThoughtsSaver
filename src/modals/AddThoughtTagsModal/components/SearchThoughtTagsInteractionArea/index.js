@@ -7,7 +7,7 @@ import View from '@components/View';
 
 import Info from './Info';
 
-const ThoughtTagsSearch = ({
+const SearchThoughtTagsInteractionArea = ({
   isThoughtTagsSearchFocused,
   thoughtTagsSearchText,
   thoughtInEditDraftTags,
@@ -50,5 +50,5 @@ const ThoughtTagsSearch = ({
   </View>
 );
 
-export default ThoughtTagsSearch;
+export default SearchThoughtTagsInteractionArea;
 

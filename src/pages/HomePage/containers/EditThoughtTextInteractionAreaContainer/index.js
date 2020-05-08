@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import EditThoughtTextIntegrationArea from '@pages/HomePage/components/EditThoughtTextIntegrationArea';
+import EditThoughtTextInteractionArea from '@pages/HomePage/components/EditThoughtTextInteractionArea';
 
 import { isFocusedSelector, focus, blur } from '@modules/FocusesModule/slice';
 import {
@@ -14,7 +14,7 @@ import {
 import cancelEditThoughtTextThunk from '@pages/HomePage/thunks/cancelEditThoughtTextThunk';
 import finishEditThoughtTextThunk from '@pages/HomePage/thunks/finishEditThoughtTextThunk';
 
-const EditThoughtTextIntegrationAreaContainer = () => {
+const EditThoughtTextInteractionAreaContainer = () => {
   const dispatch = useDispatch();
 
   const isEditThoughtTextInputFocused = useSelector(isFocusedSelector('editThoughtTextInput'));
@@ -29,7 +29,7 @@ const EditThoughtTextIntegrationAreaContainer = () => {
   const handleFinishEditThoughtTextModeButtonPress = () => dispatch(finishEditThoughtTextThunk());
 
   return (
-    <EditThoughtTextIntegrationArea
+    <EditThoughtTextInteractionArea
       isEditThoughtTextInputFocused={isEditThoughtTextInputFocused}
       thoughtInEditDraftText={thoughtInEditDraftText}
       thoughtInEditText={thoughtInEditText}
@@ -42,4 +42,4 @@ const EditThoughtTextIntegrationAreaContainer = () => {
   );
 };
 
-export default EditThoughtTextIntegrationAreaContainer;
+export default EditThoughtTextInteractionAreaContainer;

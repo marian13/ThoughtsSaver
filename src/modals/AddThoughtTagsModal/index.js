@@ -5,7 +5,7 @@ import { Modal, StyleSheet, View } from 'react-native';
 import { isVisibleSelector } from '@modules/VisibilitiesModule/slice';
 
 import SearchResultsContainer from '@modals/AddThoughtTagsModal/containers/SearchResultsContainer';
-import ThoughtTagsSearchContainer from '@modals/AddThoughtTagsModal/containers/ThoughtTagsSearchContainer';
+import SearchThoughtTagsInteractionAreaContainer from '@modals/AddThoughtTagsModal/containers/SearchThoughtTagsInteractionAreaContainer';
 
 const styles = StyleSheet.create({
   view: {
@@ -29,7 +29,7 @@ const AddThoughtTagsModal = () => {
       <View style={styles.view}>
         <SearchResultsContainer />
 
-        <ThoughtTagsSearchContainer />
+        <SearchThoughtTagsInteractionAreaContainer />
       </View>
     </Modal>
   );
