@@ -7,6 +7,8 @@ import IconButton from '@components/IconButton';
 
 import { fontSizes } from '@constants/fonts';
 
+import { createPropTypes, PropTypes } from '@utils/propTypes';
+
 const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
@@ -34,6 +36,7 @@ const styles = StyleSheet.create({
 });
 
 const TextInput = ({
+  testID,
   isFocused,
   autoResise,
   text,
@@ -55,6 +58,7 @@ const TextInput = ({
   return (
     <ScrollView style={styles.scrollView} keyboardShouldPersistTaps="always">
       <Input
+        testID={testID}
         ref={inputRef}
         multiline={autoResise}
         textAlignVertical='top'
@@ -80,5 +84,16 @@ const TextInput = ({
     </ScrollView>
   );
 };
+
+[TextInput.propTypes, TextInput.defaultProps] = createPropTypes({
+  testID: PropTypes.string,
+  isFocused: PropTypes.bool,
+  autoResise: PropTypes.bool,
+  text: PropTypes.string,
+  placeholder: PropTypes.string,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  onTextChange: PropTypes.func
+});
 
 export default TextInput;
