@@ -12,9 +12,7 @@ jasmine.getEnv().addReporter(adapter);
 // This is strictly optional.
 jasmine.getEnv().addReporter(specReporter);
 
-beforeAll(async () => {
-  await detox.init(config, { initGlobals: false });
-}, 300000);
+beforeAll(async () => await detox.init(config), 300000);
 
 beforeEach(async () => {
   try {
