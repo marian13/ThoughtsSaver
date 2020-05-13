@@ -7,14 +7,15 @@ import { createPropTypes, PropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
   view: {
-    paddingLeft: 10
+    height: '100%',
+    width: '100%'
   }
-});
+})
 
-const Menu = ({ renderOptions, style }) => {
+const Menu = ({ renderOptions, containerStyle, style }) => {
   return (
-    <View style={[styles.view, style]}>
-      <View hasShadow>
+    <View style={containerStyle}>
+      <View hasShadow style={[styles.view, style]}>
         {renderOptions()}
       </View>
     </View>
@@ -23,6 +24,7 @@ const Menu = ({ renderOptions, style }) => {
 
 [Menu.propTypes, Menu.defaultProps] = createPropTypes({
   renderOptions: PropTypes.func,
+  containerStyle: View.propTypes.style,
   style: View.propTypes.style
 });
 

@@ -8,7 +8,7 @@ export const percentStringToNumber = string => {
   if (!isString(string)) return NaN;
   if (!string.endsWith('%')) return NaN;
 
-  const subString = string[0, (string.length - 1)];
+  const subString = string.slice(0, (string.length - 1));
 
   const number = toNumber(subString);
 

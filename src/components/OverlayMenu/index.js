@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, useWindowDimensions } from 'react-native';
+import { Modal } from 'react-native';
 
 import { Dimensions } from 'react-native';
 
@@ -13,31 +13,27 @@ import { toBool } from '@utils/booleans';
 
 import { createPropTypes, PropTypes } from '@utils/propTypes';
 
-const calculateMenuWidth = (defaultMenu, window) => {
-  if (isPercentString(defaultMenu.width)) {
-    return percentStringToNumber(defaultMenu.width) * (window.width / 100);
+const calculateWidth = (menu, window) => {
+  if (isPercentString(menu.width)) {
+    return percentStringToNumber(menu.width) * (window.width / 100);
   }
 
-  if (defaultMenu.width) return defaultMenu.width;
-
-  return window.width / 2;
+  return menu.width;
 };
 
-const calculateMenuHeight = (defaultMenu, window) => {
-  if (isPercentString(defaultMenu.height)) {
-    return percentStringToNumber(defaultMenu.height) * (window.height / 100);
+const calculateHeight = (menu, window) => {
+  if (isPercentString(menu.height)) {
+    return percentStringToNumber(menu.height) * (window.height / 100);
   }
 
-  if (defaultMenu.height) return defaultMenu.height;
-
-  return window.height / 2;
+  return menu.height;
 };
 
-const calculateMenuStyle = (isVisible, defaultMenu, window) => {
+const calculateSizeStyle = (isVisible, menu, window) => {
   if (!isVisible) return {};
 
-  const width = calculateMenuWidth(defaultMenu, window);
-  const height = calculateMenuHeight(defaultMenu, window);
+  const width = calculateWidth(menu, window);
+  const height = calculateHeight(menu, window);
 
   return {
     width,
@@ -47,12 +43,10 @@ const calculateMenuStyle = (isVisible, defaultMenu, window) => {
   };
 };
 
-const calculateLeft = (menu, window, page) => {
-  const breakingX = window.width - menu.width + 40;
+const calculateLeft = (menu, _window, page) => {
+  if (page.x < menu.width + 40) return 0;
 
-  if (page.x < breakingX) return 0;
-
-  return page.x - breakingX;
+  return page.x - menu.width - 40;
 };
 
 const calculateTop = (menu, window, page) => {
@@ -78,8 +72,6 @@ const calculateLocationStyle = (isVisible, menu, window, page) => {
   };
 };
 
-let count = 0;
-
 const OverlayMenu = ({
   isVisible,
   onContentPress,
@@ -88,6 +80,7 @@ const OverlayMenu = ({
   renderOptions,
   width,
   height,
+  containerStyle,
   style,
   contentContainerStyle,
   backdropStyle
@@ -105,13 +98,14 @@ const OverlayMenu = ({
   const handleTouchablePress = event => {
     setPage({ x: event.nativeEvent.pageX, y: event.nativeEvent.pageY });
 
-    console.log(`handleTouchablePress`);
-
     onContentPress();
   };
 
-  const menuStyle = calculateMenuStyle(isVisible, { width, height }, window);
-  const locationStyle = calculateLocationStyle(isVisible, menuStyle, window, page);
+  const defaultMenu = { width, height };
+  const sizeStyle = calculateSizeStyle(isVisible, defaultMenu, window);
+
+  const menu = sizeStyle;
+  const locationStyle = calculateLocationStyle(isVisible, menu, window, page);
 
   return (
     <>
@@ -125,13 +119,17 @@ const OverlayMenu = ({
 
       {/*
         HACK
-        toBool(isVisible) is nessary here,
-        because Modal `visible` prop treats `null` truthy value.
+        toBool(isVisible) is necessary here,
+        because Modal `visible` prop treats `null` as truthy value.
       */}
       <Modal visible={toBool(isVisible)} onRequestClose={onBackdropPress} transparent>
         <Backdrop onPress={onBackdropPress} style={backdropStyle} />
 
-        <Menu style={[style, menuStyle, locationStyle]} renderOptions={renderOptions} />
+        <Menu
+          containerStyle={[containerStyle, locationStyle, sizeStyle]}
+          style={style}
+          renderOptions={renderOptions}
+        />
       </Modal>
     </>
   );
@@ -145,6 +143,7 @@ const OverlayMenu = ({
   renderOptions: PropTypes.func,
   width: [PropTypes.oneOfType([PropTypes.number, PropTypes.string]), '35%'],
   height: [PropTypes.oneOfType([PropTypes.number, PropTypes.string]), 100],
+  containerStyle: TouchableWithoutFeedbackView.propTypes.style,
   style: TouchableWithoutFeedbackView.propTypes.style,
   contentContainerStyle: TouchableWithoutFeedbackView.propTypes.style,
   backdropStyle: TouchableWithoutFeedbackView.propTypes.style
