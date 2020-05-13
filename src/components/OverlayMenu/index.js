@@ -6,13 +6,14 @@ import {
   ViewPropTypes,
   useWindowDimensions
 } from 'react-native';
-import PropTypes from 'prop-types';
 
 import Backdrop from './Backdrop';
 import Menu from './Menu';
 
 import { percentStringToNumber, isPercentString } from '@utils/percents';
 import { toBool } from '@utils/booleans';
+
+import { createPropTypes, PropTypes } from '@utils/propTypes';
 
 const calculateMenuWidth = (defaultMenu, window) => {
   if (isPercentString(defaultMenu.width)) {
@@ -120,7 +121,7 @@ const OverlayMenu = ({
   );
 };
 
-OverlayMenu.propTypes = {
+[OverlayMenu.propTypes, OverlayMenu.defaultProps] = createPropTypes({
   isVisible: PropTypes.bool,
   onContentPress: PropTypes.func,
   onBackdropPress: PropTypes.func,
@@ -131,19 +132,6 @@ OverlayMenu.propTypes = {
   style: ViewPropTypes.style,
   contentContainerStyle: ViewPropTypes.style,
   backdropStyle: ViewPropTypes.style
-};
-
-OverlayMenu.defaultTypes = {
-  isVisible: false,
-  onContentPress: () => {},
-  onBackdropPress: () => {},
-  renderContent: () => {},
-  renderOptions: () => {},
-  width: 0,
-  height: 0,
-  style: {},
-  contentContainerStyle: {},
-  backdropStyle: {}
-};
+});
 
 export default OverlayMenu;
