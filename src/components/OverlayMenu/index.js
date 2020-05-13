@@ -36,9 +36,14 @@ const calculateMenuHeight = (defaultMenu, window) => {
 const calculateMenuStyle = (isVisible, defaultMenu, window) => {
   if (!isVisible) return {};
 
+  const width = calculateMenuWidth(defaultMenu, window);
+  const height = calculateMenuHeight(defaultMenu, window);
+
   return {
-    width: calculateMenuWidth(defaultMenu, window),
-    height: calculateMenuHeight(defaultMenu, window)
+    width,
+    height,
+    minWidth: width,
+    minHeight: height
   };
 };
 
@@ -138,8 +143,8 @@ const OverlayMenu = ({
   onBackdropPress: PropTypes.func,
   renderContent: PropTypes.func,
   renderOptions: PropTypes.func,
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  width: [PropTypes.oneOfType([PropTypes.number, PropTypes.string]), '35%'],
+  height: [PropTypes.oneOfType([PropTypes.number, PropTypes.string]), 100],
   style: TouchableWithoutFeedbackView.propTypes.style,
   contentContainerStyle: TouchableWithoutFeedbackView.propTypes.style,
   backdropStyle: TouchableWithoutFeedbackView.propTypes.style
