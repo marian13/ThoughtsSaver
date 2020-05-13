@@ -5,9 +5,22 @@ import View from '@components/View';
 
 import { createPropTypes, PropTypes } from '@utils/propTypes';
 
-const TouchableWithoutFeedbackView = ({ testID, children, onPress, style }) => (
+// preventTouchesOnChildren
+// React Native does not bubble touch events
+// https://stackoverflow.com/questions/49835883/how-can-i-propagate-touch-event-in-nested-touchable-in-react-native
+
+const TouchableWithoutFeedbackView = ({
+  testID,
+  preventTouchesOnChildren,
+  children,
+  onPress,
+  style
+}) => (
   <TouchableWithoutFeedback testID={testID} onPress={onPress}>
-    <View style={style}>
+    <View
+      {...(preventTouchesOnChildren ? { onStartShouldSetResponderCapture: () => true } : {})}
+      style={style}
+    >
       {children}
     </View>
   </TouchableWithoutFeedback>
@@ -15,6 +28,7 @@ const TouchableWithoutFeedbackView = ({ testID, children, onPress, style }) => (
 
 [TouchableWithoutFeedbackView.propTypes, TouchableWithoutFeedbackView.defaultProps] = createPropTypes({
   testID: PropTypes.string,
+  preventTouchesOnChildren: PropTypes.bool,
   children: PropTypes.node,
   onPress: PropTypes.func,
   style: View.propTypes.style

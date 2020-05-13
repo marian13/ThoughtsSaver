@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import {
-  Modal,
-  TouchableWithoutFeedback,
-  View,
-  ViewPropTypes,
-  useWindowDimensions
-} from 'react-native';
+import { Modal, useWindowDimensions } from 'react-native';
+
+import { Dimensions } from 'react-native';
 
 import Backdrop from './Backdrop';
 import Menu from './Menu';
+
+import TouchableWithoutFeedbackView from '@components/TouchableWithoutFeedbackView';
 
 import { percentStringToNumber, isPercentString } from '@utils/percents';
 import { toBool } from '@utils/booleans';
@@ -75,6 +73,8 @@ const calculateLocationStyle = (isVisible, menu, window, page) => {
   };
 };
 
+let count = 0;
+
 const OverlayMenu = ({
   isVisible,
   onContentPress,
@@ -88,10 +88,19 @@ const OverlayMenu = ({
   backdropStyle
 }) => {
   const [page, setPage] = useState({});
-  const window = useWindowDimensions();
+  // HACK
+  // useWindowDimensions causes infinite re-rendering
+  // https://github.com/facebook/react-native/issues/26733
+  // const window = useWindowDimensions();
+  const window = {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height
+  };
 
   const handleTouchablePress = event => {
     setPage({ x: event.nativeEvent.pageX, y: event.nativeEvent.pageY });
+
+    console.log(`handleTouchablePress`);
 
     onContentPress();
   };
@@ -101,11 +110,13 @@ const OverlayMenu = ({
 
   return (
     <>
-      <TouchableWithoutFeedback onPress={handleTouchablePress}>
-        <View style={contentContainerStyle}>
-          {renderContent()}
-        </View>
-      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedbackView
+        preventTouchesOnChildren={true}
+        onPress={handleTouchablePress}
+        style={contentContainerStyle}
+      >
+        {renderContent()}
+      </TouchableWithoutFeedbackView>
 
       {/*
         HACK
@@ -129,9 +140,9 @@ const OverlayMenu = ({
   renderOptions: PropTypes.func,
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  style: ViewPropTypes.style,
-  contentContainerStyle: ViewPropTypes.style,
-  backdropStyle: ViewPropTypes.style
+  style: TouchableWithoutFeedbackView.propTypes.style,
+  contentContainerStyle: TouchableWithoutFeedbackView.propTypes.style,
+  backdropStyle: TouchableWithoutFeedbackView.propTypes.style
 });
 
 export default OverlayMenu;
