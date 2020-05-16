@@ -5,14 +5,14 @@ import initialState from './initialState';
 export const changeThoughtTagsSearchText = (state, action) => {
   const { text } = action.payload;
 
-  state.thoughtTagsSearchText = text;
+  state.searchThoughtTagsInputText = text;
 };
 
 export const changeThoughtTagsSearchResults = (state, action) => {
   const { exactMatchResult, results } = action.payload;
 
-  state.thoughtTagsSearchExactMatchResult = exactMatchResult;
-  state.thoughtTagsSearchResults = results;
+  state.searchThoughtTagsInputExactMatchResult = exactMatchResult;
+  state.searchThoughtTagsInputResults = results;
 };
 
 export const setThoughtInEditDraft = (state, action) => {

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import SearchThoughtTagsInteractionArea from '@modals/AddThoughtTagsModal/components/SearchThoughtTagsInteractionArea';
 
-import { thoughtTagsSearchTextSelector, thoughtInEditDraftTagsSelector } from '@modals/AddThoughtTagsModal/slice';
+import { searchThoughtTagsInputTextSelector, thoughtInEditDraftTagsSelector } from '@modals/AddThoughtTagsModal/slice';
 
 import { isFocusedSelector, focus, blur } from '@modules/FocusesModule/slice';
 
@@ -15,13 +15,13 @@ import finishEditThoughtTagsThunk from '@modals/AddThoughtTagsModal/thunks/finis
 const SearchThoughtTagsInteractionAreaContainer = () => {
   const dispatch = useDispatch();
 
-  const isThoughtTagsSearchFocused = useSelector(isFocusedSelector('thoughtTagsSearch'));
+  const isThoughtTagsSearchFocused = useSelector(isFocusedSelector('searchThoughtTagsInput'));
 
-  const thoughtTagsSearchText = useSelector(thoughtTagsSearchTextSelector);
+  const searchThoughtTagsInputText = useSelector(searchThoughtTagsInputTextSelector);
   const thoughtInEditDraftTags = useSelector(thoughtInEditDraftTagsSelector);
 
-  const handleThoughtTagsSearchFocus = () => dispatch(focus('thoughtTagsSearch'));
-  const handleThoughtTagsSearchBlur = () => dispatch(blur('thoughtTagsSearch'));
+  const handleThoughtTagsSearchFocus = () => dispatch(focus('searchThoughtTagsInput'));
+  const handleThoughtTagsSearchBlur = () => dispatch(blur('searchThoughtTagsInput'));
 
   const handleThoughtTagsSearchChange = text => dispatch(changeThoughtTagsSearchThunk({ text }));
 
@@ -32,7 +32,7 @@ const SearchThoughtTagsInteractionAreaContainer = () => {
     <SearchThoughtTagsInteractionArea
       isThoughtTagsSearchFocused={isThoughtTagsSearchFocused}
       thoughtInEditDraftTags={thoughtInEditDraftTags}
-      thoughtTagsSearchText={thoughtTagsSearchText}
+      searchThoughtTagsInputText={searchThoughtTagsInputText}
       onThoughtTagsSearchChange={handleThoughtTagsSearchChange}
       onThoughtTagsSearchFocus={handleThoughtTagsSearchFocus}
       onThoughtTagsSearchBlur={handleThoughtTagsSearchBlur}

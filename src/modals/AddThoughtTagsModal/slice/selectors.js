@@ -19,9 +19,9 @@ export const isThoughtTagsSearchFocusedSelector = createAddThoughtTagsModalSelec
 });
 
 export const doesThoughtTagsSearchHasExactMatchResultSelector = createAddThoughtTagsModalSelector(state => {
-  const { thoughtTagsSearchExactMatchResult } = state;
+  const { searchThoughtTagsInputExactMatchResult } = state;
 
-  return some(thoughtTagsSearchExactMatchResult);
+  return some(searchThoughtTagsInputExactMatchResult);
 });
 
 export const doesThoughtInEditDraftHasTagSelector = params => createAddThoughtTagsModalSelector(state => {
@@ -31,16 +31,16 @@ export const doesThoughtInEditDraftHasTagSelector = params => createAddThoughtTa
   return find(thoughtInEditDraft.tags, { id });
 });
 
-export const thoughtTagsSearchTextSelector = createAddThoughtTagsModalSelector(state => {
-  const { thoughtTagsSearchText } = state;
+export const searchThoughtTagsInputTextSelector = createAddThoughtTagsModalSelector(state => {
+  const { searchThoughtTagsInputText } = state;
 
-  return thoughtTagsSearchText;
+  return searchThoughtTagsInputText;
 });
 
-export const thoughtTagsSearchResultsSelector = createAddThoughtTagsModalSelector(state => {
-  const { thoughtTagsSearchResults } = state;
+export const searchThoughtTagsInputResultsSelector = createAddThoughtTagsModalSelector(state => {
+  const { searchThoughtTagsInputResults } = state;
 
-  return thoughtTagsSearchResults;
+  return searchThoughtTagsInputResults;
 });
 
 export const thoughtInEditDraftTagsSelector = createAddThoughtTagsModalSelector(state => {

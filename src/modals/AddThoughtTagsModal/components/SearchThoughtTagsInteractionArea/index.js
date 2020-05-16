@@ -9,7 +9,7 @@ import Info from './Info';
 
 const SearchThoughtTagsInteractionArea = ({
   isThoughtTagsSearchFocused,
-  thoughtTagsSearchText,
+  searchThoughtTagsInputText,
   thoughtInEditDraftTags,
   onThoughtTagsSearchChange,
   onThoughtTagsSearchFocus,
@@ -35,7 +35,7 @@ const SearchThoughtTagsInteractionArea = ({
       <TextInput
         isFocused={isThoughtTagsSearchFocused}
         autoResise
-        text={thoughtTagsSearchText}
+        text={searchThoughtTagsInputText}
         placeholder="Search for a tag..."
         onFocus={onThoughtTagsSearchFocus}
         onBlur={onThoughtTagsSearchBlur}

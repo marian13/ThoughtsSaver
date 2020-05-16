@@ -6,14 +6,14 @@ import SearchResults from '@modals/AddThoughtTagsModal/components/SearchResults'
 import SearchResultContainer from '@modals/AddThoughtTagsModal/containers/SearchResultContainer';
 import NoExactMatchSearchResultContainer from '@modals/AddThoughtTagsModal/containers/NoExactMatchSearchResultContainer';
 
-import { thoughtTagsSearchResultsSelector } from '@modals/AddThoughtTagsModal/slice';
+import { searchThoughtTagsInputResultsSelector } from '@modals/AddThoughtTagsModal/slice';
 
 const SearchResultsContainer = () => {
-  const thoughtTagsSearchResults = useSelector(thoughtTagsSearchResultsSelector);
+  const searchThoughtTagsInputResults = useSelector(searchThoughtTagsInputResultsSelector);
 
   return (
     <SearchResults
-      searchResults={thoughtTagsSearchResults}
+      searchResults={searchThoughtTagsInputResults}
       SearchResultContainer={SearchResultContainer}
       NoExactMatchSearchResultContainer={NoExactMatchSearchResultContainer}
     />

@@ -8,15 +8,15 @@ import {
 } from '@modules/TagsModule/slice';
 
 import {
-  thoughtTagsSearchTextSelector,
-  thoughtTagsSearchResultsSelector,
+  searchThoughtTagsInputTextSelector,
+  searchThoughtTagsInputResultsSelector,
 
   changeThoughtTagsSearchResults,
   addTagToThoughtInEditDraft
 } from '@modals/AddThoughtTagsModal/slice';
 
 const tagCreateButtonThunk = () => (dispatch, getState) => {
-  const text = thoughtTagsSearchTextSelector(getState());
+  const text = searchThoughtTagsInputTextSelector(getState());
 
   const tagAttributes = {
     id: generateUniqueId(),
@@ -27,7 +27,7 @@ const tagCreateButtonThunk = () => (dispatch, getState) => {
   dispatch(createTag({ tagAttributes }));
 
   const tag = tagSeletor({ id: tagAttributes.id })(getState());
-  const searchResults = thoughtTagsSearchResultsSelector(getState());
+  const searchResults = searchThoughtTagsInputResultsSelector(getState());
 
   dispatch(changeThoughtTagsSearchResults({
     exactMatchResult: tag,

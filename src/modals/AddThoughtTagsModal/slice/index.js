@@ -26,8 +26,8 @@ export const {
   doesThoughtTagsSearchHasExactMatchResultSelector,
   doesThoughtInEditDraftHasTagSelector,
 
-  thoughtTagsSearchTextSelector,
-  thoughtTagsSearchResultsSelector,
+  searchThoughtTagsInputTextSelector,
+  searchThoughtTagsInputResultsSelector,
 
   thoughtInEditDraftTagsSelector,
   thoughtInEditIdSelector

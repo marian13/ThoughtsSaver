@@ -5,7 +5,7 @@ import NoExactMatchSearchResult from '@modals/AddThoughtTagsModal/components/Sea
 
 import {
   doesThoughtTagsSearchHasExactMatchResultSelector,
-  thoughtTagsSearchTextSelector
+  searchThoughtTagsInputTextSelector
 } from '@modals/AddThoughtTagsModal/slice';
 
 import tagCreateButtonThunk from '@modals/AddThoughtTagsModal/thunks/tagCreateButtonThunk';
@@ -14,16 +14,16 @@ const NoExactMatchSearchResultContainer = () => {
   const dispatch = useDispatch();
 
   const doesThoughtTagsSearchHasExactMatchResult = useSelector(doesThoughtTagsSearchHasExactMatchResultSelector);
-  const thoughtTagsSearchText = useSelector(thoughtTagsSearchTextSelector);
+  const searchThoughtTagsInputText = useSelector(searchThoughtTagsInputTextSelector);
 
   const handleCreateTagButtonPress = () => dispatch(tagCreateButtonThunk());
 
   if (doesThoughtTagsSearchHasExactMatchResult) return null;
-  if (!thoughtTagsSearchText) return null;
+  if (!searchThoughtTagsInputText) return null;
 
   return (
     <NoExactMatchSearchResult
-      searchText={thoughtTagsSearchText}
+      searchText={searchThoughtTagsInputText}
       onCreateTagButtonPress={handleCreateTagButtonPress}
     />
   );

@@ -15,7 +15,7 @@ const startEditThoughtTagsThunk = ({ thought }) => dispatch => {
   //
   // To figure out why setTimeout is necessary here, see
   // https://stackoverflow.com/questions/61159324/react-native-how-to-open-the-keyboard-programmatically-after-closing-a-modal
-  setTimeout(() => dispatch(focus('thoughtTagsSearch')));
+  setTimeout(() => dispatch(focus('searchThoughtTagsInput')));
 };
 
 export default startEditThoughtTagsThunk;

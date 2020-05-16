@@ -10,6 +10,7 @@ const ThoughtText = ({ text }) => {
 
   return splitTextIntoWords(text).map((word, index) => (
     <View key={index}>
+      {/* <Text large style={{ borderWidth: 1 }}> */}
       <Text large>
         {word}
       </Text>

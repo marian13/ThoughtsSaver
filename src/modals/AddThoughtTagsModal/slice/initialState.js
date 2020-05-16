@@ -1,9 +1,9 @@
 const initialState = {
   thoughtInEditDraft: {},
   thoughtInEdit: {},
-  thoughtTagsSearchText: '',
-  thoughtTagsSearchExactMatchResult: {},
-  thoughtTagsSearchResults: []
+  searchThoughtTagsInputText: '',
+  searchThoughtTagsInputExactMatchResult: {},
+  searchThoughtTagsInputResults: []
 };
 
 export default initialState;

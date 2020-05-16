@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import some from 'lodash/some';
 
@@ -7,6 +7,7 @@ import ThoughtText from './ThoughtText';
 import Time from './Time';
 
 import TagList from '@components/TagList';
+import View from '@components/View';
 
 import { renderBlocksAsSingleRow, renderBlocksAsSeparateRows } from '@utils/rendering';
 
@@ -34,6 +35,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap'
   },
   time: {
+    // borderWidth: 1,
     flexGrow: 1,
     alignItems: 'flex-end',
     justifyContent: 'flex-end'
