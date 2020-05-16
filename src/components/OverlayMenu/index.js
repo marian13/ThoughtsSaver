@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { Modal } from 'react-native';
-
-import { Dimensions } from 'react-native';
+import { Dimensions, Modal } from 'react-native';
 
 import Backdrop from './Backdrop';
 import Menu from './Menu';
@@ -11,7 +9,7 @@ import TouchableWithoutFeedbackView from '@components/TouchableWithoutFeedbackVi
 import { percentStringToNumber, isPercentString } from '@utils/percents';
 import { toBool } from '@utils/booleans';
 
-import { createPropTypes, PropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
 const calculateWidth = (menu, window) => {
   if (isPercentString(menu.width)) {
@@ -143,10 +141,10 @@ const OverlayMenu = ({
   renderOptions: PropTypes.func,
   width: [PropTypes.oneOfType([PropTypes.number, PropTypes.string]), '35%'],
   height: [PropTypes.oneOfType([PropTypes.number, PropTypes.string]), 100],
-  containerStyle: TouchableWithoutFeedbackView.propTypes.style,
-  style: TouchableWithoutFeedbackView.propTypes.style,
-  contentContainerStyle: TouchableWithoutFeedbackView.propTypes.style,
-  backdropStyle: TouchableWithoutFeedbackView.propTypes.style
+  containerStyle: ViewPropTypes.style,
+  style: ViewPropTypes.style,
+  contentContainerStyle: ViewPropTypes.style,
+  backdropStyle: ViewPropTypes.style
 });
 
 export default OverlayMenu;

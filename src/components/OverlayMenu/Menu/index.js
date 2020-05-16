@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 import View from '@components/View';
 
-import { createPropTypes, PropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
   view: {
@@ -24,8 +24,8 @@ const Menu = ({ renderOptions, containerStyle, style }) => {
 
 [Menu.propTypes, Menu.defaultProps] = createPropTypes({
   renderOptions: PropTypes.func,
-  containerStyle: View.propTypes.style,
-  style: View.propTypes.style
+  containerStyle: ViewPropTypes.style,
+  style: ViewPropTypes.style
 });
 
 export default Menu;

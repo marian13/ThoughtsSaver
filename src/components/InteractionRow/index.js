@@ -1,8 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 
 import View from '@components/View';
+
+import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
   outerView: {
@@ -24,14 +25,9 @@ const InteractionRow = ({ children, style }) => (
   </View>
 );
 
-InteractionRow.propTypes = {
+InteractionRow.propTypes = createPropTypes({
   children: PropTypes.node,
-  style: View.propTypes.style
-};
-
-InteractionRow.defaultTypes = {
-  children: null,
-  style: {}
-};
+  style: ViewPropTypes.style
+});
 
 export default InteractionRow;

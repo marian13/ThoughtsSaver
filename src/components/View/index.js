@@ -3,13 +3,12 @@ import {
   KeyboardAvoidingView,
   Platform,
   StyleSheet,
-  View as NativeView,
-  ViewPropTypes
+  View as NativeView
 } from 'react-native';
 
 import { compact } from 'lodash';
 
-import { createPropTypes, PropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
   topBorder: {

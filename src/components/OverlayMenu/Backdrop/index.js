@@ -1,11 +1,9 @@
 import React from 'react';
-import {
-  TouchableWithoutFeedback,
-  StyleSheet,
-  View,
-  ViewPropTypes
-} from 'react-native';
-import PropTypes from 'prop-types';
+import { StyleSheet } from 'react-native';
+
+import TouchableWithoutFeedbackView from '@components/TouchableWithoutFeedbackView';
+
+import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
   view: {
@@ -18,19 +16,12 @@ const styles = StyleSheet.create({
 });
 
 const Backdrop = ({ onPress, style }) => (
-  <TouchableWithoutFeedback onPress={onPress}>
-    <View style={[styles.view, style]} />
-  </TouchableWithoutFeedback>
+  <TouchableWithoutFeedbackView onPress={onPress} style={[styles.view, style]} />
 );
 
-Backdrop.propTypes = {
+[Backdrop.propTypes, Backdrop.default] = createPropTypes({
   onPress: PropTypes.func,
   style: ViewPropTypes.style
-};
-
-Backdrop.default = {
-  onPress: () => {},
-  style: {}
-};
+});
 
 export default Backdrop;

@@ -3,7 +3,7 @@ import { TouchableWithoutFeedback } from 'react-native';
 
 import View from '@components/View';
 
-import { createPropTypes, PropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
 // preventTouchesOnChildren
 // React Native does not bubble touch events
@@ -31,7 +31,7 @@ const TouchableWithoutFeedbackView = ({
   preventTouchesOnChildren: PropTypes.bool,
   children: PropTypes.node,
   onPress: PropTypes.func,
-  style: View.propTypes.style
+  style: ViewPropTypes.style
 });
 
 export default TouchableWithoutFeedbackView;
