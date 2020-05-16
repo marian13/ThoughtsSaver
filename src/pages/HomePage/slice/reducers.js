@@ -20,7 +20,7 @@ export const startSearchThoughtByTextMode = state => {
   state.isSearchThoughtByTextMode = true;
 };
 
-export const finishSearchThoughtByTextMode = state => {
+export const finishSearchThoughtMode = state => {
   state.isSearchThoughtByTextMode = false;
 };
 
@@ -54,4 +54,10 @@ export const setThoughtInEdit = (state, action) => {
 
 export const resetThoughtInEdit = state => {
   state.thoughtInEdit = initialState.thoughtInEdit;
+};
+
+export const changeSearchThoughtInputText = (state, action) => {
+  const { text } = action.payload;
+
+  state.searchThoughtInputText = text;
 };

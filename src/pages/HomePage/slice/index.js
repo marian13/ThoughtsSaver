@@ -21,7 +21,7 @@ export const {
   finishEditThoughtTextMode,
 
   startSearchThoughtByTextMode,
-  finishSearchThoughtByTextMode,
+  finishSearchThoughtMode,
 
   resetThoughtInCreateDraft,
   changeThoughtInCreateDraftText,
@@ -31,6 +31,8 @@ export const {
 
   setThoughtInEdit,
   resetThoughtInEdit,
+
+  changeSearchThoughtInputText
 } = HomePageSlice.actions;
 
 export const {
@@ -44,7 +46,9 @@ export const {
   thoughtInEditDraftTextSelector,
 
   thoughtInEditIdSelector,
-  thoughtInEditTextSelector
+  thoughtInEditTextSelector,
+
+  searchThoughtInputTextSelector
 } = selectors;
 
 export default HomePageSlice.reducer;

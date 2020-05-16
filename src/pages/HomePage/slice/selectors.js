@@ -51,3 +51,9 @@ export const thoughtInEditTextSelector = createHomePageSelector(state => {
 
   return thoughtInEdit.text;
 });
+
+export const searchThoughtInputTextSelector = createHomePageSelector(state => {
+  const { searchThoughtInputText } = state;
+
+  return searchThoughtInputText;
+});
