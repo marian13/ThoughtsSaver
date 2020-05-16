@@ -1,13 +1,8 @@
 import { some, size } from 'lodash';
 
-import {
-  tagsSelector
-} from '@modules/TagsModule/slice';
+import { tagsSelector } from '@modules/TagsModule/slice';
 
-import {
-  changeSearchThoughtTagsInputText,
-  changeSearchThoughtTagsResults
-} from '@modals/AddThoughtTagsModal/slice';
+import { changeSearchThoughtTagsInputText, changeSearchThoughtTagsResults } from '@modals/AddThoughtTagsModal/slice';
 
 const changeSearchThoughtTagsInputThunk = ({ text: searchText }) => (dispatch, getState) => {
   const tags = tagsSelector(getState());

@@ -7,10 +7,10 @@ import {
   GENERAL_THOUGHT_OPTIONS_BUTTON,
   START_SEARCH_THOUGHT_BY_TEXT_OPTION,
 
-  SEARCH_THOUGHT_INPUT,
-
-  THOUGTH_STREAM
+  SEARCH_THOUGHT_INPUT
 } from '@pages/HomePage/constants/identifiers';
+
+import { generateThoughtTestID } from '@utils/generators';
 
 export const createThoughtTextInput = () => element(by.id(CREATE_THOUGHT_TEXT_INPUT));
 export const createThoughtButton = () => element(by.id(CREATE_THOUGHT_BUTTON));
@@ -20,9 +20,7 @@ export const startSearchThoughtByTextOption = () => element(by.id(START_SEARCH_T
 
 export const searchThoughtInput = () => element(by.id(SEARCH_THOUGHT_INPUT));
 
-export const thougthStream = () => element(by.id(THOUGTH_STREAM));
-
-export const thought = text => element(by.id(THOUGTH_STREAM).and(by.text(text)));
+export const thought = thoughtText => element(by.id(generateThoughtTestID(thoughtText)));
 
 export const createThought = async ({ text }) => {
   await createThoughtTextInput().typeText(text);

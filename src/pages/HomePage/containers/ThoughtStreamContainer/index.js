@@ -7,15 +7,26 @@ import ThoughtContainer from '@pages/HomePage/containers/ThoughtContainer';
 
 import { thoughtsSelector } from '@modules/ThoughtsModule/slice';
 
+import {
+  isSearchThoughtModeSelector,
+  searchThoughtInputTextSelector,
+
+  searchThoughtResultsSelector
+} from '@pages/HomePage/slice';
+
 import { THOUGHT_STREAM } from '@pages/HomePage/constants/identifiers';
 
 const ThoughtStreamContainer = () => {
+  const isSearchThoughtMode = useSelector(isSearchThoughtModeSelector);
+  const searchThoughtInputText = useSelector(searchThoughtInputTextSelector);
+
   const thoughts = useSelector(thoughtsSelector);
+  const searchThoughtResults = useSelector(searchThoughtResultsSelector);
 
   return (
     <ThoughtStream
       testID={THOUGHT_STREAM}
-      thoughts={thoughts}
+      thoughts={isSearchThoughtMode && searchThoughtInputText ? searchThoughtResults : thoughts}
       ThoughtContainer={ThoughtContainer}
     />
   );

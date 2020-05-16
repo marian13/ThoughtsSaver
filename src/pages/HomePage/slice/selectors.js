@@ -57,3 +57,9 @@ export const searchThoughtInputTextSelector = createHomePageSelector(state => {
 
   return searchThoughtInputText;
 });
+
+export const searchThoughtResultsSelector = createHomePageSelector(state => {
+  const { searchThoughtResults } = state;
+
+  return searchThoughtResults;
+});

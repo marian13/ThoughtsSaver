@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
 })
 
 const Thought = ({
+  testID,
   isMenuVisible,
   thought,
   onContentPress,
@@ -22,7 +23,7 @@ const Thought = ({
     isVisible={isMenuVisible}
     onContentPress={onContentPress}
     onBackdropPress={onMenuBackdropPress}
-    renderContent={() => <ThoughtContent {...thought} />}
+    renderContent={() => <ThoughtContent testID={testID} {...thought} />}
     renderOptions={() => <ThoughtMenuOptionsContainer thought={thought} />}
     height={100}
     width="50%"

@@ -1,4 +1,4 @@
-import { element, expect } from 'detox';
+import { expect } from 'detox';
 import { reloadApp } from 'detox-expo-helpers';
 
 import * as HomePage from './HomePage';
@@ -15,8 +15,8 @@ describe('ThoughtsSaver', () => {
 
     await HomePage.searchThoughtByText({ text: 'Power' });
 
-    await expect(element(thougth('Life is Great'))).toNotExist();
-    await expect(element(thougth('Money is the Power'))).toExist();
-    await expect(element(thougth('Justice is a Woman'))).toNotExist();
+    await expect(HomePage.thought('Life is Great')).toNotExist();
+    await expect(HomePage.thought('Money is the Power')).toExist();
+    await expect(HomePage.thought('Justice is a Woman')).toNotExist();
   });
 });

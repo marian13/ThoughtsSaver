@@ -7,6 +7,8 @@ import ThoughtMenuOptionsContainer from '@pages/HomePage/containers/ThoughtMenuO
 
 import { isVisibleSelector, show, hide } from '@modules/VisibilitiesModule/slice';
 
+import { generateThoughtTestID } from '@utils/generators';
+
 const ThoughtContainer = ({ thought }) => {
   const dispatch = useDispatch();
   const isThoughtMenuVisible = useSelector(isVisibleSelector(`thoughtMenu${thought.id}`));
@@ -16,6 +18,7 @@ const ThoughtContainer = ({ thought }) => {
 
   return (
     <Thought
+      testID={generateThoughtTestID(thought.text)}
       isMenuVisible={isThoughtMenuVisible}
       thought={thought}
       onContentPress={handleContentPress}

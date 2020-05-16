@@ -5,7 +5,10 @@ const initialState = {
 
   thoughtInCreateDraft: {},
   thoughtInEditDraft: {},
-  thoughtInEdit: {}
+  thoughtInEdit: {},
+
+  searchThoughtInputText: '',
+  searchThoughtResults: []
 };
 
 export default initialState;

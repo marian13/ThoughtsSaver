@@ -61,3 +61,9 @@ export const changeSearchThoughtInputText = (state, action) => {
 
   state.searchThoughtInputText = text;
 };
+
+export const changeSearchThoughtResults = (state, action) => {
+  const { results } = action.payload;
+
+  state.searchThoughtResults = results;
+};

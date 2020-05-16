@@ -70,9 +70,9 @@ const renderSeparateRows = ({ thought }) => (
   })
 );
 
-const ThoughtContent = thought => {
+const ThoughtContent = ({ testID, ...thought }) => {
   return (
-    <View style={styles.outerView} >
+    <View testID={testID} style={styles.outerView} >
       {some(thought.tags) ? renderSeparateRows({ thought }) : renderSingeRow({ thought })}
     </View>
   );
