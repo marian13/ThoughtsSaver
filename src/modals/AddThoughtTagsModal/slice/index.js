@@ -13,7 +13,7 @@ const AddThoughtTagsModalSlice = createSlice({
 
 export const {
   changeSearchThoughtTagsInputText,
-  changeSearchThoughtTagsInputResults,
+  changeSearchThoughtTagsResults,
 
   setThoughtInEditDraft,
   addTagToThoughtInEditDraft,

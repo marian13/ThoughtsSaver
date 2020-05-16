@@ -8,7 +8,7 @@ export const changeSearchThoughtTagsInputText = (state, action) => {
   state.searchThoughtTagsInputText = text;
 };
 
-export const changeSearchThoughtTagsInputResults = (state, action) => {
+export const changeSearchThoughtTagsResults = (state, action) => {
   const { exactMatchResult, results } = action.payload;
 
   state.searchThoughtTagsInputExactMatchResult = exactMatchResult;

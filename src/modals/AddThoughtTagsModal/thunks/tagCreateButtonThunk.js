@@ -11,7 +11,7 @@ import {
   searchThoughtTagsInputTextSelector,
   searchThoughtTagsResultsSelector,
 
-  changeSearchThoughtTagsInputResults,
+  changeSearchThoughtTagsResults,
   addTagToThoughtInEditDraft
 } from '@modals/AddThoughtTagsModal/slice';
 
@@ -29,7 +29,7 @@ const tagCreateButtonThunk = () => (dispatch, getState) => {
   const tag = tagSeletor({ id: tagAttributes.id })(getState());
   const searchResults = searchThoughtTagsResultsSelector(getState());
 
-  dispatch(changeSearchThoughtTagsInputResults({
+  dispatch(changeSearchThoughtTagsResults({
     exactMatchResult: tag,
     results: [...searchResults, tag]
   }));

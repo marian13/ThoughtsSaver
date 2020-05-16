@@ -6,7 +6,7 @@ import {
 
 import {
   changeSearchThoughtTagsInputText,
-  changeSearchThoughtTagsInputResults
+  changeSearchThoughtTagsResults
 } from '@modals/AddThoughtTagsModal/slice';
 
 const changeSearchThoughtTagsInputThunk = ({ text: searchText }) => (dispatch, getState) => {
@@ -27,7 +27,7 @@ const changeSearchThoughtTagsInputThunk = ({ text: searchText }) => (dispatch, g
     }
   }
 
-  dispatch(changeSearchThoughtTagsInputResults({ exactMatchResult, results }));
+  dispatch(changeSearchThoughtTagsResults({ exactMatchResult, results }));
 };
 
 export default changeSearchThoughtTagsInputThunk;
