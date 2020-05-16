@@ -16,16 +16,17 @@ const defaultDefaultPropForPropType = propType => {
   }
 };
 
-export const createPropTypes = propTypesWithDefaults => {
-  return entries(propTypesWithDefaults).reduce(([propTypes, defaultProps], [key, value]) => {
-    const [propType, defaultProp] = isArray(value) ? value : [value];
+const createPropTypesReducer = ([propTypes, defaultProps], [key, value]) => {
+  const [propType, defaultProp] = isArray(value) ? value : [value];
 
-    propTypes[key] = propType;
-    defaultProps[key] =
-      !isUndefined(defaultProp) ? defaultProp : defaultDefaultPropForPropType(propType);
+  propTypes[key] = propType;
+  defaultProps[key] = !isUndefined(defaultProp) ? defaultProp : defaultDefaultPropForPropType(propType);
 
-    return [propTypes, defaultProps];
-  }, [{}, {}]);
+  return [propTypes, defaultProps];
 };
 
-export { PropTypes };
+export const createPropTypes = propTypesWithDefaults => (
+  entries(propTypesWithDefaults).reduce(createPropTypesReducer, [{}, {}])
+);
+
+export { PropTypes, ViewPropTypes };
