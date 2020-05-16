@@ -37,10 +37,10 @@ export const searchThoughtTagsInputTextSelector = createAddThoughtTagsModalSelec
   return searchThoughtTagsInputText;
 });
 
-export const searchThoughtTagsInputResultsSelector = createAddThoughtTagsModalSelector(state => {
-  const { searchThoughtTagsInputResults } = state;
+export const searchThoughtTagsResultsSelector = createAddThoughtTagsModalSelector(state => {
+  const { searchThoughtTagsResults } = state;
 
-  return searchThoughtTagsInputResults;
+  return searchThoughtTagsResults;
 });
 
 export const thoughtInEditDraftTagsSelector = createAddThoughtTagsModalSelector(state => {

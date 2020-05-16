@@ -3,7 +3,7 @@ const initialState = {
   thoughtInEdit: {},
   searchThoughtTagsInputText: '',
   searchThoughtTagsInputExactMatchResult: {},
-  searchThoughtTagsInputResults: []
+  searchThoughtTagsResults: []
 };
 
 export default initialState;

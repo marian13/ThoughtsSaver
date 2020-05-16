@@ -27,7 +27,7 @@ export const {
   doesThoughtInEditDraftHasTagSelector,
 
   searchThoughtTagsInputTextSelector,
-  searchThoughtTagsInputResultsSelector,
+  searchThoughtTagsResultsSelector,
 
   thoughtInEditDraftTagsSelector,
   thoughtInEditIdSelector

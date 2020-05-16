@@ -12,7 +12,7 @@ export const changeSearchThoughtTagsInputResults = (state, action) => {
   const { exactMatchResult, results } = action.payload;
 
   state.searchThoughtTagsInputExactMatchResult = exactMatchResult;
-  state.searchThoughtTagsInputResults = results;
+  state.searchThoughtTagsResults = results;
 };
 
 export const setThoughtInEditDraft = (state, action) => {

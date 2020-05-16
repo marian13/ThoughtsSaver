@@ -9,7 +9,7 @@ import {
 
 import {
   searchThoughtTagsInputTextSelector,
-  searchThoughtTagsInputResultsSelector,
+  searchThoughtTagsResultsSelector,
 
   changeSearchThoughtTagsInputResults,
   addTagToThoughtInEditDraft
@@ -27,7 +27,7 @@ const tagCreateButtonThunk = () => (dispatch, getState) => {
   dispatch(createTag({ tagAttributes }));
 
   const tag = tagSeletor({ id: tagAttributes.id })(getState());
-  const searchResults = searchThoughtTagsInputResultsSelector(getState());
+  const searchResults = searchThoughtTagsResultsSelector(getState());
 
   dispatch(changeSearchThoughtTagsInputResults({
     exactMatchResult: tag,
