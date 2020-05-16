@@ -1,19 +1,16 @@
 import React from 'react';
 
-import ThoughtMenuOption from './ThoughtMenuOption';
+import OverlayMenuOption from '@components/OverlayMenuOption';
 
-const ThoughtMenuOptions = ({ onEditTextPress, onAddTagsPress, ...rest }) => (
+const ThoughtMenuOptions = ({ onEditTextPress, onAddTagsPress }) => (
   <>
-    <ThoughtMenuOption
-      {...rest}
+    <OverlayMenuOption
       iconName="edit"
-      iconType="material"
       text="Edit Text"
       onPress={onEditTextPress}
     />
 
-    <ThoughtMenuOption
-      {...rest}
+    <OverlayMenuOption
       iconName="pound"
       iconType="material-community"
       text="Add Tags"

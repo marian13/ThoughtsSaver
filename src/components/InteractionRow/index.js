@@ -25,7 +25,7 @@ const InteractionRow = ({ children, style }) => (
   </View>
 );
 
-InteractionRow.propTypes = createPropTypes({
+[InteractionRow.propTypes, InteractionRow.defaultProps] = createPropTypes({
   children: PropTypes.node,
   style: ViewPropTypes.style
 });

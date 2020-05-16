@@ -7,13 +7,15 @@ const Icon = ({
   name,
   type,
   color,
-  size
+  size,
+  containerStyle
 }) => (
   <NativeElementsIcon
     name={name}
     type={type}
     color={color}
     size={size}
+    containerStyle={containerStyle}
   />
 );
 
