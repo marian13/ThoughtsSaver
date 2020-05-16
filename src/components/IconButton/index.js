@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Icon } from 'react-native-elements';
 
 import TouchableWithoutFeedbackView from '@components/TouchableWithoutFeedbackView';
+import Icon from '@components/Icon';
 
 import { createPropTypes, PropTypes } from '@utils/propTypes';
 
