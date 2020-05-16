@@ -1,7 +1,15 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import { Icon as NativeElementsIcon } from 'react-native-elements';
 
 import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+
+const styles = StyleSheet.create({
+  iconContainer: {
+    justifyContent: 'center',
+    padding: 10
+  }
+});
 
 const Icon = ({
   name,
@@ -15,7 +23,7 @@ const Icon = ({
     type={type}
     color={color}
     size={size}
-    containerStyle={containerStyle}
+    containerStyle={[styles.iconContainer, containerStyle]}
   />
 );
 

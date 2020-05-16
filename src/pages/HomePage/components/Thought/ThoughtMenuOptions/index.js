@@ -5,13 +5,14 @@ import OverlayMenuOption from '@components/OverlayMenuOption';
 const ThoughtMenuOptions = ({ onEditTextPress, onAddTagsPress }) => (
   <>
     <OverlayMenuOption
-      iconName="edit"
+      iconName="playlist-edit"
+      iconType="material-community"
       text="Edit Text"
       onPress={onEditTextPress}
     />
 
     <OverlayMenuOption
-      iconName="pound"
+      iconName="tag-plus"
       iconType="material-community"
       text="Add Tags"
       onPress={onAddTagsPress}

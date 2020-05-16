@@ -6,13 +6,6 @@ import Icon from '@components/Icon';
 
 import { createPropTypes, PropTypes } from '@utils/propTypes';
 
-const styles = StyleSheet.create({
-  view: {
-    justifyContent: 'center',
-    padding: 10
-  }
-});
-
 const IconButton = ({
   testID,
   iconName,
@@ -24,7 +17,7 @@ const IconButton = ({
 }) => (
   <TouchableWithoutFeedbackView
     testID={testID}
-    style={[styles.view, style]}
+    style={style}
     onPress={onPress}
   >
     <Icon

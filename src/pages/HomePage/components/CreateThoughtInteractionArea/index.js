@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import InteractionRow from '@components/InteractionRow';
+import Icon from '@components/Icon';
 import IconButton from '@components/IconButton';
+import InteractionRow from '@components/InteractionRow';
 import OverlayMenu from '@components/OverlayMenu';
 import TextInput from '@components/TextInput';
 import View from '@components/View';
@@ -47,10 +48,7 @@ const CreateThoughtInteractionArea = ({
     </InteractionRow>
 
     <InteractionRow>
-      <IconButton
-        iconName="emoticon-outline"
-        iconType="material-community"
-      />
+      <Icon name="attach-file" />
 
       <TextInput
         testID={CREATE_THOUGHT_TEXT_INPUT}

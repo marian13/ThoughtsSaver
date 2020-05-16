@@ -1,7 +1,8 @@
 import React from 'react';
 
-import InteractionRow from '@components/InteractionRow';
+import Icon from '@components/Icon';
 import IconButton from '@components/IconButton';
+import InteractionRow from '@components/InteractionRow';
 import TextInput from '@components/TextInput';
 import View from '@components/View';
 
@@ -19,14 +20,11 @@ const SearchThoughtTagsInteractionArea = ({
 }) => (
   <View avoidKeyboard>
     <InteractionRow>
-      <IconButton iconName="edit" />
+      <Icon name="edit" />
 
       <Info thoughtInEditDraftTags={thoughtInEditDraftTags} />
 
-      <IconButton
-        iconName="close"
-        onPress={onCancelEditThoughtTagsButtonPress}
-      />
+      <IconButton iconName="close" onPress={onCancelEditThoughtTagsButtonPress} />
     </InteractionRow>
 
     <InteractionRow>
@@ -42,10 +40,7 @@ const SearchThoughtTagsInteractionArea = ({
         onTextChange={onSearchThoughtTagsInputChange}
       />
 
-      <IconButton
-        iconName="check-circle"
-        onPress={onFinishEditThoughtTagsButtonPress}
-      />
+      <IconButton iconName="check-circle" onPress={onFinishEditThoughtTagsButtonPress} />
     </InteractionRow>
   </View>
 );

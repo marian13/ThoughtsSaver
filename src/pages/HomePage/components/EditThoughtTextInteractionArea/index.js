@@ -1,7 +1,8 @@
 import React from 'react';
 
-import InteractionRow from '@components/InteractionRow';
+import Icon from '@components/Icon';
 import IconButton from '@components/IconButton';
+import InteractionRow from '@components/InteractionRow';
 import TextInput from '@components/TextInput';
 import View from '@components/View';
 
@@ -23,17 +24,11 @@ const EditThoughtTextInteractionArea = ({
 
       <Info thoughtInEditText={thoughtInEditText} />
 
-      <IconButton
-        iconName="close"
-        onPress={onCancelEditThoughtTextModeButtonPress}
-      />
+      <IconButton iconName="close" onPress={onCancelEditThoughtTextModeButtonPress} />
     </InteractionRow>
 
     <InteractionRow>
-      <IconButton
-        iconName="emoticon-outline"
-        iconType="material-community"
-      />
+      <Icon name="attach-file" />
 
       <TextInput
         isFocused={isEditThoughtTextInputFocused}
@@ -45,10 +40,7 @@ const EditThoughtTextInteractionArea = ({
         onTextChange={onEditThoughtTextInputChange}
       />
 
-      <IconButton
-        iconName="check-circle"
-        onPress={onFinishEditThoughtTextModeButtonPress}
-      />
+      <IconButton iconName="check-circle" onPress={onFinishEditThoughtTextModeButtonPress} />
     </InteractionRow>
   </View>
 );

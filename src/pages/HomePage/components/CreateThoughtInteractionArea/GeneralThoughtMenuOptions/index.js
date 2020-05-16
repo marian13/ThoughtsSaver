@@ -8,8 +8,8 @@ const GeneralThoughtMenuOptions = ({ onSearchThoughtByTextPress }) => (
   <>
     <OverlayMenuOption
       testID={START_SEARCH_THOUGHT_BY_TEXT_OPTION}
-      iconName="search"
-      iconType="material"
+      iconName="text"
+      iconType="material-community"
       text="Search by Text"
       onPress={onSearchThoughtByTextPress}
     />

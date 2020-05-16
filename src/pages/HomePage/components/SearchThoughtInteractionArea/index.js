@@ -1,6 +1,7 @@
 import React from 'react';
 
 import InteractionRow from '@components/InteractionRow';
+import Icon from '@components/Icon';
 import IconButton from '@components/IconButton';
 import TextInput from '@components/TextInput';
 import View from '@components/View';
@@ -16,19 +17,13 @@ const SearchThoughtInteractionArea = ({
 }) => (
   <View avoidKeyboard>
     <InteractionRow>
-      <IconButton
-        iconName="emoticon-outline"
-        iconType="material-community"
-      />
+      <IconButton iconName="more-vert" />
 
-      <IconButton
-        iconName="close"
-        onPress={onCancelSearchThoughtButtonPress}
-      />
+      <IconButton iconName="close" onPress={onCancelSearchThoughtButtonPress} />
     </InteractionRow>
 
     <InteractionRow>
-      <IconButton iconName="search" />
+      <Icon name="search" />
 
       <TextInput
         isFocused={isSearchThoughtInputFocused}
@@ -40,10 +35,7 @@ const SearchThoughtInteractionArea = ({
         onTextChange={onSearchThoughtInputChange}
       />
 
-      <IconButton
-        iconName="check-circle"
-        onPress={onFinishSearchThoughtButtonPress}
-      />
+      <IconButton iconName="check-circle" onPress={onFinishSearchThoughtButtonPress} />
     </InteractionRow>
   </View>
 );
