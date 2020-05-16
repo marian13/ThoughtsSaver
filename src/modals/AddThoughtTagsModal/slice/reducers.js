@@ -2,13 +2,13 @@ import { clone, orderBy, remove } from 'lodash';
 
 import initialState from './initialState';
 
-export const changeThoughtTagsSearchText = (state, action) => {
+export const changeSearchThoughtTagsInputText = (state, action) => {
   const { text } = action.payload;
 
   state.searchThoughtTagsInputText = text;
 };
 
-export const changeThoughtTagsSearchResults = (state, action) => {
+export const changeSearchThoughtTagsInputResults = (state, action) => {
   const { exactMatchResult, results } = action.payload;
 
   state.searchThoughtTagsInputExactMatchResult = exactMatchResult;

@@ -5,15 +5,15 @@ import {
 } from '@modules/TagsModule/slice';
 
 import {
-  changeThoughtTagsSearchText,
-  changeThoughtTagsSearchResults
+  changeSearchThoughtTagsInputText,
+  changeSearchThoughtTagsInputResults
 } from '@modals/AddThoughtTagsModal/slice';
 
-const changeThoughtTagsSearchThunk = ({ text: searchText }) => (dispatch, getState) => {
+const changeSearchThoughtTagsInputThunk = ({ text: searchText }) => (dispatch, getState) => {
   const tags = tagsSelector(getState());
   const text = searchText.trim();
 
-  dispatch(changeThoughtTagsSearchText({ text: searchText }));
+  dispatch(changeSearchThoughtTagsInputText({ text: searchText }));
 
   let exactMatchResult = {};
   const results = [];
@@ -27,7 +27,7 @@ const changeThoughtTagsSearchThunk = ({ text: searchText }) => (dispatch, getSta
     }
   }
 
-  dispatch(changeThoughtTagsSearchResults({ exactMatchResult, results }));
+  dispatch(changeSearchThoughtTagsInputResults({ exactMatchResult, results }));
 };
 
-export default changeThoughtTagsSearchThunk;
+export default changeSearchThoughtTagsInputThunk;

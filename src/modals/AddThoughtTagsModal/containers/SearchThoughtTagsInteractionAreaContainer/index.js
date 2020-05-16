@@ -7,7 +7,7 @@ import { searchThoughtTagsInputTextSelector, thoughtInEditDraftTagsSelector } fr
 
 import { isFocusedSelector, focus, blur } from '@modules/FocusesModule/slice';
 
-import changeThoughtTagsSearchThunk from '@modals/AddThoughtTagsModal/thunks/changeThoughtTagsSearchThunk';
+import changeSearchThoughtTagsInputThunk from '@modals/AddThoughtTagsModal/thunks/changeSearchThoughtTagsInputThunk';
 
 import cancelEditThoughtTagsThunk from '@modals/AddThoughtTagsModal/thunks/cancelEditThoughtTagsThunk';
 import finishEditThoughtTagsThunk from '@modals/AddThoughtTagsModal/thunks/finishEditThoughtTagsThunk';
@@ -15,27 +15,27 @@ import finishEditThoughtTagsThunk from '@modals/AddThoughtTagsModal/thunks/finis
 const SearchThoughtTagsInteractionAreaContainer = () => {
   const dispatch = useDispatch();
 
-  const isThoughtTagsSearchFocused = useSelector(isFocusedSelector('searchThoughtTagsInput'));
+  const isSearchThoughtTagsInputFocused = useSelector(isFocusedSelector('searchThoughtTagsInput'));
 
   const searchThoughtTagsInputText = useSelector(searchThoughtTagsInputTextSelector);
   const thoughtInEditDraftTags = useSelector(thoughtInEditDraftTagsSelector);
 
-  const handleThoughtTagsSearchFocus = () => dispatch(focus('searchThoughtTagsInput'));
-  const handleThoughtTagsSearchBlur = () => dispatch(blur('searchThoughtTagsInput'));
+  const handleSearchThoughtTagsInputFocus = () => dispatch(focus('searchThoughtTagsInput'));
+  const handleSearchThoughtTagsInputBlur = () => dispatch(blur('searchThoughtTagsInput'));
 
-  const handleThoughtTagsSearchChange = text => dispatch(changeThoughtTagsSearchThunk({ text }));
+  const handleSearchThoughtTagsInputChange = text => dispatch(changeSearchThoughtTagsInputThunk({ text }));
 
   const handleCancelEditThoughtTagsButtonPress = () => dispatch(cancelEditThoughtTagsThunk());
   const handleFinishEditThoughtTagsButtonPress = () => dispatch(finishEditThoughtTagsThunk());
 
   return (
     <SearchThoughtTagsInteractionArea
-      isThoughtTagsSearchFocused={isThoughtTagsSearchFocused}
+      isSearchThoughtTagsInputFocused={isSearchThoughtTagsInputFocused}
       thoughtInEditDraftTags={thoughtInEditDraftTags}
       searchThoughtTagsInputText={searchThoughtTagsInputText}
-      onThoughtTagsSearchChange={handleThoughtTagsSearchChange}
-      onThoughtTagsSearchFocus={handleThoughtTagsSearchFocus}
-      onThoughtTagsSearchBlur={handleThoughtTagsSearchBlur}
+      onSearchThoughtTagsInputChange={handleSearchThoughtTagsInputChange}
+      onSearchThoughtTagsInputFocus={handleSearchThoughtTagsInputFocus}
+      onSearchThoughtTagsInputBlur={handleSearchThoughtTagsInputBlur}
       onCancelEditThoughtTagsButtonPress={handleCancelEditThoughtTagsButtonPress}
       onFinishEditThoughtTagsButtonPress={handleFinishEditThoughtTagsButtonPress}
     />

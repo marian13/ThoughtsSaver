@@ -37,6 +37,7 @@ export const {
   isCreateThoughtModeSelector,
   isEditThoughtTextModeSelector,
   isSearchThoughtByTextModeSelector,
+  isSearchThoughtModeSelector,
 
   thoughtInCreateDraftTextSelector,
 

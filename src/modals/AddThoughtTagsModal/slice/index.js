@@ -12,8 +12,8 @@ const AddThoughtTagsModalSlice = createSlice({
 });
 
 export const {
-  changeThoughtTagsSearchText,
-  changeThoughtTagsSearchResults,
+  changeSearchThoughtTagsInputText,
+  changeSearchThoughtTagsInputResults,
 
   setThoughtInEditDraft,
   addTagToThoughtInEditDraft,
@@ -23,7 +23,7 @@ export const {
 } = AddThoughtTagsModalSlice.actions;
 
 export const {
-  doesThoughtTagsSearchHasExactMatchResultSelector,
+  doesSearchThoughtTagsHasExactMatchResultSelector,
   doesThoughtInEditDraftHasTagSelector,
 
   searchThoughtTagsInputTextSelector,

@@ -12,13 +12,13 @@ export const isVisibleSelector = createAddThoughtTagsModalSelector(state => {
   return isVisible;
 });
 
-export const isThoughtTagsSearchFocusedSelector = createAddThoughtTagsModalSelector(state => {
-  const { focusThoughtTagsSearch } = state;
+export const isSearchThoughtTagsInputFocusedSelector = createAddThoughtTagsModalSelector(state => {
+  const { focusSearchThoughtTagsInput } = state;
 
-  return focusThoughtTagsSearch;
+  return focusSearchThoughtTagsInput;
 });
 
-export const doesThoughtTagsSearchHasExactMatchResultSelector = createAddThoughtTagsModalSelector(state => {
+export const doesSearchThoughtTagsHasExactMatchResultSelector = createAddThoughtTagsModalSelector(state => {
   const { searchThoughtTagsInputExactMatchResult } = state;
 
   return some(searchThoughtTagsInputExactMatchResult);

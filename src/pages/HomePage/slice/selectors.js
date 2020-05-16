@@ -22,6 +22,12 @@ export const isSearchThoughtByTextModeSelector = createHomePageSelector(state =>
   return isSearchThoughtByTextMode;
 });
 
+export const isSearchThoughtModeSelector = createHomePageSelector(state => {
+  const { isSearchThoughtByTextMode } = state;
+
+  return isSearchThoughtByTextMode;
+});
+
 export const thoughtInCreateDraftTextSelector = createHomePageSelector(state => {
   const { thoughtInCreateDraft } = state;
 

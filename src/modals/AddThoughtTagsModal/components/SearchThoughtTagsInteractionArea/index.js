@@ -8,12 +8,12 @@ import View from '@components/View';
 import Info from './Info';
 
 const SearchThoughtTagsInteractionArea = ({
-  isThoughtTagsSearchFocused,
+  isSearchThoughtTagsInputFocused,
   searchThoughtTagsInputText,
   thoughtInEditDraftTags,
-  onThoughtTagsSearchChange,
-  onThoughtTagsSearchFocus,
-  onThoughtTagsSearchBlur,
+  onSearchThoughtTagsInputChange,
+  onSearchThoughtTagsInputFocus,
+  onSearchThoughtTagsInputBlur,
   onCancelEditThoughtTagsButtonPress,
   onFinishEditThoughtTagsButtonPress
 }) => (
@@ -33,13 +33,13 @@ const SearchThoughtTagsInteractionArea = ({
       <IconButton iconName="search" />
 
       <TextInput
-        isFocused={isThoughtTagsSearchFocused}
+        isFocused={isSearchThoughtTagsInputFocused}
         autoResise
         text={searchThoughtTagsInputText}
         placeholder="Search for a tag..."
-        onFocus={onThoughtTagsSearchFocus}
-        onBlur={onThoughtTagsSearchBlur}
-        onTextChange={onThoughtTagsSearchChange}
+        onFocus={onSearchThoughtTagsInputFocus}
+        onBlur={onSearchThoughtTagsInputBlur}
+        onTextChange={onSearchThoughtTagsInputChange}
       />
 
       <IconButton

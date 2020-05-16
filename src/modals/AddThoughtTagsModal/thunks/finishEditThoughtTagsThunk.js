@@ -5,7 +5,7 @@ import { hide } from '@modules/VisibilitiesModule/slice';
 
 import { thoughtInEditDraftTagsSelector, thoughtInEditIdSelector } from '@modals/AddThoughtTagsModal/slice';
 
-import changeThoughtTagsSearchThunk from '@modals/AddThoughtTagsModal/thunks/changeThoughtTagsSearchThunk';
+import changeSearchThoughtTagsInputThunk from '@modals/AddThoughtTagsModal/thunks/changeSearchThoughtTagsInputThunk';
 
 const finishEditThoughtTagsThunk = () => (dispatch, getState) => {
   const thoughtDraftTags = thoughtInEditDraftTagsSelector(getState());
@@ -19,7 +19,7 @@ const finishEditThoughtTagsThunk = () => (dispatch, getState) => {
 
   dispatch(hide('addThoughtTagsModal'));
   dispatch(updateThought({ thoughtAttributes }));
-  dispatch(changeThoughtTagsSearchThunk({ text: '' }));
+  dispatch(changeSearchThoughtTagsInputThunk({ text: '' }));
 };
 
 export default finishEditThoughtTagsThunk;

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import NoExactMatchSearchResult from '@modals/AddThoughtTagsModal/components/SearchResults/NoExactMatchSearchResult';
 
 import {
-  doesThoughtTagsSearchHasExactMatchResultSelector,
+  doesSearchThoughtTagsHasExactMatchResultSelector,
   searchThoughtTagsInputTextSelector
 } from '@modals/AddThoughtTagsModal/slice';
 
@@ -13,12 +13,12 @@ import tagCreateButtonThunk from '@modals/AddThoughtTagsModal/thunks/tagCreateBu
 const NoExactMatchSearchResultContainer = () => {
   const dispatch = useDispatch();
 
-  const doesThoughtTagsSearchHasExactMatchResult = useSelector(doesThoughtTagsSearchHasExactMatchResultSelector);
+  const doesSearchThoughtTagsHasExactMatchResult = useSelector(doesSearchThoughtTagsHasExactMatchResultSelector);
   const searchThoughtTagsInputText = useSelector(searchThoughtTagsInputTextSelector);
 
   const handleCreateTagButtonPress = () => dispatch(tagCreateButtonThunk());
 
-  if (doesThoughtTagsSearchHasExactMatchResult) return null;
+  if (doesSearchThoughtTagsHasExactMatchResult) return null;
   if (!searchThoughtTagsInputText) return null;
 
   return (
