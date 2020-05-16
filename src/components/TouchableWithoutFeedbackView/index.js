@@ -3,6 +3,7 @@ import { TouchableWithoutFeedback } from 'react-native';
 
 import View from '@components/View';
 
+import { ifProp } from '@utils/props';
 import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
 // preventTouchesOnChildren
@@ -18,7 +19,7 @@ const TouchableWithoutFeedbackView = ({
 }) => (
   <TouchableWithoutFeedback testID={testID} onPress={onPress}>
     <View
-      {...(preventTouchesOnChildren ? { onStartShouldSetResponderCapture: () => true } : {})}
+      {...ifProp(preventTouchesOnChildren && { onStartShouldSetResponderCapture: () => true })}
       style={style}
     >
       {children}

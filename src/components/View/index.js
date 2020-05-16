@@ -8,6 +8,7 @@ import {
 
 import { compact } from 'lodash';
 
+import { ifProp } from '@utils/props';
 import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
@@ -59,7 +60,7 @@ const View = ({
   return (
     <Component
       {...rest}
-      {...(avoidKeyboard ? { behavior: Platform.OS === 'ios' ? 'padding' : 'height' } : {})}
+      {...ifProp(avoidKeyboard && { behavior: Platform.OS === 'ios' ? 'padding' : 'height' })}
       style={compact([
         hasTopBorder && styles.topBorder,
         hasBottomBorder && styles.bottomBorder,

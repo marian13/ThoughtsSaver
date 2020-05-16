@@ -5,6 +5,7 @@ import { compact } from 'lodash';
 
 import { fontSizes } from '@constants/fonts';
 
+import { ifProp } from '@utils/props';
 import { createPropTypes, PropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
@@ -28,7 +29,7 @@ const Text = ({
 }) => (
   <NativeText
     {...rest}
-    {...(reduced ? { numberOfLines: 1, ellipsizeMode: 'tail' } : {})}
+    {...ifProp(reduced && { numberOfLines: 1, ellipsizeMode: 'tail' })}
     style={compact([
       white && styles.white,
       bold && styles.bold,
