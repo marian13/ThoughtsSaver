@@ -16,6 +16,14 @@ export const finishEditThoughtTextMode = state => {
   state.isEditThoughtTextMode = false;
 };
 
+export const startSearchThoughtByTextMode = state => {
+  state.isSearchThoughtByTextMode = true;
+};
+
+export const finishSearchThoughtByTextMode = state => {
+  state.isSearchThoughtByTextMode = false;
+};
+
 export const resetThoughtInCreateDraft = state => {
   state.thoughtInCreateDraft = initialState.thoughtInCreateDraft;
 };

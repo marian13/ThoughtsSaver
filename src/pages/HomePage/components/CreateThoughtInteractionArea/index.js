@@ -7,6 +7,8 @@ import OverlayMenu from '@components/OverlayMenu';
 import TextInput from '@components/TextInput';
 import View from '@components/View';
 
+import GeneralThoughtMenuOptionsContainer from '@pages/HomePage/containers/GeneralThoughtMenuOptionsContainer';
+
 import {
   CREATE_THOUGHT_TEXT_INPUT,
   CREATE_THOUGHT_BUTTON,
@@ -37,7 +39,9 @@ const CreateThoughtInteractionArea = ({
         onContentPress={onGeneralThoughtOptionsButtonPress}
         onBackdropPress={onGeneralThoughtOptionsMenuBackdropPress}
         renderContent={() => <IconButton testID={GENERAL_THOUGHT_OPTIONS_BUTTON} iconName="more-vert" />}
+        renderOptions={() => <GeneralThoughtMenuOptionsContainer />}
         height={100}
+        width="55%"
         containerStyle={styles.overlayMenuContainer}
       />
     </InteractionRow>

@@ -1,8 +1,6 @@
 import { element, expect } from 'detox';
 import { reloadApp } from 'detox-expo-helpers';
 
-import sleep from '@utils/sleep';
-
 import * as HomePage from './HomePage';
 
 describe('ThoughtsSaver', () => {

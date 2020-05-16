@@ -5,3 +5,5 @@ export const THOUGHT_STREAM = 'thoughtStream';
 
 export const GENERAL_THOUGHT_OPTIONS_BUTTON = 'generalThoughtOptionsButton';
 export const GENERAL_THOUGHT_OPTIONS_MENU = 'generalThoughtOptionsMenu';
+
+export const START_SEARCH_THOUGHT_BY_TEXT_OPTION = 'startSearchThoughtByTextOption';

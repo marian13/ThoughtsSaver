@@ -1,6 +1,7 @@
 const initialState = {
   isCreateThoughtMode: false,
   isEditThoughtTextMode: false,
+  isSearchThoughtByTextMode: false,
 
   thoughtInCreateDraft: {},
   thoughtInEditDraft: {},
