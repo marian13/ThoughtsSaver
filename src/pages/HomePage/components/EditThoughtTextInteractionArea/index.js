@@ -20,7 +20,7 @@ const EditThoughtTextInteractionArea = ({
 }) => (
   <View avoidKeyboard>
     <InteractionRow>
-      <IconButton iconName="edit" />
+      <Icon name="edit" />
 
       <Info thoughtInEditText={thoughtInEditText} />
 

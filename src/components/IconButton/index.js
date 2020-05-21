@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import TouchableWithoutFeedbackView from '@components/TouchableWithoutFeedbackView';
+import TouchableView from '@components/TouchableView';
 import Icon from '@components/Icon';
 
 import { createPropTypes, PropTypes } from '@utils/propTypes';
@@ -15,9 +15,9 @@ const IconButton = ({
   onPress,
   style
 }) => (
-  <TouchableWithoutFeedbackView
+  <TouchableView
     testID={testID}
-    style={style}
+    containerStyle={style}
     onPress={onPress}
   >
     <Icon
@@ -26,7 +26,7 @@ const IconButton = ({
       color={iconColor}
       size={iconSize}
     />
-  </TouchableWithoutFeedbackView>
+  </TouchableView>
 );
 
 [IconButton.propTypes, IconButton.defaultProps] = createPropTypes({

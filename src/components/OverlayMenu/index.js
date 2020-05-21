@@ -4,7 +4,7 @@ import { Dimensions, Modal } from 'react-native';
 import Backdrop from './Backdrop';
 import Menu from './Menu';
 
-import TouchableWithoutFeedbackView from '@components/TouchableWithoutFeedbackView';
+import TouchableView from '@components/TouchableView';
 
 import { percentStringToNumber, isPercentString } from '@utils/percents';
 import { toBool } from '@utils/booleans';
@@ -107,13 +107,12 @@ const OverlayMenu = ({
 
   return (
     <>
-      <TouchableWithoutFeedbackView
-        preventTouchesOnChildren={true}
+      <TouchableView
         onPress={handleTouchablePress}
         style={contentContainerStyle}
       >
         {renderContent()}
-      </TouchableWithoutFeedbackView>
+      </TouchableView>
 
       {/*
         HACK

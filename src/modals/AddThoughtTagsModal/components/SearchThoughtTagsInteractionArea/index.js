@@ -28,7 +28,7 @@ const SearchThoughtTagsInteractionArea = ({
     </InteractionRow>
 
     <InteractionRow>
-      <IconButton iconName="search" />
+      <Icon name="search" />
 
       <TextInput
         isFocused={isSearchThoughtTagsInputFocused}

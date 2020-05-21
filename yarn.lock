@@ -10219,6 +10219,11 @@ react-native-status-bar-height@^2.2.0:
   resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.5.0.tgz#bc0fb85230603850aab9667ee8111a62954de90c"
   integrity sha512-sYBCPYA/NapBSHkdm/IVL4ID3LLlIuLqINi2FBDyMkc2BU9pfSGOtkz9yfxoK39mYJuTrlTOQ7mManARUsYDSA==
 
+react-native-touchable-safe@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/react-native-touchable-safe/-/react-native-touchable-safe-1.1.5.tgz#b97203910fa668db09ac3ebd458c81de30a422d2"
+  integrity sha512-rQges2eD8x/g0R4P9XO5UZYhJD5a6+CWt5P9XoDRsN/vaA6lNdB0j23YujBE9NZ3D9P1xX1fHY27IwK3BltWRg==
+
 react-native-view-shot@3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/react-native-view-shot/-/react-native-view-shot-3.1.2.tgz#8c8e84c67a4bc8b603e697dbbd59dbc9b4f84825"

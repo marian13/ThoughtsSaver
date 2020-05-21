@@ -6,7 +6,7 @@ import IconButton from '@components/IconButton';
 import CheckBox from '@components/CheckBox';
 
 import View from '@components/View';
-import TouchableWithoutFeedbackView from '@components/TouchableWithoutFeedbackView';
+import TouchableView from '@components/TouchableView';
 
 const styles = StyleSheet.create({
   view: {
@@ -31,7 +31,7 @@ const SearchResult = ({ tag, selected, onChangeThoughtInEditDraftTags }) => {
         iconColor="#bfbfbf"
       />
 
-      <TouchableWithoutFeedbackView
+      <TouchableView
         onPress={onChangeThoughtInEditDraftTags}
         style={styles.touchableWithoutFeedbackView}
       >
@@ -41,7 +41,7 @@ const SearchResult = ({ tag, selected, onChangeThoughtInEditDraftTags }) => {
           checked={selected}
           onPress={onChangeThoughtInEditDraftTags}
         />
-      </TouchableWithoutFeedbackView>
+      </TouchableView>
     </View>
   );
 };

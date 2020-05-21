@@ -39,7 +39,7 @@ const CreateThoughtInteractionArea = ({
         isVisible={isGeneralThoughtOptionsMenuVisible}
         onContentPress={onGeneralThoughtOptionsButtonPress}
         onBackdropPress={onGeneralThoughtOptionsMenuBackdropPress}
-        renderContent={() => <IconButton testID={GENERAL_THOUGHT_OPTIONS_BUTTON} iconName="more-vert" />}
+        renderContent={() => <Icon testID={GENERAL_THOUGHT_OPTIONS_BUTTON} name="more-vert" />}
         renderOptions={() => <GeneralThoughtMenuOptionsContainer />}
         height={100}
         width="55%"
