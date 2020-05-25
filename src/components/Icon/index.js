@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Icon as NativeElementsIcon } from 'react-native-elements';
 
 import View from '@components/View';
-import GoogleIcon from './GoogleIcon';
+import SocialIcon from './SocialIcon';
 
 import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
@@ -20,8 +20,8 @@ const Icon = ({
   size,
   containerStyle
 }) => {
-  if (name === 'google') {
-    return <GoogleIcon size={size} containerStyle={containerStyle} />;
+  if (['facebook', 'google'].includes(name)) {
+    return <SocialIcon name={name} size={size} containerStyle={containerStyle} />;
   }
 
   return (

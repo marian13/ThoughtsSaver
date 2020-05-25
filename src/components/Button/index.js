@@ -29,6 +29,7 @@ const iconProp = ({ iconName, iconType, containerStyle }) => ({
 });
 
 const Button = ({
+  disabled,
   outline,
   iconName,
   iconType,
@@ -37,6 +38,7 @@ const Button = ({
 }) => (
   <NativeElementsButton
     raised
+    disabled={disabled}
     {...ifProp(outline && outlineProp)}
     {...ifProp(iconName && iconProp({ iconName, iconType, containerStyle: styles.iconContainer }))}
     title={text}
@@ -46,6 +48,7 @@ const Button = ({
 );
 
 [Button.propTypes, Button.defaultProps] = createPropTypes({
+  disabled: PropTypes.bool,
   outline: PropTypes.bool,
   iconName: PropTypes.string,
   iconType: PropTypes.string,
