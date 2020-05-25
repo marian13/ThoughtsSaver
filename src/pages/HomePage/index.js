@@ -1,23 +1,21 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
+import Page from '@components/Page';
 import Header from '@pages/HomePage/components/Header';
-
 import AddThoughtTagsModal from '@modals/AddThoughtTagsModal';
 
 import ThoughtStreamContainer from '@pages/HomePage/containers/ThoughtStreamContainer';
 import ThoughtInteractionAreaContainer from '@pages/HomePage/containers/ThoughtInteractionAreaContainer';
 
 const styles = StyleSheet.create({
-  view: {
-    justifyContent: 'flex-end',
-    height: '100%',
-    width: '100%'
+  page: {
+    justifyContent: 'flex-end'
   }
 });
 
 const HomePage = () => (
-  <View style={styles.view}>
+  <Page style={styles.page}>
     <Header />
 
     <ThoughtStreamContainer />
@@ -25,7 +23,7 @@ const HomePage = () => (
     <ThoughtInteractionAreaContainer />
 
     <AddThoughtTagsModal />
-  </View>
+  </Page>
 );
 
 export default HomePage;
