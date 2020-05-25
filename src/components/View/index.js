@@ -25,6 +25,12 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center'
   },
+  fullWidth: {
+    width: '100%'
+  },
+  fullHeight: {
+    height: '100%'
+  },
   shadow: {
     // https://github.com/react-native-elements/react-native-elements/blob/v1.2.7/src/overlay/Overlay.js#L115
     backgroundColor: 'white',
@@ -52,6 +58,8 @@ const View = ({
   hasShadow,
   avoidKeyboard,
   centered,
+  fullWidth,
+  fullHeight,
   children,
   style,
   ...rest
@@ -67,6 +75,8 @@ const View = ({
         hasBottomBorder && styles.bottomBorder,
         hasShadow && styles.shadow,
         centered && styles.center,
+        fullWidth && styles.fullWidth,
+        fullHeight && styles.fullHeight,
         style
       ])}
     >
@@ -81,6 +91,8 @@ const View = ({
   hasShadow: PropTypes.bool,
   avoidKeyboard: PropTypes.bool,
   centered: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  fullHeight: PropTypes.bool,
   children: PropTypes.node,
   style: ViewPropTypes.style
 });
