@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 
 import TouchableView from '@components/TouchableView';
 import Icon from '@components/Icon';

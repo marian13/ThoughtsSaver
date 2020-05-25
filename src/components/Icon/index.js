@@ -2,11 +2,13 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Icon as NativeElementsIcon } from 'react-native-elements';
 
+import View from '@components/View';
+import GoogleIcon from './GoogleIcon';
+
 import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
-  iconContainer: {
-    justifyContent: 'center',
+  view: {
     padding: 10
   }
 });
@@ -17,15 +19,22 @@ const Icon = ({
   color,
   size,
   containerStyle
-}) => (
-  <NativeElementsIcon
-    name={name}
-    type={type}
-    color={color}
-    size={size}
-    containerStyle={[styles.iconContainer, containerStyle]}
-  />
-);
+}) => {
+  if (name === 'google') {
+    return <GoogleIcon size={size} containerStyle={containerStyle} />;
+  }
+
+  return (
+    <View centered style={[styles.view, containerStyle]}>
+      <NativeElementsIcon
+        name={name}
+        type={type}
+        color={color}
+        size={size}
+      />
+    </View>
+  );
+};
 
 [Icon.propTypes, Icon.defaultProps] = createPropTypes({
   name: [PropTypes.string, 'web-asset'],
