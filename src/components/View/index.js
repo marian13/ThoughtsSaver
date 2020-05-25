@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
   },
   center: {
     justifyContent: 'center',
-    alignContent: 'center'
+    alignContent: 'center',
+    alignItems: 'center'
   },
   shadow: {
     // https://github.com/react-native-elements/react-native-elements/blob/v1.2.7/src/overlay/Overlay.js#L115
