@@ -15,6 +15,17 @@ const styles = StyleSheet.create({
   }
 });
 
+const isSocialName = name => ['facebook', 'google'].includes(name);
+
+const renderSocialIcon = ({ disabled, name, size, containerStyle }) => (
+  <SocialIcon
+    disabled={disabled}
+    name={name}
+    size={size}
+    containerStyle={containerStyle}
+  />
+);
+
 const Icon = ({
   disabled,
   name,
@@ -23,16 +34,7 @@ const Icon = ({
   size,
   containerStyle
 }) => {
-  if (['facebook', 'google'].includes(name)) {
-    return (
-      <SocialIcon
-        disabled={disabled}
-        name={name}
-        size={size}
-        containerStyle={containerStyle}
-      />
-    );
-  }
+  if (isSocialName(name)) return renderSocialIcon({ disabled, name, size, containerStyle });
 
   return (
     <View centered style={[styles.view, containerStyle]}>
