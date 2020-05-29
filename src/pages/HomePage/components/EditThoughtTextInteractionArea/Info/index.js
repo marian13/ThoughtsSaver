@@ -7,7 +7,8 @@ import Text from '@components/Text';
 const styles = StyleSheet.create({
   outerView: {
     flex: 1,
-    paddingVertical: 5
+    paddingVertical: 5,
+    paddingLeft: 15
   }
 });
 

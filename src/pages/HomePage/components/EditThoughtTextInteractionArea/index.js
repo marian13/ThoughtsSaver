@@ -1,4 +1,7 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
+
+import { isEmpty } from 'lodash';
 
 import Icon from '@components/Icon';
 import IconButton from '@components/IconButton';
@@ -7,6 +10,12 @@ import TextInput from '@components/TextInput';
 import View from '@components/View';
 
 import Info from './Info';
+
+const styles = StyleSheet.create({
+  textInputContainerStyle: {
+    paddingLeft: 15
+  }
+});
 
 const EditThoughtTextInteractionArea = ({
   isEditThoughtTextInputFocused,
@@ -20,27 +29,42 @@ const EditThoughtTextInteractionArea = ({
 }) => (
   <View avoidKeyboard>
     <InteractionRow>
-      <Icon name="edit" />
-
       <Info thoughtInEditText={thoughtInEditText} />
 
       <IconButton iconName="close" onPress={onCancelEditThoughtTextModeButtonPress} />
     </InteractionRow>
 
     <InteractionRow>
-      <Icon name="attach-file" />
-
       <TextInput
         isFocused={isEditThoughtTextInputFocused}
         autoResise
         text={thoughtInEditDraftText}
-        placeholder="Save a new thought..."
         onFocus={onEditThoughtTextInputFocus}
         onBlur={onEditThoughtTextInputBlur}
         onTextChange={onEditThoughtTextInputChange}
+        containerStyle={styles.textInputContainerStyle}
       />
 
-      <IconButton iconName="check-circle" onPress={onFinishEditThoughtTextModeButtonPress} />
+      <IconButton
+        disabled={isEmpty(thoughtInEditDraftText)}
+        iconName="check-circle"
+        onPress={onFinishEditThoughtTextModeButtonPress}
+      />
+    </InteractionRow>
+
+    <InteractionRow>
+      <View horizontal>
+        <IconButton iconName="keyboard-arrow-down" />
+        <IconButton iconName="tag-faces" />
+        <IconButton iconName="attach-file" />
+      </View>
+
+      <View horizontal>
+        <IconButton iconName="mic" />
+        <IconButton iconName="photo-camera" />
+
+        <IconButton iconName="more-vert" />
+      </View>
     </InteractionRow>
   </View>
 );

@@ -21,9 +21,6 @@ import {
 const styles = StyleSheet.create({
   textInputContainerStyle: {
     paddingLeft: 15
-  },
-  overlayMenuContainer: {
-    paddingLeft: 10
   }
 });
 
@@ -79,7 +76,6 @@ const CreateThoughtInteractionArea = ({
           renderOptions={() => <GeneralThoughtMenuOptionsContainer />}
           height={100}
           width="55%"
-          containerStyle={styles.overlayMenuContainer}
         />
       </View>
     </InteractionRow>
