@@ -20,7 +20,7 @@ export const {
   startEditThoughtTextMode,
   finishEditThoughtTextMode,
 
-  startSearchThoughtByTextMode,
+  startSearchThoughtMode,
   finishSearchThoughtMode,
 
   resetThoughtInCreateDraft,
@@ -39,7 +39,6 @@ export const {
 export const {
   isCreateThoughtModeSelector,
   isEditThoughtTextModeSelector,
-  isSearchThoughtByTextModeSelector,
   isSearchThoughtModeSelector,
 
   thoughtInCreateDraftTextSelector,

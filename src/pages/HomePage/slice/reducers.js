@@ -16,12 +16,12 @@ export const finishEditThoughtTextMode = state => {
   state.isEditThoughtTextMode = false;
 };
 
-export const startSearchThoughtByTextMode = state => {
-  state.isSearchThoughtByTextMode = true;
+export const startSearchThoughtMode = state => {
+  state.isSearchThoughtMode = true;
 };
 
 export const finishSearchThoughtMode = state => {
-  state.isSearchThoughtByTextMode = false;
+  state.isSearchThoughtMode = false;
 };
 
 export const resetThoughtInCreateDraft = state => {
