@@ -1,16 +1,25 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 
 import InteractionRow from '@components/InteractionRow';
-import Icon from '@components/Icon';
 import IconButton from '@components/IconButton';
 import TextInput from '@components/TextInput';
 import View from '@components/View';
 
+import Info from './Info';
+
 import { SEARCH_THOUGHT_INPUT } from '@pages/HomePage/constants/identifiers';
+
+const styles = StyleSheet.create({
+  textInputContainerStyle: {
+    paddingLeft: 15
+  }
+});
 
 const SearchThoughtInteractionArea = ({
   isSearchThoughtInputFocused,
   searchThoughtInputText,
+  searchThoughtResults,
   onSearchThoughtInputChange,
   onSearchThoughtInputFocus,
   onSearchThoughtInputBlur,
@@ -19,26 +28,37 @@ const SearchThoughtInteractionArea = ({
 }) => (
   <View avoidKeyboard>
     <InteractionRow>
-      <IconButton iconName="more-vert" />
+      <Info
+        searchThoughtInputText={searchThoughtInputText}
+        searchThoughtResults={searchThoughtResults}
+      />
 
       <IconButton iconName="close" onPress={onCancelSearchThoughtButtonPress} />
     </InteractionRow>
 
     <InteractionRow>
-      <Icon name="search" />
-
       <TextInput
         testID={SEARCH_THOUGHT_INPUT}
         isFocused={isSearchThoughtInputFocused}
         autoResise
         text={searchThoughtInputText}
-        placeholder="Search for a thought..."
+        placeholder="Enter your search term..."
         onFocus={onSearchThoughtInputFocus}
         onBlur={onSearchThoughtInputBlur}
         onTextChange={onSearchThoughtInputChange}
+        containerStyle={styles.textInputContainerStyle}
       />
 
       <IconButton iconName="check-circle" onPress={onFinishSearchThoughtButtonPress} />
+    </InteractionRow>
+
+    <InteractionRow>
+      <View horizontal>
+        <IconButton iconName="keyboard-arrow-down" />
+        <IconButton iconName="tag-faces" />
+      </View>
+
+      <IconButton iconName="more-vert" />
     </InteractionRow>
   </View>
 );

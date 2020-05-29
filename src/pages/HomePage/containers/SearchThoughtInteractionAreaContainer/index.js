@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import SearchThoughtInteractionArea from '@pages/HomePage/components/SearchThoughtInteractionArea';
 
-import { searchThoughtInputTextSelector } from '@pages/HomePage/slice';
+import { searchThoughtInputTextSelector, searchThoughtResultsSelector } from '@pages/HomePage/slice';
 
 import { isFocusedSelector, focus, blur } from '@modules/FocusesModule/slice';
 
@@ -20,6 +20,7 @@ const SearchThoughtInteractionAreaContainer = () => {
   const isSearchThoughtInputFocused = useSelector(isFocusedSelector(SEARCH_THOUGHT_INPUT));
 
   const searchThoughtInputText = useSelector(searchThoughtInputTextSelector);
+  const searchThoughtResults = useSelector(searchThoughtResultsSelector);
 
   const handleSearchThoughInputFocus = () => dispatch(focus(SEARCH_THOUGHT_INPUT));
   const handleSearchThoughInputBlur = () => dispatch(blur(SEARCH_THOUGHT_INPUT));
@@ -33,6 +34,7 @@ const SearchThoughtInteractionAreaContainer = () => {
     <SearchThoughtInteractionArea
       isSearchThoughtInputFocused={isSearchThoughtInputFocused}
       searchThoughtInputText={searchThoughtInputText}
+      searchThoughtResults={searchThoughtResults}
       onSearchThoughtInputChange={handleSearchThoughInputChange}
       onSearchThoughtInputFocus={handleSearchThoughInputFocus}
       onSearchThoughtInputBlur={handleSearchThoughInputBlur}
