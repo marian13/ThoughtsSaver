@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 
 import Icon from '@components/Icon';
 import IconButton from '@components/IconButton';
@@ -7,6 +8,12 @@ import TextInput from '@components/TextInput';
 import View from '@components/View';
 
 import Info from './Info';
+
+const styles = StyleSheet.create({
+  textInputContainerStyle: {
+    paddingLeft: 15
+  }
+});
 
 const SearchThoughtTagsInteractionArea = ({
   isSearchThoughtTagsInputFocused,
@@ -20,16 +27,12 @@ const SearchThoughtTagsInteractionArea = ({
 }) => (
   <View avoidKeyboard>
     <InteractionRow>
-      <Icon name="edit" />
-
       <Info thoughtInEditDraftTags={thoughtInEditDraftTags} />
 
       <IconButton iconName="close" onPress={onCancelEditThoughtTagsButtonPress} />
     </InteractionRow>
 
     <InteractionRow>
-      <Icon name="search" />
-
       <TextInput
         isFocused={isSearchThoughtTagsInputFocused}
         autoResise
@@ -38,9 +41,19 @@ const SearchThoughtTagsInteractionArea = ({
         onFocus={onSearchThoughtTagsInputFocus}
         onBlur={onSearchThoughtTagsInputBlur}
         onTextChange={onSearchThoughtTagsInputChange}
+        containerStyle={styles.textInputContainerStyle}
       />
 
       <IconButton iconName="check-circle" onPress={onFinishEditThoughtTagsButtonPress} />
+    </InteractionRow>
+
+    <InteractionRow>
+      <View horizontal>
+        <IconButton iconName="keyboard-arrow-down" />
+        <IconButton iconName="tag-faces" />
+      </View>
+
+      <IconButton iconName="more-vert" />
     </InteractionRow>
   </View>
 );

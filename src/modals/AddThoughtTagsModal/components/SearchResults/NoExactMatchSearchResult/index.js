@@ -8,30 +8,22 @@ import IconButton from '@components/IconButton';
 const styles = StyleSheet.create({
   outerView: {
     flexDirection: 'row',
-    alignItems: 'center',
     height: 50
   },
   innerView: {
-    flexDirection: 'row',
     flex: 1,
-    justifyContent: 'space-between',
-    alignItems: 'center'
+    justifyContent: 'center',
+    paddingRight: 15
   }
 });
 
 const NoExactMatchSearchResult = ({ searchText, onCreateTagButtonPress }) => {
   return (
     <View hasTopBorder style={styles.outerView}>
-      <IconButton iconName="more-vert" iconColor="#bfbfbf" />
+      <IconButton iconName="add" onPress={onCreateTagButtonPress} />
 
       <View style={styles.innerView}>
-        <View>
-          <Text>Exact match not found.</Text>
-          <Text reduced>Create `{searchText.trim()}`</Text>
-          <Text>?</Text>
-        </View>
-
-        <IconButton iconName="add" onPress={onCreateTagButtonPress} />
+        <Text large reduced>No exact match. Create "{searchText.trim()}"?</Text>
       </View>
     </View>
   );

@@ -11,7 +11,7 @@ import TouchableView from '@components/TouchableView';
 const styles = StyleSheet.create({
   view: {
     flexDirection: 'row',
-    alignItems: 'center',
+    justifyContent: 'space-between',
     height: 50
   },
   touchableWithoutFeedbackView: {
@@ -25,23 +25,16 @@ const styles = StyleSheet.create({
 const SearchResult = ({ tag, selected, onChangeThoughtInEditDraftTags }) => {
   return (
     <View hasTopBorder style={styles.view}>
-      <IconButton
-        iconName="more-vert"
-        iconType="material"
-        iconColor="#bfbfbf"
-      />
-
       <TouchableView
         onPress={onChangeThoughtInEditDraftTags}
         style={styles.touchableWithoutFeedbackView}
       >
-        <Tag text={tag.text} />
+        <CheckBox checked={selected} onPress={onChangeThoughtInEditDraftTags} />
 
-        <CheckBox
-          checked={selected}
-          onPress={onChangeThoughtInEditDraftTags}
-        />
+        <Tag text={tag.text} />
       </TouchableView>
+
+      <IconButton iconName="more-vert" iconColor="rgb(32,150,243)" />
     </View>
   );
 };

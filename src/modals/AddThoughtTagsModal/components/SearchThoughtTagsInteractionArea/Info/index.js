@@ -11,23 +11,23 @@ import TagList from '@components/TagList';
 const styles = StyleSheet.create({
   outerView: {
     flex: 1,
+    paddingLeft: 15
   },
   innerView: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'flex-end',
-    paddingBottom: 5,
-    paddingLeft: 2
+    paddingBottom: 5
   },
   text: {
     position: 'absolute', // HACK
-    left: 2,
+    left: 15,
     bottom: 25
   }
 });
 
 const Info = ({ thoughtInEditDraftTags }) => (
-  <View centered style={styles.outerView}>
+  <View style={styles.outerView}>
     <Text bold style={styles.text}>
       Already Added Tags ({size(thoughtInEditDraftTags)})
     </Text>
