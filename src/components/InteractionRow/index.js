@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
   }
 });
 
-const InteractionRow = ({ children, style }) => (
-  <View avoidKeyboard style={[styles.outerView, style]}>
+const InteractionRow = ({ isVisible, children, style }) => (
+  <View avoidKeyboard displayed={isVisible} style={[styles.outerView, style]}>
     <View hasTopBorder style={styles.innerView}>
       {children}
     </View>
@@ -26,6 +26,7 @@ const InteractionRow = ({ children, style }) => (
 );
 
 [InteractionRow.propTypes, InteractionRow.defaultProps] = createPropTypes({
+  isVisible: [PropTypes.bool, true],
   children: PropTypes.node,
   style: ViewPropTypes.style
 });
