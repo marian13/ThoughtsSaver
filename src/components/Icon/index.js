@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Icon as NativeElementsIcon } from 'react-native-elements';
 
+import { compact } from 'lodash';
+
 import View from '@components/View';
 import SocialIcon from './SocialIcon';
 
@@ -14,6 +16,7 @@ const styles = StyleSheet.create({
 });
 
 const Icon = ({
+  disabled,
   name,
   type,
   color,
@@ -21,7 +24,14 @@ const Icon = ({
   containerStyle
 }) => {
   if (['facebook', 'google'].includes(name)) {
-    return <SocialIcon name={name} size={size} containerStyle={containerStyle} />;
+    return (
+      <SocialIcon
+        disabled={disabled}
+        name={name}
+        size={size}
+        containerStyle={containerStyle}
+      />
+    );
   }
 
   return (
@@ -29,7 +39,7 @@ const Icon = ({
       <NativeElementsIcon
         name={name}
         type={type}
-        color={color}
+        color={disabled ? '#D1D5D8' : color}
         size={size}
       />
     </View>

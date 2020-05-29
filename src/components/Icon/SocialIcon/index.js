@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   }
 });
 
+// TODO disabled
 const SocialIcon = ({ name, size, containerStyle }) => (
   <View centered style={[styles.view, containerStyle]}>
     <Image
@@ -27,6 +28,7 @@ const SocialIcon = ({ name, size, containerStyle }) => (
 );
 
 [SocialIcon.propTypes, SocialIcon.defaultProps] = createPropTypes({
+  disabled: PropTypes.bool,
   name: [PropTypes.string, 'google'],
   size: [PropTypes.number, 25],
   containerStyle: ViewPropTypes.style

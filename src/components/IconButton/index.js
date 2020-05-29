@@ -7,6 +7,7 @@ import { createPropTypes, PropTypes } from '@utils/propTypes';
 
 const IconButton = ({
   testID,
+  disabled,
   iconName,
   iconType,
   iconColor,
@@ -16,10 +17,12 @@ const IconButton = ({
 }) => (
   <TouchableView
     testID={testID}
+    disabled={disabled}
     containerStyle={style}
     onPress={onPress}
   >
     <Icon
+      disabled={disabled}
       name={iconName}
       type={iconType}
       color={iconColor}
@@ -30,6 +33,7 @@ const IconButton = ({
 
 [IconButton.propTypes, IconButton.defaultProps] = createPropTypes({
   testID: PropTypes.string,
+  disabled: PropTypes.bool,
   iconName: [PropTypes.string, 'web-asset'],
   iconType: [PropTypes.string, 'material'],
   iconColor: [PropTypes.string, '#f50'],
