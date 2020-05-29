@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 });
 
 const Backdrop = ({ onPress, style }) => (
-  <TouchableView onPress={onPress} style={[styles.view, style]} />
+  <TouchableView onPress={onPress} containerStyle={[styles.view, style]} />
 );
 
 [Backdrop.propTypes, Backdrop.default] = createPropTypes({
