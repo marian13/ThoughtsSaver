@@ -52,10 +52,19 @@ const styles = StyleSheet.create({
         shadowOpacity: 1
       }
     })
+  },
+  hidden: {
+    opacity: 0
   }
 });
 
+const avoidKeyboardProp = { behavior: Platform.OS === 'ios' ? 'padding' : 'height' };
+const disallowChildrenTouchesProp = { onStartShouldSetResponderCapture: () => true };
+
 const View = ({
+  displayed,
+  hidden,
+  disallowChildrenTouches,
   hasTopBorder,
   hasBottomBorder,
   hasShadow,
@@ -68,12 +77,16 @@ const View = ({
   style,
   ...rest
 }) => {
+  if (!displayed) return null;
+
   const Component = avoidKeyboard ? KeyboardAvoidingView : NativeView;
 
   return (
     <Component
       {...rest}
-      {...ifProp(avoidKeyboard && { behavior: Platform.OS === 'ios' ? 'padding' : 'height' })}
+      {...ifProp(avoidKeyboard && avoidKeyboardProp)}
+      {...ifProp(disallowChildrenTouches && disallowChildrenTouchesProp) }
+      {...ifProp(hidden && disallowChildrenTouchesProp) }
       style={compact([
         hasTopBorder && styles.topBorder,
         hasBottomBorder && styles.bottomBorder,
@@ -82,7 +95,8 @@ const View = ({
         fullWidth && styles.fullWidth,
         fullHeight && styles.fullHeight,
         horizontal && styles.horizontal,
-        style
+        style,
+        hidden && styles.hidden
       ])}
     >
       {children}
@@ -91,6 +105,9 @@ const View = ({
 };
 
 [View.propTypes, View.defaultProps] = createPropTypes({
+  displayed: [PropTypes.bool, true],
+  hidden: PropTypes.bool,
+  disallowChildrenTouches: PropTypes.bool,
   hasTopBorder: PropTypes.bool,
   hasBottomBorder: PropTypes.bool,
   hasShadow: PropTypes.bool,
