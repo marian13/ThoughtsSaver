@@ -4,17 +4,17 @@ import IconButton from '@components/IconButton';
 
 import { createPropTypes, PropTypes } from '@utils/propTypes';
 
-const CheckBox = ({ checked, onPress }) => (
+const CheckBox = ({ checked, value, onPress }) => (
   <IconButton
     iconName={checked ? 'check' : 'panorama-fish-eye'}
-    iconType="material"
     iconColor={checked ? 'rgb(0,150,137)' : '#bfbfbf'}
-    onPress={() => onPress(!checked)}
+    onPress={() => onPress(!checked, value)}
   />
 );
 
 [CheckBox.propTypes, CheckBox.defaultProps] = createPropTypes({
   checked: PropTypes.bool,
+  value: PropTypes.string,
   onPress: PropTypes.func
 });
 
