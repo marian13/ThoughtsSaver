@@ -9,3 +9,5 @@ export const GENERAL_THOUGHT_OPTIONS_MENU = 'generalThoughtOptionsMenu';
 export const START_SEARCH_THOUGHT_BY_TEXT_OPTION = 'startSearchThoughtByTextOption';
 
 export const SEARCH_THOUGHT_INPUT = 'searchThoughtInput';
+export const SEARCH_THOUGHT_OPTIONS_BUTTON = 'searchThoughtOptionsButton';
+export const SEARCH_THOUGHT_OPTIONS_COLLAPSE = 'searchThoughtOptionsCollapse';

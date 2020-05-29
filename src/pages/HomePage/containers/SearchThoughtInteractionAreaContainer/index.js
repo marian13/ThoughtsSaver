@@ -6,18 +6,20 @@ import SearchThoughtInteractionArea from '@pages/HomePage/components/SearchThoug
 import { searchThoughtInputTextSelector, searchThoughtResultsSelector } from '@pages/HomePage/slice';
 
 import { isFocusedSelector, focus, blur } from '@modules/FocusesModule/slice';
+import { isVisibleSelector, show, hide } from '@modules/VisibilitiesModule/slice';
 
 import changeSearchThoughtInputThunk from '@pages/HomePage/thunks/changeSearchThoughtInputThunk';
 
 import cancelSearchThoughtThunk from '@pages/HomePage/thunks/cancelSearchThoughtThunk';
 import finishSearchThoughtThunk from '@pages/HomePage/thunks/finishSearchThoughtThunk';
 
-import { SEARCH_THOUGHT_INPUT } from '@pages/HomePage/constants/identifiers';
+import { SEARCH_THOUGHT_INPUT, SEARCH_THOUGHT_OPTIONS_COLLAPSE } from '@pages/HomePage/constants/identifiers';
 
 const SearchThoughtInteractionAreaContainer = () => {
   const dispatch = useDispatch();
 
   const isSearchThoughtInputFocused = useSelector(isFocusedSelector(SEARCH_THOUGHT_INPUT));
+  const isSearchThoughtOptionsVisible = useSelector(isVisibleSelector(SEARCH_THOUGHT_OPTIONS_COLLAPSE))
 
   const searchThoughtInputText = useSelector(searchThoughtInputTextSelector);
   const searchThoughtResults = useSelector(searchThoughtResultsSelector);
@@ -30,9 +32,13 @@ const SearchThoughtInteractionAreaContainer = () => {
   const handleCancelSearchThoughtButtonPress = () => dispatch(cancelSearchThoughtThunk());
   const handleFinishSearchThoughtButtonPress = () => dispatch(finishSearchThoughtThunk());
 
+  const handleShowSearchThoughtOptionsButtonPress = () => dispatch(show(SEARCH_THOUGHT_OPTIONS_COLLAPSE));
+  const handleHideSearchThoughtOptionsButtonPress = () => dispatch(hide(SEARCH_THOUGHT_OPTIONS_COLLAPSE));
+
   return (
     <SearchThoughtInteractionArea
       isSearchThoughtInputFocused={isSearchThoughtInputFocused}
+      isSearchThoughtOptionsVisible={isSearchThoughtOptionsVisible}
       searchThoughtInputText={searchThoughtInputText}
       searchThoughtResults={searchThoughtResults}
       onSearchThoughtInputChange={handleSearchThoughInputChange}
@@ -40,6 +46,8 @@ const SearchThoughtInteractionAreaContainer = () => {
       onSearchThoughtInputBlur={handleSearchThoughInputBlur}
       onCancelSearchThoughtButtonPress={handleCancelSearchThoughtButtonPress}
       onFinishSearchThoughtButtonPress={handleFinishSearchThoughtButtonPress}
+      onShowSearchThoughtOptionsButtonPress={handleShowSearchThoughtOptionsButtonPress}
+      onHideSearchThoughtOptionsButtonPress={handleHideSearchThoughtOptionsButtonPress}
     />
   );
 };
