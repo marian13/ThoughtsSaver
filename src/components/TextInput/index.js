@@ -7,7 +7,7 @@ import IconButton from '@components/IconButton';
 
 import { fontSizes } from '@constants/fonts';
 
-import { createPropTypes, PropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -43,7 +43,8 @@ const TextInput = ({
   placeholder,
   onFocus,
   onBlur,
-  onTextChange
+  onTextChange,
+  containerStyle
 }) => {
   const inputRef = useRef(null);
 
@@ -56,7 +57,7 @@ const TextInput = ({
   const hasText = !!text;
 
   return (
-    <ScrollView style={styles.scrollView} keyboardShouldPersistTaps="always">
+    <ScrollView keyboardShouldPersistTaps="always" style={[styles.scrollView, containerStyle]}>
       <Input
         testID={testID}
         ref={inputRef}
@@ -93,7 +94,8 @@ const TextInput = ({
   placeholder: PropTypes.string,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
-  onTextChange: PropTypes.func
+  onTextChange: PropTypes.func,
+  containerStyle: ViewPropTypes.style
 });
 
 export default TextInput;
