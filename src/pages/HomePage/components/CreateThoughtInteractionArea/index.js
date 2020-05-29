@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
+import { isEmpty } from 'lodash';
+
 import Icon from '@components/Icon';
 import IconButton from '@components/IconButton';
 import InteractionRow from '@components/InteractionRow';
@@ -17,6 +19,9 @@ import {
 } from '@pages/HomePage/constants/identifiers';
 
 const styles = StyleSheet.create({
+  textInputContainerStyle: {
+    paddingLeft: 15
+  },
   overlayMenuContainer: {
     paddingLeft: 10
   }
@@ -35,21 +40,6 @@ const CreateThoughtInteractionArea = ({
 }) => (
   <View avoidKeyboard>
     <InteractionRow>
-      <OverlayMenu
-        isVisible={isGeneralThoughtOptionsMenuVisible}
-        onContentPress={onGeneralThoughtOptionsButtonPress}
-        onBackdropPress={onGeneralThoughtOptionsMenuBackdropPress}
-        renderContent={() => <Icon testID={GENERAL_THOUGHT_OPTIONS_BUTTON} name="more-vert" />}
-        renderOptions={() => <GeneralThoughtMenuOptionsContainer />}
-        height={100}
-        width="55%"
-        containerStyle={styles.overlayMenuContainer}
-      />
-    </InteractionRow>
-
-    <InteractionRow>
-      <Icon name="attach-file" />
-
       <TextInput
         testID={CREATE_THOUGHT_TEXT_INPUT}
         isFocused={isCreateThoughtTextInputFocused}
@@ -59,13 +49,39 @@ const CreateThoughtInteractionArea = ({
         onFocus={onCreateThoughtTextInputFocus}
         onBlur={onCreateThoughtTextInputBlur}
         onTextChange={onCreateThoughtTextInputChange}
+        containerStyle={styles.textInputContainerStyle}
       />
 
       <IconButton
         testID={CREATE_THOUGHT_BUTTON}
+        disabled={isEmpty(thoughtInCreateDraftText)}
         iconName="send"
         onPress={onCreateThoughtButtonPress}
       />
+    </InteractionRow>
+
+    <InteractionRow>
+      <View horizontal>
+        <IconButton iconName="keyboard-arrow-down" />
+        <IconButton iconName="tag-faces" />
+        <IconButton iconName="attach-file" />
+      </View>
+
+      <View horizontal>
+        <IconButton iconName="mic" />
+        <IconButton iconName="photo-camera" />
+
+        <OverlayMenu
+          isVisible={isGeneralThoughtOptionsMenuVisible}
+          onContentPress={onGeneralThoughtOptionsButtonPress}
+          onBackdropPress={onGeneralThoughtOptionsMenuBackdropPress}
+          renderContent={() => <Icon testID={GENERAL_THOUGHT_OPTIONS_BUTTON} name="more-vert" />}
+          renderOptions={() => <GeneralThoughtMenuOptionsContainer />}
+          height={100}
+          width="55%"
+          containerStyle={styles.overlayMenuContainer}
+        />
+      </View>
     </InteractionRow>
   </View>
 );
