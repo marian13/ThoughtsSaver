@@ -11,6 +11,8 @@ const withoutFeedbackProp = { all: 'without' };
 const TouchableView = ({
   testID,
   disabled,
+  horizontal,
+  centered,
   withoutFeedback,
   children,
   onPress,
@@ -24,7 +26,11 @@ const TouchableView = ({
     onPress={onPress}
     outerStyle={containerStyle}
   >
-    <View style={style}>
+    <View
+      horizontal={horizontal}
+      centered={centered}
+      style={style}
+    >
       {children}
     </View>
   </Touchable>
@@ -33,6 +39,8 @@ const TouchableView = ({
 [TouchableView.propTypes, TouchableView.defaultProps] = createPropTypes({
   testID: PropTypes.string,
   disabled: PropTypes.bool,
+  horizontal: PropTypes.bool,
+  centered: PropTypes.bool,
   withoutFeedback: PropTypes.bool,
   children: PropTypes.node,
   onPress: PropTypes.func,
