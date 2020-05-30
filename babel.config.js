@@ -16,7 +16,8 @@ module.exports = function(api) {
             '@modules': './src/modules',
             '@modals': './src/modals',
             '@pages': './src/pages',
-            '@utils': './src/utils'
+            '@utils': './src/utils',
+            '@testHelper': './test/testHelper'
           }
         },
       ],
