@@ -66,3 +66,18 @@ export const reverseForEach = (array, reverseForEachFunction) => {
 
   return array;
 };
+
+// Basic idea is taken from https://api.rubyonrails.org/classes/Array.html#method-i-extract-21
+const extractReducer = ([extracted, nonextracted, array], element) => {
+  array.forEach(item => item === element ? addDest(extracted, item) : addDest(nonextracted, item));
+
+  return [extracted, [], nonextracted];
+};
+
+export const extract = (array, ...elements) => {
+  if (none(elements)) return [[], array];
+
+  const [extracted, _, nonextracted] = elements.reduce(extractReducer, [[], [], array]);
+
+  return [extracted, nonextracted];
+};
