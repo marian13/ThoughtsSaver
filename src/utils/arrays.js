@@ -24,3 +24,11 @@ export const addDest = (array, ...elements) => {
 
   return array;
 };
+
+const removeReducer = (array, element) => array.filter(item => item !== element);
+
+export const remove = (array, ...elements) => {
+  if (none(elements)) return array;
+
+  return elements.reduce(removeReducer, array);
+};
