@@ -16,3 +16,11 @@ export const add = (array, ...elements) => {
 
   return array.concat(elements);
 };
+
+export const addDest = (array, ...elements) => {
+  if (none(elements)) return array;
+
+  elements.forEach(element => array.push(element));
+
+  return array;
+};
