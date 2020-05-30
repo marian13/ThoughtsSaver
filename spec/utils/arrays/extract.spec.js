@@ -3,6 +3,16 @@ import '@specHelper';
 import { extract } from '@utils/arrays';
 
 describe('extract', () => {
+  it('supports element as function', () => {
+    const array = [1, 2, 3, 4, 5];
+    const extractFunction = element => element === 4;
+
+    const [extracted, nonextracted] = extract(array, extractFunction);
+
+    expect(extracted).toEqual([4]);
+    expect(nonextracted).toEqual([1, 2, 3, 5]);
+  });
+
   context('when no elements passed', () => {
     it('returns empty array as extracted', () => {
       const array = [1, 2, 3, 4, 5];

@@ -1,3 +1,5 @@
+import { isFunction } from '@utils/functions';
+
 // https://api.rubyonrails.org/classes/Array.html#method-c-wrap
 export const wrap = object => {
   if (object === undefined) return [];
@@ -27,7 +29,11 @@ export const addDest = (array, ...elements) => {
   return array;
 };
 
-const removeReducer = (array, element) => array.filter(item => item !== element);
+const createRemoveReducerFilterFunction = element => (
+  isFunction(element) ? item => !element(item) : item => item !== element
+);
+
+const removeReducer = (array, element) => array.filter(createRemoveReducerFilterFunction(element));
 
 export const remove = (array, ...elements) => {
   if (none(elements)) return array;
@@ -35,8 +41,16 @@ export const remove = (array, ...elements) => {
   return elements.reduce(removeReducer, array);
 };
 
+const createRemoveDestReducerFilterMapFunction = element => {
+  if (isFunction(element)) {
+    return (item, index) => element(item) && index;
+  } else {
+    return (item, index) => item === element && index;
+  }
+};
+
 const removeDestReducer = (array, element) => {
-  const indices = filterMap(array, (item, index) => item === element && index);
+  const indices = filterMap(array, createRemoveDestReducerFilterMapFunction(element));
 
   reverseForEach(indices, index => array.splice(index, 1));
 
@@ -68,8 +82,16 @@ export const reverseForEach = (array, reverseForEachFunction) => {
 };
 
 // Basic idea is taken from https://api.rubyonrails.org/classes/Array.html#method-i-extract-21
+const createExtractReducerForEachFunction = ([extracted, nonextracted], element) => {
+  if (isFunction(element)) {
+    return item => element(item) ? addDest(extracted, item) : addDest(nonextracted, item);
+  } else {
+    return item => item === element ? addDest(extracted, item) : addDest(nonextracted, item);
+  }
+};
+
 const extractReducer = ([extracted, nonextracted, array], element) => {
-  array.forEach(item => item === element ? addDest(extracted, item) : addDest(nonextracted, item));
+  array.forEach(createExtractReducerForEachFunction([extracted, nonextracted, array], element));
 
   return [extracted, [], nonextracted];
 };

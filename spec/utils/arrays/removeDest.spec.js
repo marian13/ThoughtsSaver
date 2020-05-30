@@ -3,6 +3,16 @@ import '@specHelper';
 import { removeDest } from '@utils/arrays';
 
 describe('removeDest', () => {
+  it('supports element as function', () => {
+    const array = [1, 2, 3, 4];
+    const removeDestFunction = element => element === 4;
+
+    const result = removeDest(array, removeDestFunction);
+
+    expect(result).toBe(array);
+    expect(result).toEqual([1, 2, 3]);
+  });
+
   context('when no elements passed', () => {
     it('returns original array', () => {
       const array = [1, 2, 3];
