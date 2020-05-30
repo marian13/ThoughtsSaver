@@ -49,9 +49,11 @@ export const removeDest = (array, ...elements) => {
   return elements.reduce(removeDestReducer, array);
 };
 
-const filterMapReducer = filterMapFunction => (memo, element) => (
-  filterMapFunction(element) ? addDest(memo, element) : memo
-);
+const filterMapReducer = filterMapFunction => (memo, element, index) => {
+  const result = filterMapFunction(element, index);
+
+  return result ? addDest(memo, result) : memo;
+};
 
 export const filterMap = (array, filterMapFunction) => {
   if (empty(array)) return [];
