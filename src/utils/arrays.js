@@ -7,7 +7,9 @@ export const wrap = object => {
   return [object];
 };
 
-export const none = array => array.length === 0;
+export const empty = array => array.length === 0;
+
+export const none = array => empty(array);
 
 export const any = array => array.length > 0;
 
@@ -45,4 +47,14 @@ export const removeDest = (array, ...elements) => {
   if (none(elements)) return array;
 
   return elements.reduce(removeDestReducer, array);
+};
+
+const filterMapReducer = filterMapFunction => (memo, element) => (
+  filterMapFunction(element) ? addDest(memo, element) : memo
+);
+
+export const filterMap = (array, filterMapFunction) => {
+  if (empty(array)) return [];
+
+  return array.reduce(filterMapReducer(filterMapFunction), []);
 };
