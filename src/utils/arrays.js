@@ -11,3 +11,8 @@ export const none = array => array.length === 0;
 
 export const any = array => array.length > 0;
 
+export const add = (array, ...elements) => {
+  if (none(elements)) return array;
+
+  return array.concat(elements);
+};
