@@ -6,3 +6,5 @@ export const wrap = object => {
 
   return [object];
 };
+
+export const none = array => array.length === 0;
