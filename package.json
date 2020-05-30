@@ -5,7 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test": "node_modules/.bin/jest test/**/*.spec.js",
+    "unit-test": "node_modules/.bin/jest",
+    "unit-test-all": "node_modules/.bin/jest test/.*.spec.js",
     "eject": "expo eject"
   },
   "dependencies": {
