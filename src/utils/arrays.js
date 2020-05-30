@@ -36,12 +36,12 @@ export const remove = (array, ...elements) => {
 };
 
 const removeDestReducer = (array, element) => {
-  const index = array.findIndex(item => item === element);
+  const indices = filterMap(array, (item, index) => item === element && index);
 
-  if (index >= 0) array.splice(index, 1);
+  reverseForEach(indices, index => array.splice(index, 1));
 
   return array;
-}
+};
 
 export const removeDest = (array, ...elements) => {
   if (none(elements)) return array;

@@ -12,22 +12,56 @@ describe('remove', () => {
   });
 
   context('when one element passed', () => {
-    it('returns copy of original array without that element', () => {
-      const array = [1, 2, 3, 4];
-      const element = 4;
+    context('and array contains that element', () => {
+      it('returns copy of original array without that element', () => {
+        const array = [1, 2, 3, 4];
+        const element = 4;
 
-      expect(remove(array, element)).not.toBe(array);
-      expect(remove(array, element)).toEqual([1, 2, 3]);
+        expect(remove(array, element)).not.toBe(array);
+        expect(remove(array, element)).toEqual([1, 2, 3]);
+      });
+    });
+
+    context('and array does NOT contain that element', () => {
+      it('returns copy of original array', () => {
+        const array = [1, 2, 3, 4];
+        const element = 5;
+
+        expect(remove(array, element)).not.toBe(array);
+        expect(remove(array, element)).toEqual([1, 2, 3, 4]);
+      });
     });
   });
 
   context('when multiple elements passed', () => {
-    it('returns copy of original array without those elements', () => {
-      const array = [1, 2, 3, 4, 5];
-      const elements = [4, 5];
+    context('and array contains all those elements', () => {
+      it('returns copy of original array without those elements', () => {
+        const array = [1, 2, 3, 4, 5];
+        const elements = [4, 5];
 
-      expect(remove(array, ...elements)).not.toBe(array);
-      expect(remove(array, ...elements)).toEqual([1, 2, 3]);
+        expect(remove(array, ...elements)).not.toBe(array);
+        expect(remove(array, ...elements)).toEqual([1, 2, 3]);
+      });
+    });
+
+    context('and array contains some of those element', () => {
+      it('returns copy of original array without those some elements', () => {
+        const array = [1, 2, 3, 4, 5];
+        const elements = [5, 6];
+
+        expect(remove(array, ...elements)).not.toBe(array);
+        expect(remove(array, ...elements)).toEqual([1, 2, 3, 4]);
+      });
+    });
+
+    context('and array does NOT contains any of those element', () => {
+      it('returns copy of original array', () => {
+        const array = [1, 2, 3, 4, 5];
+        const elements = [6, 7];
+
+        expect(remove(array, ...elements)).not.toBe(array);
+        expect(remove(array, ...elements)).toEqual([1, 2, 3, 4, 5]);
+      });
     });
   });
 
