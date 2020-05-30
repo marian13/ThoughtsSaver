@@ -32,3 +32,17 @@ export const remove = (array, ...elements) => {
 
   return elements.reduce(removeReducer, array);
 };
+
+const removeDestReducer = (array, element) => {
+  const index = array.findIndex(item => item === element);
+
+  if (index >= 0) array.splice(index, 1);
+
+  return array;
+}
+
+export const removeDest = (array, ...elements) => {
+  if (none(elements)) return array;
+
+  return elements.reduce(removeDestReducer, array);
+};

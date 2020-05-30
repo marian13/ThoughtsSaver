@@ -32,7 +32,7 @@ describe('remove', () => {
   });
 
   context('when array contains duplicates', () => {
-    it('removes all duplicates', () => {
+    it('returns copy of original array without duplicates', () => {
       const array = [1, 2, 2, 3, 3];
       const elements = [2, 3];
 
