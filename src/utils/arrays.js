@@ -81,3 +81,13 @@ export const extract = (array, ...elements) => {
 
   return [extracted, nonextracted];
 };
+
+export const addOrRemove = (array, ...elements) => {
+  if (none(elements)) return array;
+
+  const [removed, left] = extract(array, ...elements);
+  // TODO Optimization remove which returns deleted elements
+  const [_, toAdd] = extract(elements, ...removed);
+
+  return addDest(left, ...toAdd);
+};
