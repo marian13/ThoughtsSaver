@@ -1,13 +1,20 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import CheckBox from '@components/CheckBox';
 import InteractionRow from '@components/InteractionRow';
 import Text from '@components/Text';
-import TouchableView from '@components/TouchableView';
 import View from '@components/View';
 
-import { SEARCH_THOUGHT_OPTIONS_COLLAPSE } from '@pages/HomePage/constants/identifiers';
+import SearchThoughtOption from './SearchThoughtOption';
+
+import { createSet, has } from '@utils/sets';
+
+import {
+  SEARCH_THOUGHT_OPTIONS_COLLAPSE,
+  SEARCH_THOUGHT_BY_TEXT_OPTION,
+  SEARCH_THOUGHT_BY_TAG_OPTION,
+  SEARCH_THOUGHT_FUZZY_OPTION
+} from '@pages/HomePage/constants/identifiers';
 
 const styles = StyleSheet.create({
   outerView: {
@@ -20,37 +27,43 @@ const styles = StyleSheet.create({
 });
 
 const SearchThoughtOptionsCollapse = ({
-  isVisible
-}) => (
-  <InteractionRow
-    testID={SEARCH_THOUGHT_OPTIONS_COLLAPSE}
-    isVisible={isVisible}
-  >
-    <View style={styles.outerView}>
-      <Text bold style={styles.headerText}>Search options</Text>
+  isVisible,
+  options,
+  onOptionPress
+}) => {
+  const set = createSet(options);
 
-      <TouchableView horizontal>
-        <CheckBox />
-        <View centered>
-          <Text large>Search by text</Text>
-        </View>
-      </TouchableView>
+  return (
+    <InteractionRow
+      testID={SEARCH_THOUGHT_OPTIONS_COLLAPSE}
+      isVisible={isVisible}
+    >
+      <View style={styles.outerView}>
+        <Text bold style={styles.headerText}>Search options</Text>
 
-      <TouchableView horizontal>
-        <CheckBox />
-        <View centered>
-          <Text large>Search by tag</Text>
-        </View>
-      </TouchableView>
+        <SearchThoughtOption
+          testID={SEARCH_THOUGHT_BY_TEXT_OPTION}
+          selected={has(set, SEARCH_THOUGHT_BY_TEXT_OPTION)}
+          text="Search by text"
+          onPress={() => onOptionPress(SEARCH_THOUGHT_BY_TEXT_OPTION)}
+        />
 
-      <TouchableView horizontal>
-        <CheckBox />
-        <View centered>
-          <Text large>Fuzzy search</Text>
-        </View>
-      </TouchableView>
-    </View>
-  </InteractionRow>
-);
+        <SearchThoughtOption
+          testID={SEARCH_THOUGHT_BY_TAG_OPTION}
+          selected={has(set, SEARCH_THOUGHT_BY_TAG_OPTION)}
+          text="Search by tag"
+          onPress={() => onOptionPress(SEARCH_THOUGHT_BY_TAG_OPTION)}
+        />
+
+        <SearchThoughtOption
+          testID={SEARCH_THOUGHT_FUZZY_OPTION}
+          selected={has(set, SEARCH_THOUGHT_FUZZY_OPTION)}
+          text="Fuzzy search"
+          onPress={() => onOptionPress(SEARCH_THOUGHT_FUZZY_OPTION)}
+        />
+      </View>
+    </InteractionRow>
+  );
+};
 
 export default SearchThoughtOptionsCollapse;

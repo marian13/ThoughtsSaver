@@ -13,6 +13,8 @@ import changeSearchThoughtInputThunk from '@pages/HomePage/thunks/changeSearchTh
 import cancelSearchThoughtThunk from '@pages/HomePage/thunks/cancelSearchThoughtThunk';
 import finishSearchThoughtThunk from '@pages/HomePage/thunks/finishSearchThoughtThunk';
 
+import SearchThoughtOptionsCollapseContainer from '@pages/HomePage/containers/SearchThoughtOptionsCollapseContainer';
+
 import { SEARCH_THOUGHT_INPUT, SEARCH_THOUGHT_OPTIONS_COLLAPSE } from '@pages/HomePage/constants/identifiers';
 
 const SearchThoughtInteractionAreaContainer = () => {
@@ -48,6 +50,7 @@ const SearchThoughtInteractionAreaContainer = () => {
       onFinishSearchThoughtButtonPress={handleFinishSearchThoughtButtonPress}
       onShowSearchThoughtOptionsButtonPress={handleShowSearchThoughtOptionsButtonPress}
       onHideSearchThoughtOptionsButtonPress={handleHideSearchThoughtOptionsButtonPress}
+      SearchThoughtOptionsCollapseContainer={SearchThoughtOptionsCollapseContainer}
     />
   );
 };

@@ -7,7 +7,6 @@ import TextInput from '@components/TextInput';
 import View from '@components/View';
 
 import Info from './Info';
-import SearchThoughtOptionsCollapse from './SearchThoughtOptionsCollapse';
 
 import {
   SEARCH_THOUGHT_INPUT,
@@ -31,7 +30,8 @@ const SearchThoughtInteractionArea = ({
   onCancelSearchThoughtButtonPress,
   onFinishSearchThoughtButtonPress,
   onShowSearchThoughtOptionsButtonPress,
-  onHideSearchThoughtOptionsButtonPress
+  onHideSearchThoughtOptionsButtonPress,
+  SearchThoughtOptionsCollapseContainer
 }) => (
   <View avoidKeyboard>
     <InteractionRow>
@@ -76,9 +76,7 @@ const SearchThoughtInteractionArea = ({
       <IconButton iconName="more-vert" />
     </InteractionRow>
 
-    <SearchThoughtOptionsCollapse
-      isVisible={isSearchThoughtOptionsVisible}
-    />
+    <SearchThoughtOptionsCollapseContainer />
   </View>
 );
 

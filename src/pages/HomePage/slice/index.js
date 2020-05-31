@@ -33,7 +33,8 @@ export const {
   resetThoughtInEdit,
 
   changeSearchThoughtInputText,
-  changeSearchThoughtResults
+  changeSearchThoughtResults,
+  changeSearchThoughtOptions
 } = HomePageSlice.actions;
 
 export const {
@@ -49,7 +50,8 @@ export const {
   thoughtInEditTextSelector,
 
   searchThoughtInputTextSelector,
-  searchThoughtResultsSelector
+  searchThoughtResultsSelector,
+  searchThoughtOptionsSelector
 } = selectors;
 
 export default HomePageSlice.reducer;

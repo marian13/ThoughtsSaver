@@ -67,3 +67,9 @@ export const changeSearchThoughtResults = (state, action) => {
 
   state.searchThoughtResults = results;
 };
+
+export const changeSearchThoughtOptions = (state, action) => {
+  const { options } = action.payload;
+
+  state.searchThoughtOptions = options;
+};
