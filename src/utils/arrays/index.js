@@ -1,4 +1,5 @@
 import { isFunction } from '@utils/functions';
+import addOrRemove from '@utils/arrays/addOrRemove';
 
 // https://api.rubyonrails.org/classes/Array.html#method-c-wrap
 export const wrap = object => {
@@ -104,12 +105,12 @@ export const extract = (array, ...elements) => {
   return [extracted, nonextracted];
 };
 
-export const addOrRemove = (array, ...elements) => {
+const rejectReducer = (array, element) => array.filter(item => item !== element);
+
+export const reject = (array, ...elements) => {
   if (none(elements)) return array;
 
-  const [removed, left] = extract(array, ...elements);
-  // TODO Optimization remove which returns deleted elements
-  const [_, toAdd] = extract(elements, ...removed);
-
-  return addDest(left, ...toAdd);
+  return elements.reduce(rejectReducer, array);
 };
+
+export { addOrRemove };

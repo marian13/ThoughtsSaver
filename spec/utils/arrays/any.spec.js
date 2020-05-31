@@ -2,7 +2,7 @@ import '@specHelper';
 
 import { any } from '@utils/arrays';
 
-describe('none', () => {
+describe('any', () => {
   context('when array is empty', () => {
     it('returns false', () => {
       const array = [];
