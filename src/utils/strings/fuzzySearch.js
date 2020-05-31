@@ -1,4 +1,4 @@
-const fuzzySearch = (text, textToSearch) => Distance(text, textToSearch) > 0.7;
+const fuzzySearch = (text, textToSearch) => Distance(text, textToSearch) > 0.8;
 
 export default fuzzySearch;
 

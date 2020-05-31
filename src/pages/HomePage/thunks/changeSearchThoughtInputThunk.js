@@ -1,21 +1,56 @@
 import { thoughtsSelector } from '@modules/ThoughtsModule/slice';
 
 import {
-  searchThoughtOptionsSelector,
+  isSearchThoughtByTextOptionSelectedSelector,
+  isSearchThoughtByTagOptionSelectedSelector,
+  isSearchThoughtFuzzyOptionSelectedSelector,
 
   changeSearchThoughtInputText,
   changeSearchThoughtResults
 } from '@pages/HomePage/slice';
 
-const changeSearchThoughtInputThunk = ({ text: searchText }) => (dispatch, getState) => {
+import { any, filter, compact } from '@utils/arrays';
+import { fuzzySearch } from '@utils/strings';
+
+const createSearchFunction = isFuzzySelected => {
+  if (isFuzzySelected) {
+    return (text, textToSearch) => fuzzySearch(text, textToSearch);
+  } else {
+    return (text, textToSearch) => text.includes(textToSearch);
+  }
+};
+
+const createCombinedFilterFunction = (isByTextSelected, isByTagSelected, searchText, searchFunction) => {
+  const filterFunctions = compact([
+    isByTextSelected && (thought => searchFunction(thought.text, searchText)),
+    isByTagSelected && (thought => any(thought.tags, tag => searchFunction(tag.text, searchText)))
+  ]);
+
+  return thought => any(filterFunctions, filterFunction => filterFunction(thought) === true);
+};
+
+const changeSearchThoughtInputThunk = ({ text: textToSearch }) => (dispatch, getState) => {
   const thoughts = thoughtsSelector(getState());
-  const text = searchText.trim();
-  const options = searchThoughtOptionsSelector(getState());
+  const searchText = textToSearch.trim();
 
   dispatch(changeSearchThoughtInputText({ text: searchText }));
 
-  // TODO results based on options
-  const results = text ? thoughts.filter(thought => thought.text.includes(text)) : thoughts;
+  if (!searchText) return dispatch(changeSearchThoughtResults({ results: thoughts }));;
+
+  const isSearchThoughtByTextOptionSelected = isSearchThoughtByTextOptionSelectedSelector(getState());
+  const isSearchThoughtByTagOptionSelected = isSearchThoughtByTagOptionSelectedSelector(getState());
+  const isSearchThoughtFuzzyOptionSelected = isSearchThoughtFuzzyOptionSelectedSelector(getState());
+
+  const searchFunction = createSearchFunction(isSearchThoughtFuzzyOptionSelected);
+
+  const filterFunction = createCombinedFilterFunction(
+    isSearchThoughtByTextOptionSelected,
+    isSearchThoughtByTagOptionSelected,
+    searchText,
+    searchFunction
+  );
+
+  const results = filter(thoughts, filterFunction);
 
   dispatch(changeSearchThoughtResults({ results }));
 };
