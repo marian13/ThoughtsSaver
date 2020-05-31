@@ -10,7 +10,6 @@ import addOrRemove from '@utils/arrays/addOrRemove';
 import filterMap from '@utils/arrays/filterMap';
 import reverseForEach from '@utils/arrays/reverseForEach';
 import extract from '@utils/arrays/extract';
-import reject from '@utils/arrays/reject';
 
 export {
   empty,
@@ -24,6 +23,5 @@ export {
   addOrRemove,
   filterMap,
   reverseForEach,
-  extract,
-  reject
+  extract
 };
