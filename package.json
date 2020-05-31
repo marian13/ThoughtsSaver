@@ -5,8 +5,10 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "spec:unit": "node_modules/.bin/jest ' '",
+    "spec:unit": "node_modules/.bin/jest 'preventNoParemetersHack'",
     "spec:unit:all": "node_modules/.bin/jest spec/.*.spec.js",
+    "spec:e2e": "detox test 'preventNoParemetersHack'",
+    "spec:e2e:all": "detox test e2e/.*.spec.js",
     "eject": "expo eject"
   },
   "dependencies": {
