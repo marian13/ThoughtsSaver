@@ -4,6 +4,7 @@ import has from '@utils/sets/has';
 import add from '@utils/sets/add';
 import remove from '@utils/sets/remove';
 import addOrRemove from '@utils/sets/addOrRemove';
+import toArray from '@utils/sets/toArray';
 
 export {
   createSet,
@@ -11,5 +12,6 @@ export {
   has,
   add,
   remove,
-  addOrRemove
+  addOrRemove,
+  toArray
 };
