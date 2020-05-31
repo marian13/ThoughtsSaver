@@ -42,6 +42,10 @@ export const {
   isEditThoughtTextModeSelector,
   isSearchThoughtModeSelector,
 
+  isSearchThoughtByTextOptionSelectedSelector,
+  isSearchThoughtByTagOptionSelectedSelector,
+  isSearchThoughtFuzzyOptionSelectedSelector,
+
   thoughtInCreateDraftTextSelector,
 
   thoughtInEditDraftTextSelector,

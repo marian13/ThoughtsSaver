@@ -7,8 +7,6 @@ import View from '@components/View';
 
 import SearchThoughtOption from './SearchThoughtOption';
 
-import { createSet, has } from '@utils/sets';
-
 import {
   SEARCH_THOUGHT_OPTIONS_COLLAPSE,
   SEARCH_THOUGHT_BY_TEXT_OPTION,
@@ -28,42 +26,40 @@ const styles = StyleSheet.create({
 
 const SearchThoughtOptionsCollapse = ({
   isVisible,
-  options,
+  isByTextOptionSelected,
+  isByTagOptionSelected,
+  isFuzzyOptionSelected,
   onOptionPress
-}) => {
-  const set = createSet(options);
+}) => (
+  <InteractionRow
+    testID={SEARCH_THOUGHT_OPTIONS_COLLAPSE}
+    isVisible={isVisible}
+  >
+    <View style={styles.outerView}>
+      <Text bold style={styles.headerText}>Search options</Text>
 
-  return (
-    <InteractionRow
-      testID={SEARCH_THOUGHT_OPTIONS_COLLAPSE}
-      isVisible={isVisible}
-    >
-      <View style={styles.outerView}>
-        <Text bold style={styles.headerText}>Search options</Text>
+      <SearchThoughtOption
+        testID={SEARCH_THOUGHT_BY_TEXT_OPTION}
+        selected={isByTextOptionSelected}
+        text="Search by text"
+        onPress={() => onOptionPress(SEARCH_THOUGHT_BY_TEXT_OPTION)}
+      />
 
-        <SearchThoughtOption
-          testID={SEARCH_THOUGHT_BY_TEXT_OPTION}
-          selected={has(set, SEARCH_THOUGHT_BY_TEXT_OPTION)}
-          text="Search by text"
-          onPress={() => onOptionPress(SEARCH_THOUGHT_BY_TEXT_OPTION)}
-        />
+      <SearchThoughtOption
+        testID={SEARCH_THOUGHT_BY_TAG_OPTION}
+        selected={isByTagOptionSelected}
+        text="Search by tag"
+        onPress={() => onOptionPress(SEARCH_THOUGHT_BY_TAG_OPTION)}
+      />
 
-        <SearchThoughtOption
-          testID={SEARCH_THOUGHT_BY_TAG_OPTION}
-          selected={has(set, SEARCH_THOUGHT_BY_TAG_OPTION)}
-          text="Search by tag"
-          onPress={() => onOptionPress(SEARCH_THOUGHT_BY_TAG_OPTION)}
-        />
-
-        <SearchThoughtOption
-          testID={SEARCH_THOUGHT_FUZZY_OPTION}
-          selected={has(set, SEARCH_THOUGHT_FUZZY_OPTION)}
-          text="Fuzzy search"
-          onPress={() => onOptionPress(SEARCH_THOUGHT_FUZZY_OPTION)}
-        />
-      </View>
-    </InteractionRow>
-  );
-};
+      <SearchThoughtOption
+        testID={SEARCH_THOUGHT_FUZZY_OPTION}
+        selected={isFuzzyOptionSelected}
+        text="Fuzzy search"
+        onPress={() => onOptionPress(SEARCH_THOUGHT_FUZZY_OPTION)}
+      />
+    </View>
+  </InteractionRow>
+);
 
 export default SearchThoughtOptionsCollapse;

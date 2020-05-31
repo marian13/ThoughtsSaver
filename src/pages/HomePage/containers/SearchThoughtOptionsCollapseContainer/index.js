@@ -5,7 +5,11 @@ import SearchThoughtOptionsCollapse from '@pages/HomePage/components/SearchThoug
 
 import { isVisibleSelector } from '@modules/VisibilitiesModule/slice';
 
-import { searchThoughtOptionsSelector } from '@pages/HomePage/slice';
+import {
+  isSearchThoughtByTextOptionSelectedSelector,
+  isSearchThoughtByTagOptionSelectedSelector,
+  isSearchThoughtFuzzyOptionSelectedSelector
+} from '@pages/HomePage/slice';
 
 import changeSearchThoughtOptionsThunk from '@pages/HomePage/thunks/changeSearchThoughtOptionsThunk';
 
@@ -16,14 +20,18 @@ const SearchThoughtOptionsCollapseContainer = () => {
 
   const isSearchThoughtOptionsVisible = useSelector(isVisibleSelector(SEARCH_THOUGHT_OPTIONS_COLLAPSE))
 
-  const searchThoughtOptions = useSelector(searchThoughtOptionsSelector);
+  const isSearchThoughtByTextOptionSelected = useSelector(isSearchThoughtByTextOptionSelectedSelector);
+  const isSearchThoughtByTagOptionSelected = useSelector(isSearchThoughtByTagOptionSelectedSelector);
+  const isSearchThoughtFuzzyOptionSelected = useSelector(isSearchThoughtFuzzyOptionSelectedSelector);
 
   const handleSearchThoughtOptionsChange = option => dispatch(changeSearchThoughtOptionsThunk({ option }));
 
   return (
     <SearchThoughtOptionsCollapse
       isVisible={isSearchThoughtOptionsVisible}
-      options={searchThoughtOptions}
+      isByTextOptionSelected={isSearchThoughtByTextOptionSelected}
+      isByTagOptionSelected={isSearchThoughtByTagOptionSelected}
+      isFuzzyOptionSelected={isSearchThoughtFuzzyOptionSelected}
       onOptionPress={handleSearchThoughtOptionsChange}
     />
   );
