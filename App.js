@@ -1,5 +1,7 @@
 // https://redux-toolkit.js.org/tutorials/advanced-tutorial#rendering-the-provider
 
+import './src/globals';
+
 import React from 'react';
 import { Provider } from 'react-redux';
 

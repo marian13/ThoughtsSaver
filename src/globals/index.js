@@ -1,0 +1,1 @@
+global.p = console.log;
