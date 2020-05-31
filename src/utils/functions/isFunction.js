@@ -1,3 +1,3 @@
 import { isFunction } from 'lodash';
 
-export { isFunction };
+export default isFunction;

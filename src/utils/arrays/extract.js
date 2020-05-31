@@ -1,6 +1,6 @@
 // Basic idea is taken from https://api.rubyonrails.org/classes/Array.html#method-i-extract-21
 // But this version also removes duplicates
-import { isFunction } from '@utils/functions';
+import isFunction from '@utils/functions/isFunction';
 import none from '@utils/arrays/none';
 import addDest from '@utils/arrays/addDest';
 

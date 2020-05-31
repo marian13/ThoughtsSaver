@@ -1,4 +1,4 @@
-import { isFunction } from '@utils/functions';
+import isFunction from '@utils/functions/isFunction';
 import none from '@utils/arrays/none';
 
 const createRemoveReducerFilterFunction = element => (
