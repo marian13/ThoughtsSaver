@@ -1,5 +1,7 @@
 import { isFunction } from '@utils/functions';
-import { none, filterMap, reverseForEach } from '@utils/arrays';
+import none from '@utils/arrays/none';
+import filterMap from '@utils/arrays/filterMap';
+import reverseForEach from '@utils/arrays/reverseForEach';
 
 const createRemoveDestReducerFilterMapFunction = element => {
   if (isFunction(element)) {

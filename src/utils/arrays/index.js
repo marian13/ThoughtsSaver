@@ -1,3 +1,6 @@
+import empty from '@utils/arrays/empty';
+import none from '@utils/arrays/none';
+import any from '@utils/arrays/any';
 import wrap from '@utils/arrays/wrap';
 import add from '@utils/arrays/add';
 import addDest from '@utils/arrays/addDest';
@@ -9,13 +12,10 @@ import reverseForEach from '@utils/arrays/reverseForEach';
 import extract from '@utils/arrays/extract';
 import reject from '@utils/arrays/reject';
 
-export const empty = array => array.length === 0;
-
-export const none = array => empty(array);
-
-export const any = array => array.length > 0;
-
 export {
+  empty,
+  none,
+  any,
   wrap,
   add,
   addDest,

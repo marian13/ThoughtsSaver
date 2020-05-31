@@ -1,5 +1,5 @@
 import { isFunction } from '@utils/functions';
-import { none } from '@utils/arrays';
+import none from '@utils/arrays/none';
 
 const createRemoveReducerFilterFunction = element => (
   isFunction(element) ? item => !element(item) : item => item !== element

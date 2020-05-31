@@ -1,4 +1,4 @@
-import { none } from '@utils/arrays';
+import none from '@utils/arrays/none';
 
 const addDest = (array, ...elements) => {
   if (none(elements)) return array;
