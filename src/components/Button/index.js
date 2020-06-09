@@ -34,6 +34,7 @@ const Button = ({
   iconName,
   iconType,
   text,
+  onPress,
   style
 }) => (
   <NativeElementsButton
@@ -42,6 +43,7 @@ const Button = ({
     {...ifProp(outline && outlineProp)}
     {...ifProp(iconName && iconProp({ iconName, iconType, containerStyle: styles.iconContainer }))}
     title={text}
+    onPress={onPress}
     containerStyle={style}
     titleStyle={styles.title}
   />
