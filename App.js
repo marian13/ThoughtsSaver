@@ -1,23 +1,13 @@
-// https://redux-toolkit.js.org/tutorials/advanced-tutorial#rendering-the-provider
-
-import './src/globals';
-
 import React from 'react';
-import { Provider } from 'react-redux';
+
+import ReduxProvider from './src/redux/ReduxProvider';
 
 import HomePage from './src/pages/HomePage';
 
-import configureAppStore from './src/redux/configureAppStore';
-import initThunk from './src/redux/initThunk';
-
-const store = configureAppStore();
-
-store.dispatch(initThunk());
-
 const App = () => (
-  <Provider store={store}>
+  <ReduxProvider>
     <HomePage />
-  </Provider>
+  </ReduxProvider>
 );
 
 export default App;
