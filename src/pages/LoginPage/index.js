@@ -15,15 +15,25 @@ const styles = StyleSheet.create({
   }
 });
 
-const LoginPage = () => (
+const LoginPage = ({ navigation }) => (
   <Page style={styles.page}>
     <View fullWidth centered>
       <View style={styles.view}>
-        <Button outline iconName="facebook" text="Sign in with Facebook" />
+        <Button
+          outline
+          iconName="facebook"
+          text="Sign in with Facebook"
+          onPress={() => navigation.navigate('Home')}
+        />
       </View>
 
       <View style={styles.view}>
-        <Button outline iconName="google" text="Sign in with Google" />
+        <Button
+          outline
+          iconName="google"
+          text="Sign in with Google"
+          onPress={() => navigation.navigate('Home')}
+        />
       </View>
     </View>
   </Page>
