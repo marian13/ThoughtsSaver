@@ -10,7 +10,8 @@ import OverlayMenu from '@components/OverlayMenu';
 import TextInput from '@components/TextInput';
 import View from '@components/View';
 
-import GeneralThoughtMenuOptionsContainer from '@pages/HomePage/containers/GeneralThoughtMenuOptionsContainer';
+import EmojiPickerCollapse from '@pages/HomePage/components/EmojiPickerCollapse';
+import ToggleEmojiPickerCollapseButton from '@pages/HomePage/components/ToggleEmojiPickerCollapseButton';
 
 import {
   CREATE_THOUGHT_TEXT_INPUT,
@@ -27,13 +28,18 @@ const styles = StyleSheet.create({
 const CreateThoughtInteractionArea = ({
   isCreateThoughtTextInputFocused,
   isGeneralThoughtOptionsMenuVisible,
+  isEmojiPickerCollapseVisible,
   thoughtInCreateDraftText,
   onCreateThoughtTextInputChange,
   onCreateThoughtTextInputFocus,
   onCreateThoughtTextInputBlur,
   onCreateThoughtButtonPress,
   onGeneralThoughtOptionsButtonPress,
-  onGeneralThoughtOptionsMenuBackdropPress
+  onGeneralThoughtOptionsMenuBackdropPress,
+  onShowEmojiPickerCollapseButtonPress,
+  onHideEmojiPickerCollapseButtonPress,
+  onEmojiPick,
+  GeneralThoughtMenuOptionsContainer
 }) => (
   <View avoidKeyboard>
     <InteractionRow>
@@ -60,7 +66,13 @@ const CreateThoughtInteractionArea = ({
     <InteractionRow>
       <View horizontal>
         <IconButton iconName="keyboard-arrow-down" />
-        <IconButton iconName="tag-faces" />
+
+        <ToggleEmojiPickerCollapseButton
+          isEmojiPickerCollapseVisible={isEmojiPickerCollapseVisible}
+          onShowPress={onShowEmojiPickerCollapseButtonPress}
+          onHidePress={onHideEmojiPickerCollapseButtonPress}
+        />
+
         <IconButton iconName="attach-file" />
       </View>
 
@@ -79,6 +91,11 @@ const CreateThoughtInteractionArea = ({
         />
       </View>
     </InteractionRow>
+
+    <EmojiPickerCollapse
+      isVisible={isEmojiPickerCollapseVisible}
+      onEmojiPick={onEmojiPick}
+    />
   </View>
 );
 

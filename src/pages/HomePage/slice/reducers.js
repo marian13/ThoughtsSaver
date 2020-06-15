@@ -1,3 +1,5 @@
+import { toString } from '@utils/strings';
+
 import initialState from './initialState';
 
 export const startCreateThoughtMode = state => {
@@ -35,6 +37,13 @@ export const changeThoughtInCreateDraftText = (state, action) => {
   thoughtInCreateDraft.text = text;
 };
 
+export const appendEmojiToThoughtInCreateDraftText = (state, action) => {
+  const { emoji } = action.payload;
+  const { thoughtInCreateDraft } = state;
+
+  thoughtInCreateDraft.text = `${toString(thoughtInCreateDraft.text)}${emoji}`;
+};
+
 export const resetThoughtInEditDraft = state => {
   state.thoughtInEditDraft = initialState.thoughtInEditDraft;
 };
@@ -44,6 +53,13 @@ export const changeThoughtInEditDraftText = (state, action) => {
   const { thoughtInEditDraft } = state;
 
   thoughtInEditDraft.text = text;
+};
+
+export const appendEmojiToThoughtInEditDraftText = (state, action) => {
+  const { emoji } = action.payload;
+  const { thoughtInEditDraft } = state;
+
+  thoughtInEditDraft.text = `${toString(thoughtInEditDraft.text)}${emoji}`;
 };
 
 export const setThoughtInEdit = (state, action) => {
@@ -60,6 +76,12 @@ export const changeSearchThoughtInputText = (state, action) => {
   const { text } = action.payload;
 
   state.searchThoughtInputText = text;
+};
+
+export const appendEmojiToSearchThoughtInputText = (state, action) => {
+  const { emoji } = action.payload;
+
+  state.searchThoughtInputText = `${toString(state.searchThoughtInputText)}${emoji}`;
 };
 
 export const changeSearchThoughtResults = (state, action) => {

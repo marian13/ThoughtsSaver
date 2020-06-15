@@ -25,14 +25,17 @@ export const {
 
   resetThoughtInCreateDraft,
   changeThoughtInCreateDraftText,
+  appendEmojiToThoughtInCreateDraftText,
 
   resetThoughtInEditDraft,
   changeThoughtInEditDraftText,
+  appendEmojiToThoughtInEditDraftText,
 
   setThoughtInEdit,
   resetThoughtInEdit,
 
   changeSearchThoughtInputText,
+  appendEmojiToSearchThoughtInputText,
   changeSearchThoughtResults,
   changeSearchThoughtOptions
 } = HomePageSlice.actions;

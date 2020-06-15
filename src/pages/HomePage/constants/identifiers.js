@@ -16,3 +16,6 @@ export const SEARCH_THOUGHT_OPTIONS_COLLAPSE = 'searchThoughtOptionsCollapse';
 export const SEARCH_THOUGHT_BY_TEXT_OPTION = 'searchThoughtByTextOption';
 export const SEARCH_THOUGHT_BY_TAG_OPTION = 'searchThoughtByTagOption';
 export const SEARCH_THOUGHT_FUZZY_OPTION = 'searchThoughtFuzzyOption';
+
+export const TOGGLE_EMOJI_PICKER_BUTTON = 'toggleEmojiPickerButton';
+export const EMOJI_PICKER_COLLAPSE = 'emojiPickerCollapse';
