@@ -6,6 +6,9 @@ import IconButton from '@components/IconButton';
 import TextInput from '@components/TextInput';
 import View from '@components/View';
 
+import EmojiPickerCollapse from '@pages/HomePage/components/EmojiPickerCollapse';
+import ToggleEmojiPickerCollapseButton from '@pages/HomePage/components/ToggleEmojiPickerCollapseButton';
+
 import Info from './Info';
 
 import {
@@ -21,6 +24,7 @@ const styles = StyleSheet.create({
 
 const SearchThoughtInteractionArea = ({
   isSearchThoughtInputFocused,
+  isEmojiPickerCollapseVisible,
   isSearchThoughtOptionsVisible,
   searchThoughtInputText,
   searchThoughtResults,
@@ -31,6 +35,9 @@ const SearchThoughtInteractionArea = ({
   onFinishSearchThoughtButtonPress,
   onShowSearchThoughtOptionsButtonPress,
   onHideSearchThoughtOptionsButtonPress,
+  onShowEmojiPickerCollapseButtonPress,
+  onHideEmojiPickerCollapseButtonPress,
+  onEmojiPick,
   SearchThoughtOptionsCollapseContainer
 }) => (
   <View avoidKeyboard>
@@ -70,13 +77,23 @@ const SearchThoughtInteractionArea = ({
               : onShowSearchThoughtOptionsButtonPress()
           )}
         />
-        <IconButton iconName="tag-faces" />
+
+        <ToggleEmojiPickerCollapseButton
+          isEmojiPickerCollapseVisible={isEmojiPickerCollapseVisible}
+          onShowPress={onShowEmojiPickerCollapseButtonPress}
+          onHidePress={onHideEmojiPickerCollapseButtonPress}
+        />
       </View>
 
       <IconButton iconName="more-vert" />
     </InteractionRow>
 
     <SearchThoughtOptionsCollapseContainer />
+
+    <EmojiPickerCollapse
+      isVisible={isEmojiPickerCollapseVisible}
+      onEmojiPick={onEmojiPick}
+    />
   </View>
 );
 
