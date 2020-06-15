@@ -3,11 +3,13 @@ import { StyleSheet } from 'react-native';
 
 import { isEmpty } from 'lodash';
 
-import Icon from '@components/Icon';
 import IconButton from '@components/IconButton';
 import InteractionRow from '@components/InteractionRow';
 import TextInput from '@components/TextInput';
 import View from '@components/View';
+
+import EmojiPickerCollapse from '@pages/HomePage/components/EmojiPickerCollapse';
+import ToggleEmojiPickerCollapseButton from '@pages/HomePage/components/ToggleEmojiPickerCollapseButton';
 
 import Info from './Info';
 
@@ -19,13 +21,17 @@ const styles = StyleSheet.create({
 
 const EditThoughtTextInteractionArea = ({
   isEditThoughtTextInputFocused,
+  isEmojiPickerCollapseVisible,
   thoughtInEditDraftText,
   thoughtInEditText,
   onEditThoughtTextInputChange,
   onEditThoughtTextInputFocus,
   onEditThoughtTextInputBlur,
   onCancelEditThoughtTextModeButtonPress,
-  onFinishEditThoughtTextModeButtonPress
+  onFinishEditThoughtTextModeButtonPress,
+  onShowEmojiPickerCollapseButtonPress,
+  onHideEmojiPickerCollapseButtonPress,
+  onEmojiPick
 }) => (
   <View avoidKeyboard>
     <InteractionRow>
@@ -55,7 +61,13 @@ const EditThoughtTextInteractionArea = ({
     <InteractionRow>
       <View horizontal>
         <IconButton iconName="keyboard-arrow-down" />
-        <IconButton iconName="tag-faces" />
+
+        <ToggleEmojiPickerCollapseButton
+          isEmojiPickerCollapseVisible={isEmojiPickerCollapseVisible}
+          onShowPress={onShowEmojiPickerCollapseButtonPress}
+          onHidePress={onHideEmojiPickerCollapseButtonPress}
+        />
+
         <IconButton iconName="attach-file" />
       </View>
 
@@ -66,6 +78,11 @@ const EditThoughtTextInteractionArea = ({
         <IconButton iconName="more-vert" />
       </View>
     </InteractionRow>
+
+    <EmojiPickerCollapse
+      isVisible={isEmojiPickerCollapseVisible}
+      onEmojiPick={onEmojiPick}
+    />
   </View>
 );
 
