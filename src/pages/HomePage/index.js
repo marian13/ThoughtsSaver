@@ -5,7 +5,7 @@ import Page from '@components/Page';
 import Header from '@pages/HomePage/components/Header';
 import AddThoughtTagsModal from '@modals/AddThoughtTagsModal';
 
-import ThoughtStreamContainer from '@pages/HomePage/containers/ThoughtStreamContainer';
+import ThoughtStream from '@pages/HomePage/components/ThoughtStream';
 import ThoughtInteractionAreaContainer from '@pages/HomePage/containers/ThoughtInteractionAreaContainer';
 
 const styles = StyleSheet.create({
@@ -18,7 +18,7 @@ const HomePage = () => (
   <Page style={styles.page}>
     <Header />
 
-    <ThoughtStreamContainer />
+    <ThoughtStream />
 
     <ThoughtInteractionAreaContainer />
 
