@@ -2,16 +2,16 @@ import { SEARCH_THOUGHT_BY_TEXT_OPTION } from '@pages/HomePage/constants/identif
 
 const initialState = {
   isCreateThoughtMode: false,
-  isEditThoughtTextMode: false,
+  isEditThoughtMode: false,
   isSearchThoughtMode: false,
 
-  thoughtInCreateDraft: {},
-  thoughtInEditDraft: {},
+  thought: {},
+  thoughtInCreate: {},
   thoughtInEdit: {},
 
   searchThoughtInputText: '',
   searchThoughtResults: [],
-  searchThoughtOptions: [SEARCH_THOUGHT_BY_TEXT_OPTION]
+  searchThoughtOptions: [SEARCH_THOUGHT_BY_TEXT_OPTION],
 };
 
 export default initialState;

@@ -9,7 +9,8 @@ import ThoughtMenuOptions from './ThoughtMenuOptions';
 
 import { isVisibleSelector, show, hide } from '@modules/VisibilitiesModule/slice';
 
-import { generateThoughtTestID } from '@utils/generators';
+import { getThoughtID } from '@constants/identifiers';
+import { getThoughtMenuID } from '@pages/HomePage/constants/identifiers';
 
 const styles = StyleSheet.create({
   overlayMenuContainer: {
@@ -19,17 +20,17 @@ const styles = StyleSheet.create({
 
 const Thought = ({ thought }) => {
   const dispatch = useDispatch();
-  const isMenuVisible = useSelector(isVisibleSelector(`thoughtMenu${thought.id}`));
+  const isMenuVisible = useSelector(isVisibleSelector(getThoughtMenuID(thought)));
 
-  const handleContentPress = () => dispatch(show(`thoughtMenu${thought.id}`));
-  const handleMenuBackdropPress = () => dispatch(hide(`thoughtMenu${thought.id}`));
+  const handleContentPress = () => dispatch(show(getThoughtMenuID(thought)));
+  const handleMenuBackdropPress = () => dispatch(hide(getThoughtMenuID(thought)));
 
   return (
     <OverlayMenu
       isVisible={isMenuVisible}
       onContentPress={handleContentPress}
       onBackdropPress={handleMenuBackdropPress}
-      renderContent={() => <ThoughtContent testID={generateThoughtTestID(thought.text)} {...thought} />}
+      renderContent={() => <ThoughtContent testID={getThoughtID(thought)} {...thought} />}
       renderOptions={() => <ThoughtMenuOptions thought={thought} />}
       height={100}
       width="50%"

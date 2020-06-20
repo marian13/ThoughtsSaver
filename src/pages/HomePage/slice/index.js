@@ -14,26 +14,21 @@ const HomePageSlice = createSlice({
 });
 
 export const {
+  setThought,
+  resetThought,
+  changeThoughtText,
+
   startCreateThoughtMode,
   finishCreateThoughtMode,
+  setThoughtInCreate,
 
-  startEditThoughtTextMode,
-  finishEditThoughtTextMode,
-
-  startSearchThoughtMode,
-  finishSearchThoughtMode,
-
-  resetThoughtInCreateDraft,
-  changeThoughtInCreateDraftText,
-  appendEmojiToThoughtInCreateDraftText,
-
-  resetThoughtInEditDraft,
-  changeThoughtInEditDraftText,
-  appendEmojiToThoughtInEditDraftText,
-
+  startEditThoughtMode,
+  finishEditThoughtMode,
   setThoughtInEdit,
   resetThoughtInEdit,
 
+  startSearchThoughtMode,
+  finishSearchThoughtMode,
   changeSearchThoughtInputText,
   appendEmojiToSearchThoughtInputText,
   changeSearchThoughtResults,
@@ -41,21 +36,22 @@ export const {
 } = HomePageSlice.actions;
 
 export const {
+  thoughtSelector,
+  thoughtIdSelector,
+  thoughtTextSelector,
+
   isCreateThoughtModeSelector,
-  isEditThoughtTextModeSelector,
-  isSearchThoughtModeSelector,
+  thoughtInCreateSelector,
 
-  isSearchThoughtByTextOptionSelectedSelector,
-  isSearchThoughtByTagOptionSelectedSelector,
-  isSearchThoughtFuzzyOptionSelectedSelector,
-
-  thoughtInCreateDraftTextSelector,
-
-  thoughtInEditDraftTextSelector,
-
+  isEditThoughtModeSelector,
+  thoughtInEditSelector,
   thoughtInEditIdSelector,
   thoughtInEditTextSelector,
 
+  isSearchThoughtModeSelector,
+  isSearchThoughtByTextOptionSelectedSelector,
+  isSearchThoughtByTagOptionSelectedSelector,
+  isSearchThoughtFuzzyOptionSelectedSelector,
   searchThoughtInputTextSelector,
   searchThoughtResultsSelector,
   searchThoughtOptionsSelector

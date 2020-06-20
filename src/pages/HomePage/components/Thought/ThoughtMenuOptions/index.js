@@ -3,13 +3,14 @@ import { useDispatch } from 'react-redux';
 
 import OverlayMenuOption from '@components/OverlayMenuOption';
 
-import startEditThoughtTextThunk from '@pages/HomePage/thunks/startEditThoughtTextThunk';
 import startEditThoughtTagsThunk from '@pages/HomePage/thunks/startEditThoughtTagsThunk';
+
+import editThoughtThunk from './thunks/editThoughtThunk';
 
 const ThoughtMenuOptions = ({ thought }) => {
   const dispatch = useDispatch();
 
-  const handleEditTextPress = () => dispatch(startEditThoughtTextThunk({ thought }));
+  const handleEditOptionPress = () => dispatch(editThoughtThunk({ thought }));
   const handleAddTagsPress = () => dispatch(startEditThoughtTagsThunk({ thought }));
 
   return (
@@ -17,8 +18,8 @@ const ThoughtMenuOptions = ({ thought }) => {
       <OverlayMenuOption
         iconName="playlist-edit"
         iconType="material-community"
-        text="Edit Text"
-        onPress={handleEditTextPress}
+        text="Edit"
+        onPress={handleEditOptionPress}
       />
 
       <OverlayMenuOption

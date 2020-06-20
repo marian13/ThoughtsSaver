@@ -12,80 +12,31 @@ const createHomePageSelector = selector => (
   createSelector(state => state.HomePage, selector)
 );
 
-export const isCreateThoughtModeSelector = createHomePageSelector(state => {
-  const { isCreateThoughtMode } = state;
+export const thoughtSelector = createHomePageSelector(state => state.thought);
+export const thoughtIdSelector = createHomePageSelector(state => state.thought.id);
+export const thoughtTextSelector = createHomePageSelector(state => state.thought.text);
 
-  return isCreateThoughtMode;
-});
+export const isCreateThoughtModeSelector = createHomePageSelector(state => state.isCreateThoughtMode);
+export const thoughtInCreateSelector = createHomePageSelector(state => state.thoughtInCreate);
 
-export const isEditThoughtTextModeSelector = createHomePageSelector(state => {
-  const { isEditThoughtTextMode } = state;
+export const isEditThoughtModeSelector = createHomePageSelector(state => state.isEditThoughtMode);
+export const thoughtInEditSelector = createHomePageSelector(state => state.thoughtInEdit);
+export const thoughtInEditIdSelector = createHomePageSelector(state => state.thoughtInEdit.id);
+export const thoughtInEditTextSelector = createHomePageSelector(state => state.thoughtInEdit.text);
 
-  return isEditThoughtTextMode;
-});
+export const isSearchThoughtModeSelector = createHomePageSelector(state => state.isSearchThoughtMode);
 
-export const isSearchThoughtModeSelector = createHomePageSelector(state => {
-  const { isSearchThoughtMode } = state;
+export const isSearchThoughtByTextOptionSelectedSelector = createHomePageSelector(state => (
+  has(state.searchThoughtOptions, SEARCH_THOUGHT_BY_TEXT_OPTION)
+));
+export const isSearchThoughtByTagOptionSelectedSelector = createHomePageSelector(state => (
+  has(state.searchThoughtOptions, SEARCH_THOUGHT_BY_TAG_OPTION)
+));
+export const isSearchThoughtFuzzyOptionSelectedSelector = createHomePageSelector(state => (
+  has(state.searchThoughtOptions, SEARCH_THOUGHT_FUZZY_OPTION)
+));
 
-  return isSearchThoughtMode;
-});
+export const searchThoughtInputTextSelector = createHomePageSelector(state => state.searchThoughtInputText);
+export const searchThoughtResultsSelector = createHomePageSelector(state => state.searchThoughtResults);
+export const searchThoughtOptionsSelector = createHomePageSelector(state => state.searchThoughtOptions);
 
-export const isSearchThoughtByTextOptionSelectedSelector = createHomePageSelector(state => {
-  const { searchThoughtOptions } = state;
-
-  return has(searchThoughtOptions, SEARCH_THOUGHT_BY_TEXT_OPTION);
-});
-
-export const isSearchThoughtByTagOptionSelectedSelector = createHomePageSelector(state => {
-  const { searchThoughtOptions } = state;
-
-  return has(searchThoughtOptions, SEARCH_THOUGHT_BY_TAG_OPTION);
-});
-
-export const isSearchThoughtFuzzyOptionSelectedSelector = createHomePageSelector(state => {
-  const { searchThoughtOptions } = state;
-
-  return has(searchThoughtOptions, SEARCH_THOUGHT_FUZZY_OPTION);
-});
-
-export const thoughtInCreateDraftTextSelector = createHomePageSelector(state => {
-  const { thoughtInCreateDraft } = state;
-
-  return thoughtInCreateDraft.text;
-});
-
-export const thoughtInEditDraftTextSelector = createHomePageSelector(state => {
-  const { thoughtInEditDraft } = state;
-
-  return thoughtInEditDraft.text;
-});
-
-export const thoughtInEditIdSelector = createHomePageSelector(state => {
-  const { thoughtInEdit } = state;
-
-  return thoughtInEdit.id;
-});
-
-export const thoughtInEditTextSelector = createHomePageSelector(state => {
-  const { thoughtInEdit } = state;
-
-  return thoughtInEdit.text;
-});
-
-export const searchThoughtInputTextSelector = createHomePageSelector(state => {
-  const { searchThoughtInputText } = state;
-
-  return searchThoughtInputText;
-});
-
-export const searchThoughtResultsSelector = createHomePageSelector(state => {
-  const { searchThoughtResults } = state;
-
-  return searchThoughtResults;
-});
-
-export const searchThoughtOptionsSelector = createHomePageSelector(state => {
-  const { searchThoughtOptions } = state;
-
-  return searchThoughtOptions;
-});

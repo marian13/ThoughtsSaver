@@ -1,8 +1,11 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import { useSelector } from 'react-redux';
 
-import View from '@components/View';
 import Text from '@components/Text';
+import View from '@components/View';
+
+import { thoughtInEditTextSelector } from '@pages/HomePage/slice';
 
 const styles = StyleSheet.create({
   outerView: {
@@ -12,7 +15,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const Info = ({ thoughtInEditText }) => {
+const EditThoughtInfo = () => {
+  const thoughtInEditText = useSelector(thoughtInEditTextSelector);
+
   return (
     <View style={styles.outerView}>
       <View>
@@ -30,4 +35,4 @@ const Info = ({ thoughtInEditText }) => {
   );
 };
 
-export default Info;
+export default EditThoughtInfo;

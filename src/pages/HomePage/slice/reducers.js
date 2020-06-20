@@ -2,6 +2,23 @@ import { toString } from '@utils/strings';
 
 import initialState from './initialState';
 
+export const setThought = (state, action) => {
+  const { thought } = action.payload;
+
+  state.thought = thought;
+};
+
+export const resetThought = state => {
+  state.thought = initialState.thought;
+};
+
+export const changeThoughtText = (state, action) => {
+  const { text } = action.payload;
+  const { thought } = state;
+
+  thought.text = text;
+};
+
 export const startCreateThoughtMode = state => {
   state.isCreateThoughtMode = true;
 };
@@ -10,56 +27,18 @@ export const finishCreateThoughtMode = state => {
   state.isCreateThoughtMode = false;
 };
 
-export const startEditThoughtTextMode = state => {
-  state.isEditThoughtTextMode = true;
+export const setThoughtInCreate = (state, action) => {
+  const { thought } = action.payload;
+
+  state.thoughtInCreate = thought;
 };
 
-export const finishEditThoughtTextMode = state => {
-  state.isEditThoughtTextMode = false;
+export const startEditThoughtMode = state => {
+  state.isEditThoughtMode = true;
 };
 
-export const startSearchThoughtMode = state => {
-  state.isSearchThoughtMode = true;
-};
-
-export const finishSearchThoughtMode = state => {
-  state.isSearchThoughtMode = false;
-};
-
-export const resetThoughtInCreateDraft = state => {
-  state.thoughtInCreateDraft = initialState.thoughtInCreateDraft;
-};
-
-export const changeThoughtInCreateDraftText = (state, action) => {
-  const { text } = action.payload;
-  const { thoughtInCreateDraft } = state;
-
-  thoughtInCreateDraft.text = text;
-};
-
-export const appendEmojiToThoughtInCreateDraftText = (state, action) => {
-  const { emoji } = action.payload;
-  const { thoughtInCreateDraft } = state;
-
-  thoughtInCreateDraft.text = `${toString(thoughtInCreateDraft.text)}${emoji}`;
-};
-
-export const resetThoughtInEditDraft = state => {
-  state.thoughtInEditDraft = initialState.thoughtInEditDraft;
-};
-
-export const changeThoughtInEditDraftText = (state, action) => {
-  const { text } = action.payload;
-  const { thoughtInEditDraft } = state;
-
-  thoughtInEditDraft.text = text;
-};
-
-export const appendEmojiToThoughtInEditDraftText = (state, action) => {
-  const { emoji } = action.payload;
-  const { thoughtInEditDraft } = state;
-
-  thoughtInEditDraft.text = `${toString(thoughtInEditDraft.text)}${emoji}`;
+export const finishEditThoughtMode = state => {
+  state.isEditThoughtMode = false;
 };
 
 export const setThoughtInEdit = (state, action) => {
@@ -70,6 +49,14 @@ export const setThoughtInEdit = (state, action) => {
 
 export const resetThoughtInEdit = state => {
   state.thoughtInEdit = initialState.thoughtInEdit;
+};
+
+export const startSearchThoughtMode = state => {
+  state.isSearchThoughtMode = true;
+};
+
+export const finishSearchThoughtMode = state => {
+  state.isSearchThoughtMode = false;
 };
 
 export const changeSearchThoughtInputText = (state, action) => {
