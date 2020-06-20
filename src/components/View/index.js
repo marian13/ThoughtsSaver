@@ -6,8 +6,7 @@ import {
   View as NativeView
 } from 'react-native';
 
-import { compact } from 'lodash';
-
+import { compact } from '@utils/arrays';
 import { ifProp } from '@utils/props';
 import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
 
@@ -37,7 +36,6 @@ const styles = StyleSheet.create({
   shadow: {
     // https://github.com/react-native-elements/react-native-elements/blob/v1.2.7/src/overlay/Overlay.js#L115
     backgroundColor: 'white',
-    borderRadius: 3,
     ...Platform.select({
       android: {
         elevation: 2,
