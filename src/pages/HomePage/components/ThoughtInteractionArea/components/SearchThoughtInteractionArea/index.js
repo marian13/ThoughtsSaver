@@ -3,7 +3,7 @@ import React from 'react';
 import InteractionRow from '@components/InteractionRow';
 import View from '@components/View';
 
-import ToggleEmojiPickerCollapseButton from '@pages/HomePage/components/ToggleEmojiPickerCollapseButton';
+import ToggleEmojiPickerCollapseButton from '../ToggleEmojiPickerCollapseButton';
 
 import SearchThoughtInfo from './components/SearchThoughtInfo';
 import CancelSearchThoughtButton from './components/CancelSearchThoughtButton';

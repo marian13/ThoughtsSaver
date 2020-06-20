@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import FlatList from '@components/FlatList';
 
-import Thought from '@pages/HomePage/components/Thought';
+import Thought from './components/Thought';
 
 import { thoughtsSelector } from '@modules/ThoughtsModule/slice';
 import {

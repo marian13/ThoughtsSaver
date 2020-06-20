@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EmojiPickerCollapse from '@pages/HomePage/components/EmojiPickerCollapse';
+import EmojiPickerCollapse from '@pages/HomePage/components/ThoughtInteractionArea/components/EmojiPickerCollapse';
 
 import addEmojiToSearchThoughtTextThunk from './thunks/addEmojiToSearchThoughtTextThunk';
 

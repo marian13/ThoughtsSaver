@@ -9,7 +9,7 @@ import { searchThoughtTextSelector } from '@pages/HomePage/slice';
 
 import { SEARCH_THOUGHT_INPUT } from '@pages/HomePage/constants/identifiers';
 
-import changeSearchThoughtTextThunk from '@pages/HomePage/components/SearchThoughtInteractionArea/thunks/changeSearchThoughtTextThunk';
+import changeSearchThoughtTextThunk from '@pages/HomePage/components/ThoughtInteractionArea/components/SearchThoughtInteractionArea/thunks/changeSearchThoughtTextThunk';
 
 const styles = StyleSheet.create({
   textInputContainerStyle: {

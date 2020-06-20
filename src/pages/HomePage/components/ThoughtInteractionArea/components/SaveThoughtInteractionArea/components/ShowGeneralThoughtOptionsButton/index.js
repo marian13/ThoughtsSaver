@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Icon from '@components/Icon';
 import OverlayMenu from '@components/OverlayMenu';
 
-import GeneralThoughtMenuOptions from '@pages/HomePage/components/GeneralThoughtMenuOptions';
+import GeneralThoughtMenuOptions from './components/GeneralThoughtMenuOptions';
 
 import { isVisibleSelector, show, hide } from '@modules/VisibilitiesModule/slice';
 

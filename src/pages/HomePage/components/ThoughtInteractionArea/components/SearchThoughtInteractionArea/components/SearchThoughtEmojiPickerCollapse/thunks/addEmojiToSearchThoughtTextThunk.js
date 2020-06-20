@@ -1,6 +1,6 @@
 import { searchThoughtTextSelector, addEmojiToSearchThoughtText } from '@pages/HomePage/slice';
 
-import changeSearchThoughtTextThunk from '@pages/HomePage/components/SearchThoughtInteractionArea/thunks/changeSearchThoughtTextThunk';
+import changeSearchThoughtTextThunk from '@pages/HomePage/components/ThoughtInteractionArea/components/SearchThoughtInteractionArea/thunks/changeSearchThoughtTextThunk';
 
 const addEmojiToSearchThoughtTextThunk = ({ emoji }) => (dispatch, getState) => {
   dispatch(addEmojiToSearchThoughtText({ emoji }));

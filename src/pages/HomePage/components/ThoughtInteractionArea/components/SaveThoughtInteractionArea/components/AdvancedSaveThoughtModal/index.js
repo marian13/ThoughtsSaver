@@ -5,15 +5,15 @@ import InteractionRow from '@components/InteractionRow';
 import Modal from '@components/Modal';
 import View from '@components/View';
 
-import ToggleModeOptionsCollapseButton from '@pages/HomePage/components/ToggleModeOptionsCollapseButton';
-import ToggleEmojiPickerCollapseButton from '@pages/HomePage/components/ToggleEmojiPickerCollapseButton';
-import AttachFileToThoughtButton from '@pages/HomePage/components/AttachFileToThoughtButton';
-import ToggleAdvancedSaveThoughtModalButton from '@pages/HomePage/components/ToggleAdvancedSaveThoughtModalButton';
-import AttachRecordingToThoughtButton from '@pages/HomePage/components/AttachRecordingToThoughtButton';
-import AttachPhotoToThoughtButton from '@pages/HomePage/components/AttachPhotoToThoughtButton';
-import ShowGeneralThoughtOptionsButton from '@pages/HomePage/components/ShowGeneralThoughtOptionsButton';
+import EmojiPickerCollapse from '@pages/HomePage/components/ThoughtInteractionArea/components/EmojiPickerCollapse';
+import ToggleEmojiPickerCollapseButton from '../../../ToggleEmojiPickerCollapseButton';
 
-import EmojiPickerCollapse from '@pages/HomePage/components/EmojiPickerCollapse';
+import ToggleModeOptionsCollapseButton from '../ToggleModeOptionsCollapseButton';
+import AttachFileToThoughtButton from '../AttachFileToThoughtButton';
+import ToggleAdvancedSaveThoughtModalButton from '../ToggleAdvancedSaveThoughtModalButton';
+import AttachRecordingToThoughtButton from '../AttachRecordingToThoughtButton';
+import AttachPhotoToThoughtButton from '../AttachPhotoToThoughtButton';
+import ShowGeneralThoughtOptionsButton from '../ShowGeneralThoughtOptionsButton';
 
 import { isVisibleSelector, hide } from '@modules/VisibilitiesModule/slice';
 

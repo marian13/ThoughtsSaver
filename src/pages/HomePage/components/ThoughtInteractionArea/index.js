@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import SaveThoughtInteractionArea from '@pages/HomePage/components/SaveThoughtInteractionArea';
-import SearchThoughtInteractionArea from '@pages/HomePage/components/SearchThoughtInteractionArea';
+import SaveThoughtInteractionArea from './components/SaveThoughtInteractionArea';
+import SearchThoughtInteractionArea from './components/SearchThoughtInteractionArea';
 
 import {
   isCreateThoughtModeSelector,

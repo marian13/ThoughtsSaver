@@ -4,20 +4,21 @@ import { useSelector } from 'react-redux';
 import InteractionRow from '@components/InteractionRow';
 import View from '@components/View';
 
-import ThoughtTextInput from '@pages/HomePage/components/ThoughtTextInput';
-import SaveThoughtButton from '@pages/HomePage/components/SaveThoughtButton';
+import ToggleEmojiPickerCollapseButton from '../ToggleEmojiPickerCollapseButton';
 
-import ToggleModeOptionsCollapseButton from '@pages/HomePage/components/ToggleModeOptionsCollapseButton';
-import ToggleEmojiPickerCollapseButton from '@pages/HomePage/components/ToggleEmojiPickerCollapseButton';
-import AttachFileToThoughtButton from '@pages/HomePage/components/AttachFileToThoughtButton';
-import ToggleAdvancedSaveThoughtModalButton from '@pages/HomePage/components/ToggleAdvancedSaveThoughtModalButton';
+import ThoughtTextInput from './components/ThoughtTextInput';
+import SaveThoughtButton from './components/SaveThoughtButton';
 
-import AttachRecordingToThoughtButton from '@pages/HomePage/components/AttachRecordingToThoughtButton';
-import AttachPhotoToThoughtButton from '@pages/HomePage/components/AttachPhotoToThoughtButton';
-import ShowGeneralThoughtOptionsButton from '@pages/HomePage/components/ShowGeneralThoughtOptionsButton';
+import ToggleModeOptionsCollapseButton from './components/ToggleModeOptionsCollapseButton';
+import AttachFileToThoughtButton from './components/AttachFileToThoughtButton';
+import ToggleAdvancedSaveThoughtModalButton from './components/ToggleAdvancedSaveThoughtModalButton';
 
-import SaveThoughtEmojiPickerCollapse from '@pages/HomePage/components/SaveThoughtEmojiPickerCollapse';
-import AdvancedSaveThoughtModal from '@pages/HomePage/components/AdvancedSaveThoughtModal';
+import AttachRecordingToThoughtButton from './components/AttachRecordingToThoughtButton';
+import AttachPhotoToThoughtButton from './components/AttachPhotoToThoughtButton';
+import ShowGeneralThoughtOptionsButton from './components/ShowGeneralThoughtOptionsButton';
+
+import SaveThoughtEmojiPickerCollapse from './components/SaveThoughtEmojiPickerCollapse';
+import AdvancedSaveThoughtModal from './components/AdvancedSaveThoughtModal';
 
 import EditThougthInfo from './components/EditThougthInfo';
 import CancelEditThoughtButton from './components/CancelEditThoughtButton';
