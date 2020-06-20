@@ -9,11 +9,11 @@ import { GENERAL_THOUGHT_OPTIONS_MENU, SEARCH_THOUGHT_INPUT } from '@pages/HomeP
 
 import { dispatchFocus } from '@utils/dispatch';
 
-const startSearchThoughtByTextThunk = () => dispatch => {
+const startSearchThoughtThunk = () => dispatch => {
   dispatch(finishCreateThoughtMode());
   dispatch(hide(GENERAL_THOUGHT_OPTIONS_MENU));
   dispatch(startSearchThoughtMode());
   dispatchFocus(dispatch, SEARCH_THOUGHT_INPUT);
 };
 
-export default startSearchThoughtByTextThunk;
+export default startSearchThoughtThunk;
