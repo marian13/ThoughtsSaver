@@ -1,28 +1,22 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { useSelector } from 'react-redux';
 
 import InteractionRow from '@components/InteractionRow';
-import View from '@components/View';
-import EmojiPicker from '@components/EmojiPicker';
+
+import AddEmojiToThoughtPicker from '@pages/HomePage/components/AddEmojiToThoughtPicker';
+
+import { isVisibleSelector } from '@modules/VisibilitiesModule/slice';
 
 import { EMOJI_PICKER_COLLAPSE } from '@pages/HomePage/constants/identifiers';
 
-const styles = StyleSheet.create({
-  outerView: {
-    paddingVertical: 5,
-    flex: 1
-  }
-});
+const EmojiPickerCollapse = () => {
+  const isCollapseVisible = useSelector(isVisibleSelector(EMOJI_PICKER_COLLAPSE));
 
-const EmojiPickerCollapse = ({ isVisible, onEmojiPick }) => (
-  <InteractionRow
-    testID={EMOJI_PICKER_COLLAPSE}
-    isVisible={isVisible}
-  >
-    <View centered style={styles.outerView}>
-      <EmojiPicker onPick={onEmojiPick} />
-    </View>
-  </InteractionRow>
-);
+  return (
+    <InteractionRow testID={EMOJI_PICKER_COLLAPSE} isVisible={isCollapseVisible}>
+      <AddEmojiToThoughtPicker />
+    </InteractionRow>
+  );
+};
 
 export default EmojiPickerCollapse;
