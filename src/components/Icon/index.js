@@ -2,8 +2,6 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Icon as NativeElementsIcon } from 'react-native-elements';
 
-import { compact } from 'lodash';
-
 import View from '@components/View';
 import SocialIcon from './SocialIcon';
 
