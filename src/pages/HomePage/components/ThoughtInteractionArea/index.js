@@ -1,23 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import CreateThoughtInteractionArea from '@pages/HomePage/components/CreateThoughtInteractionArea';
-import EditThoughtTextInteractionArea from '@pages/HomePage/components/EditThoughtTextInteractionArea';
+import SaveThoughtInteractionArea from '@pages/HomePage/components/SaveThoughtInteractionArea';
 import SearchThoughtInteractionArea from '@pages/HomePage/components/SearchThoughtInteractionArea';
 
 import {
   isCreateThoughtModeSelector,
-  isEditThoughtTextModeSelector,
+  isEditThoughtModeSelector,
   isSearchThoughtModeSelector
 } from '@pages/HomePage/slice';
 
 const ThoughtInteractionArea = () => {
   const isCreateThoughtMode = useSelector(isCreateThoughtModeSelector);
-  const isEditThoughtTextMode = useSelector(isEditThoughtTextModeSelector);
+  const isEditThoughtMode = useSelector(isEditThoughtModeSelector);
   const isSearchThoughtMode = useSelector(isSearchThoughtModeSelector);
 
-  if (isCreateThoughtMode) return <CreateThoughtInteractionArea />;
-  if (isEditThoughtTextMode) return <EditThoughtTextInteractionArea />;
+  if (isCreateThoughtMode || isEditThoughtMode) return <SaveThoughtInteractionArea />;
   if (isSearchThoughtMode) return <SearchThoughtInteractionArea />;
 
   return null;
