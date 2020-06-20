@@ -1,7 +1,20 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import { useSelector } from 'react-redux';
 
 import FlatList from '@components/FlatList';
+
+import Thought from '@pages/HomePage/components/Thought';
+
+import { thoughtsSelector } from '@modules/ThoughtsModule/slice';
+import {
+  isSearchThoughtModeSelector,
+  searchThoughtInputTextSelector,
+
+  searchThoughtResultsSelector
+} from '@pages/HomePage/slice';
+
+import { THOUGHT_STREAM } from '@pages/HomePage/constants/identifiers';
 
 const styles = StyleSheet.create({
   view: {
@@ -10,16 +23,19 @@ const styles = StyleSheet.create({
   }
 });
 
-const ThoughtStream = ({ thoughts, ThoughtContainer }) => {
-  const renderThought = ({ item: thought }) => <ThoughtContainer thought={thought} />;
+const ThoughtStream = () => {
+  const isSearchMode = useSelector(isSearchThoughtModeSelector);
+  const searchInputText = useSelector(searchThoughtInputTextSelector);
+
+  const thoughts = useSelector(thoughtsSelector);
+  const searchResults = useSelector(searchThoughtResultsSelector);
+
+  const items = isSearchMode && searchInputText ? searchResults : thoughts;
+  const renderItem = ({ item }) => <Thought thought={item} />;
 
   return (
-    <View style={styles.view}>
-      <FlatList
-        scrollToBottomOnChange
-        items={thoughts}
-        renderItem={renderThought}
-      />
+    <View testID={THOUGHT_STREAM} style={styles.view}>
+      <FlatList scrollToBottomOnChange items={items} renderItem={renderItem} />
     </View>
   );
 };
