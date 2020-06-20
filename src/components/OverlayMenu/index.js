@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Dimensions, Modal } from 'react-native';
 
-import Backdrop from './Backdrop';
-import Menu from './Menu';
-
+import Backdrop from '@components/Backdrop';
 import TouchableView from '@components/TouchableView';
+
+import Menu from './Menu';
 
 import { percentStringToNumber, isPercentString } from '@utils/percents';
 import { toBool } from '@utils/booleans';
@@ -84,8 +84,7 @@ const OverlayMenu = ({
   backdropStyle
 }) => {
   const [page, setPage] = useState({});
-  // HACK
-  // useWindowDimensions causes infinite re-rendering
+  // HACK useWindowDimensions causes infinite re-rendering
   // https://github.com/facebook/react-native/issues/26733
   // const window = useWindowDimensions();
   const window = {
@@ -114,11 +113,7 @@ const OverlayMenu = ({
         {renderContent()}
       </TouchableView>
 
-      {/*
-        HACK
-        toBool(isVisible) is necessary here,
-        because Modal `visible` prop treats `null` as truthy value.
-      */}
+      {/* HACK toBool(isVisible) is necessary here, because Modal `visible` prop treats `null` as truthy value. */}
       <Modal visible={toBool(isVisible)} onRequestClose={onBackdropPress} transparent>
         <Backdrop onPress={onBackdropPress} style={backdropStyle} />
 
