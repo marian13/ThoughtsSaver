@@ -9,7 +9,7 @@ const initialState = {
   thoughtInCreate: {},
   thoughtInEdit: {},
 
-  searchThoughtInputText: '',
+  searchThoughtText: '',
   searchThoughtResults: [],
   searchThoughtOptions: [SEARCH_THOUGHT_BY_TEXT_OPTION],
 };

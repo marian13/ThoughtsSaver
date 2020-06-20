@@ -17,6 +17,7 @@ export const {
   setThought,
   resetThought,
   changeThoughtText,
+  addEmojiToThought,
 
   startCreateThoughtMode,
   finishCreateThoughtMode,
@@ -29,8 +30,8 @@ export const {
 
   startSearchThoughtMode,
   finishSearchThoughtMode,
-  changeSearchThoughtInputText,
-  appendEmojiToSearchThoughtInputText,
+  changeSearchThoughtText,
+  addEmojiToSearchThoughtText,
   changeSearchThoughtResults,
   changeSearchThoughtOptions
 } = HomePageSlice.actions;
@@ -52,7 +53,7 @@ export const {
   isSearchThoughtByTextOptionSelectedSelector,
   isSearchThoughtByTagOptionSelectedSelector,
   isSearchThoughtFuzzyOptionSelectedSelector,
-  searchThoughtInputTextSelector,
+  searchThoughtTextSelector,
   searchThoughtResultsSelector,
   searchThoughtOptionsSelector
 } = selectors;

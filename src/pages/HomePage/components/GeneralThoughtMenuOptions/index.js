@@ -3,14 +3,14 @@ import { useDispatch } from 'react-redux';
 
 import OverlayMenuOption from '@components/OverlayMenuOption';
 
-import startSearchThoughtThunk from '@pages/HomePage/thunks/startSearchThoughtThunk';
+import selectSearchThoughtOptionThunk from './thunks/selectSearchThoughtOptionThunk';
 
 import { START_SEARCH_THOUGHT_OPTION } from '@pages/HomePage/constants/identifiers';
 
 const GeneralThoughtMenuOptions = () => {
   const dispatch = useDispatch();
 
-  const handleSearchOptionPress = () => dispatch(startSearchThoughtThunk());
+  const handleSearchOptionPress = () => dispatch(selectSearchThoughtOptionThunk());
 
   return (
     <>

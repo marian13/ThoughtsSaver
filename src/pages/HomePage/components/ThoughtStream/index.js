@@ -9,7 +9,7 @@ import Thought from '@pages/HomePage/components/Thought';
 import { thoughtsSelector } from '@modules/ThoughtsModule/slice';
 import {
   isSearchThoughtModeSelector,
-  searchThoughtInputTextSelector,
+  searchThoughtTextSelector,
 
   searchThoughtResultsSelector
 } from '@pages/HomePage/slice';
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
 const ThoughtStream = () => {
   const isSearchMode = useSelector(isSearchThoughtModeSelector);
-  const searchInputText = useSelector(searchThoughtInputTextSelector);
+  const searchInputText = useSelector(searchThoughtTextSelector);
 
   const thoughts = useSelector(thoughtsSelector);
   const searchResults = useSelector(searchThoughtResultsSelector);

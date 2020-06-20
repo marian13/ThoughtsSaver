@@ -36,7 +36,7 @@ export const isSearchThoughtFuzzyOptionSelectedSelector = createHomePageSelector
   has(state.searchThoughtOptions, SEARCH_THOUGHT_FUZZY_OPTION)
 ));
 
-export const searchThoughtInputTextSelector = createHomePageSelector(state => state.searchThoughtInputText);
+export const searchThoughtTextSelector = createHomePageSelector(state => state.searchThoughtText);
 export const searchThoughtResultsSelector = createHomePageSelector(state => state.searchThoughtResults);
 export const searchThoughtOptionsSelector = createHomePageSelector(state => state.searchThoughtOptions);
 

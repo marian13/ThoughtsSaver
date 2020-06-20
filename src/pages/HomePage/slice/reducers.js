@@ -19,6 +19,13 @@ export const changeThoughtText = (state, action) => {
   thought.text = text;
 };
 
+export const addEmojiToThought = (state, action) => {
+  const { emoji } = action.payload;
+  const { thought } = state;
+
+  thought.text = `${toString(thought.text)}${emoji}`;
+};
+
 export const startCreateThoughtMode = state => {
   state.isCreateThoughtMode = true;
 };
@@ -59,16 +66,16 @@ export const finishSearchThoughtMode = state => {
   state.isSearchThoughtMode = false;
 };
 
-export const changeSearchThoughtInputText = (state, action) => {
+export const changeSearchThoughtText = (state, action) => {
   const { text } = action.payload;
 
-  state.searchThoughtInputText = text;
+  state.searchThoughtText = text;
 };
 
-export const appendEmojiToSearchThoughtInputText = (state, action) => {
+export const addEmojiToSearchThoughtText = (state, action) => {
   const { emoji } = action.payload;
 
-  state.searchThoughtInputText = `${toString(state.searchThoughtInputText)}${emoji}`;
+  state.searchThoughtText = `${toString(state.searchThoughtText)}${emoji}`;
 };
 
 export const changeSearchThoughtResults = (state, action) => {

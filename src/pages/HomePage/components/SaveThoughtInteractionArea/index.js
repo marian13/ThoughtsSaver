@@ -16,7 +16,7 @@ import AttachRecordingToThoughtButton from '@pages/HomePage/components/AttachRec
 import AttachPhotoToThoughtButton from '@pages/HomePage/components/AttachPhotoToThoughtButton';
 import ShowGeneralThoughtOptionsButton from '@pages/HomePage/components/ShowGeneralThoughtOptionsButton';
 
-import EmojiPickerCollapse from '@pages/HomePage/components/EmojiPickerCollapse';
+import SaveThoughtEmojiPickerCollapse from '@pages/HomePage/components/SaveThoughtEmojiPickerCollapse';
 import AdvancedSaveThoughtModal from '@pages/HomePage/components/AdvancedSaveThoughtModal';
 
 import EditThougthInfo from './components/EditThougthInfo';
@@ -54,7 +54,7 @@ const SaveThoughtInteractionArea = () => {
         </View>
       </InteractionRow>
 
-      <EmojiPickerCollapse />
+      <SaveThoughtEmojiPickerCollapse />
       <AdvancedSaveThoughtModal />
     </View>
   );

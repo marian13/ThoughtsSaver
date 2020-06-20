@@ -5,7 +5,7 @@ import {
   isSearchThoughtByTagOptionSelectedSelector,
   isSearchThoughtFuzzyOptionSelectedSelector,
 
-  changeSearchThoughtInputText,
+  changeSearchThoughtText,
   changeSearchThoughtResults
 } from '@pages/HomePage/slice';
 
@@ -29,11 +29,11 @@ const createCombinedFilterFunction = (isByTextSelected, isByTagSelected, searchT
   return thought => any(filterFunctions, filterFunction => filterFunction(thought) === true);
 };
 
-const changeSearchThoughtInputThunk = ({ text: textToSearch }) => (dispatch, getState) => {
+const changeSearchThoughtTextThunk = ({ text: textToSearch }) => (dispatch, getState) => {
   const thoughts = thoughtsSelector(getState());
   const searchText = textToSearch.trim();
 
-  dispatch(changeSearchThoughtInputText({ text: searchText }));
+  dispatch(changeSearchThoughtText({ text: searchText }));
 
   if (!searchText) return dispatch(changeSearchThoughtResults({ results: thoughts }));;
 
@@ -55,4 +55,4 @@ const changeSearchThoughtInputThunk = ({ text: textToSearch }) => (dispatch, get
   dispatch(changeSearchThoughtResults({ results }));
 };
 
-export default changeSearchThoughtInputThunk;
+export default changeSearchThoughtTextThunk;

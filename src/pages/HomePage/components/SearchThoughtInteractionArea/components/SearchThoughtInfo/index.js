@@ -1,10 +1,14 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-
-import { isEmpty, size } from 'lodash';
+import { useSelector } from 'react-redux';
 
 import View from '@components/View';
 import Text from '@components/Text';
+
+import { searchThoughtTextSelector, searchThoughtResultsSelector } from '@pages/HomePage/slice';
+
+import { isEmpty } from 'lodash';
+import { size } from '@utils/arrays';
 
 const styles = StyleSheet.create({
   outerView: {
@@ -14,9 +18,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const renderText = ({ searchThoughtInputText, searchThoughtResults }) => {
+const renderText = ({ searchThoughtText, searchThoughtResults }) => {
   // HACK Rendering invinsible character to keep height.
-  if (isEmpty(searchThoughtInputText)) return ' ';
+  if (isEmpty(searchThoughtText)) return ' ';
 
   if (isEmpty(searchThoughtResults)) return 'No results. Time to investigate this area.';
 
@@ -25,7 +29,10 @@ const renderText = ({ searchThoughtInputText, searchThoughtResults }) => {
   return `${size(searchThoughtResults)} results found.`;
 };
 
-const Info = ({ searchThoughtInputText, searchThoughtResults }) => {
+const SearchThoughtInfo = () => {
+  const searchThoughtText = useSelector(searchThoughtTextSelector);
+  const searchThoughtResults = useSelector(searchThoughtResultsSelector);
+
   return (
     <View style={styles.outerView}>
       <View>
@@ -36,11 +43,11 @@ const Info = ({ searchThoughtInputText, searchThoughtResults }) => {
 
       <View>
         <Text reduced>
-          {renderText({ searchThoughtInputText, searchThoughtResults })}
+          {renderText({ searchThoughtText, searchThoughtResults })}
         </Text>
       </View>
     </View>
   );
 };
 
-export default Info;
+export default SearchThoughtInfo;

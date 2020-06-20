@@ -15,8 +15,8 @@ const ThoughtInteractionArea = () => {
   const isEditThoughtMode = useSelector(isEditThoughtModeSelector);
   const isSearchThoughtMode = useSelector(isSearchThoughtModeSelector);
 
-  if (isCreateThoughtMode || isEditThoughtMode) return <SaveThoughtInteractionArea />;
   if (isSearchThoughtMode) return <SearchThoughtInteractionArea />;
+  if (isCreateThoughtMode || isEditThoughtMode) return <SaveThoughtInteractionArea />;
 
   return null;
 };

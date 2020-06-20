@@ -5,7 +5,7 @@ import {
   CREATE_THOUGHT_BUTTON,
 
   GENERAL_THOUGHT_OPTIONS_BUTTON,
-  START_SEARCH_THOUGHT_BY_TEXT_OPTION,
+  START_SEARCH_THOUGHT_OPTION,
 
   SEARCH_THOUGHT_INPUT
 } from '@pages/HomePage/constants/identifiers';
@@ -16,7 +16,7 @@ export const createThoughtTextInput = () => element(by.id(CREATE_THOUGHT_TEXT_IN
 export const createThoughtButton = () => element(by.id(CREATE_THOUGHT_BUTTON));
 
 export const generalThoughtOptionsButton = () => element(by.id(GENERAL_THOUGHT_OPTIONS_BUTTON));
-export const startSearchThoughtByTextOption = () => element(by.id(START_SEARCH_THOUGHT_BY_TEXT_OPTION));
+export const startSearchThoughtByTextOption = () => element(by.id(START_SEARCH_THOUGHT_OPTION));
 
 export const searchThoughtInput = () => element(by.id(SEARCH_THOUGHT_INPUT));
 

@@ -10,7 +10,7 @@ export const START_SEARCH_THOUGHT_OPTION = 'startSearchThoughtOption';
 
 export const SEARCH_THOUGHT_INPUT = 'searchThoughtInput';
 
-export const SEARCH_THOUGHT_OPTIONS_BUTTON = 'searchThoughtOptionsButton';
+export const TOGGLE_SEARCH_THOUGHT_OPTIONS_COLLAPSE_BUTTON = 'toggleSearchThoughtOptionsCollapseButton';
 export const SEARCH_THOUGHT_OPTIONS_COLLAPSE = 'searchThoughtOptionsCollapse';
 
 export const SEARCH_THOUGHT_BY_TEXT_OPTION = 'searchThoughtByTextOption';

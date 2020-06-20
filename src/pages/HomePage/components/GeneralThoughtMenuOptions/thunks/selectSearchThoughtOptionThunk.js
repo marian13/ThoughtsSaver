@@ -1,19 +1,15 @@
 import { hide } from '@modules/VisibilitiesModule/slice';
 
-import {
-  finishCreateThoughtMode,
-  startSearchThoughtMode
-} from '@pages/HomePage/slice';
+import startSearchThoughtModeThunk from '@pages/HomePage/thunks/startSearchThoughtModeThunk';
 
 import { GENERAL_THOUGHT_OPTIONS_MENU, SEARCH_THOUGHT_INPUT } from '@pages/HomePage/constants/identifiers';
 
 import { dispatchFocus } from '@utils/dispatch';
 
-const startSearchThoughtThunk = () => dispatch => {
-  dispatch(finishCreateThoughtMode());
+const selectSearchThoughtOptionThunk = () => dispatch => {
   dispatch(hide(GENERAL_THOUGHT_OPTIONS_MENU));
-  dispatch(startSearchThoughtMode());
+  dispatch(startSearchThoughtModeThunk());
   dispatchFocus(dispatch, SEARCH_THOUGHT_INPUT);
 };
 
-export default startSearchThoughtThunk;
+export default selectSearchThoughtOptionThunk;

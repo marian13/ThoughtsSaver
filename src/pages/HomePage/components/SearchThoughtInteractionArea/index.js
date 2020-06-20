@@ -1,99 +1,42 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 
 import InteractionRow from '@components/InteractionRow';
-import IconButton from '@components/IconButton';
-import TextInput from '@components/TextInput';
 import View from '@components/View';
 
-import EmojiPickerCollapse from '@pages/HomePage/components/EmojiPickerCollapse';
 import ToggleEmojiPickerCollapseButton from '@pages/HomePage/components/ToggleEmojiPickerCollapseButton';
 
-import Info from './Info';
+import SearchThoughtInfo from './components/SearchThoughtInfo';
+import CancelSearchThoughtButton from './components/CancelSearchThoughtButton';
 
-import {
-  SEARCH_THOUGHT_INPUT,
-  SEARCH_THOUGHT_OPTIONS_BUTTON,
-} from '@pages/HomePage/constants/identifiers';
+import SearchThoughtInput from './components/SearchThoughtInput';
+import FinishSearchThoughtButton from './components/FinishSearchThoughtButton';
 
-const styles = StyleSheet.create({
-  textInputContainerStyle: {
-    paddingLeft: 15
-  }
-});
+import ToggleSearchThoughtOptionsCollapseButton from './components/ToggleSearchThoughtOptionsCollapseButton';
 
-const SearchThoughtInteractionArea = ({
-  isSearchThoughtInputFocused,
-  isEmojiPickerCollapseVisible,
-  isSearchThoughtOptionsVisible,
-  searchThoughtInputText,
-  searchThoughtResults,
-  onSearchThoughtInputChange,
-  onSearchThoughtInputFocus,
-  onSearchThoughtInputBlur,
-  onCancelSearchThoughtButtonPress,
-  onFinishSearchThoughtButtonPress,
-  onShowSearchThoughtOptionsButtonPress,
-  onHideSearchThoughtOptionsButtonPress,
-  onShowEmojiPickerCollapseButtonPress,
-  onHideEmojiPickerCollapseButtonPress,
-  onEmojiPick,
-  SearchThoughtOptionsCollapseContainer
-}) => (
+import SearchThoughtOptionsCollapse from './components/SearchThoughtOptionsCollapse';
+import SearchThoughtEmojiPickerCollapse from './components/SearchThoughtEmojiPickerCollapse';
+
+const SearchThoughtInteractionArea = () => (
   <View avoidKeyboard>
     <InteractionRow>
-      <Info
-        searchThoughtInputText={searchThoughtInputText}
-        searchThoughtResults={searchThoughtResults}
-      />
-
-      <IconButton iconName="close" onPress={onCancelSearchThoughtButtonPress} />
+      <SearchThoughtInfo />
+      <CancelSearchThoughtButton />
     </InteractionRow>
 
     <InteractionRow>
-      <TextInput
-        testID={SEARCH_THOUGHT_INPUT}
-        isFocused={isSearchThoughtInputFocused}
-        autoResise
-        text={searchThoughtInputText}
-        placeholder="Enter your search term..."
-        onFocus={onSearchThoughtInputFocus}
-        onBlur={onSearchThoughtInputBlur}
-        onTextChange={onSearchThoughtInputChange}
-        containerStyle={styles.textInputContainerStyle}
-      />
-
-      <IconButton iconName="check-circle" onPress={onFinishSearchThoughtButtonPress} />
+      <SearchThoughtInput />
+      <FinishSearchThoughtButton />
     </InteractionRow>
 
     <InteractionRow>
       <View horizontal>
-        <IconButton
-          testID={SEARCH_THOUGHT_OPTIONS_BUTTON}
-          iconName={isSearchThoughtOptionsVisible ? 'keyboard-arrow-up' : 'keyboard-arrow-down'}
-          onPress={() => (
-            isSearchThoughtOptionsVisible
-              ? onHideSearchThoughtOptionsButtonPress()
-              : onShowSearchThoughtOptionsButtonPress()
-          )}
-        />
-
-        <ToggleEmojiPickerCollapseButton
-          isEmojiPickerCollapseVisible={isEmojiPickerCollapseVisible}
-          onShowPress={onShowEmojiPickerCollapseButtonPress}
-          onHidePress={onHideEmojiPickerCollapseButtonPress}
-        />
+        <ToggleSearchThoughtOptionsCollapseButton />
+        <ToggleEmojiPickerCollapseButton />
       </View>
-
-      <IconButton iconName="more-vert" />
     </InteractionRow>
 
-    <SearchThoughtOptionsCollapseContainer />
-
-    <EmojiPickerCollapse
-      isVisible={isEmojiPickerCollapseVisible}
-      onEmojiPick={onEmojiPick}
-    />
+    <SearchThoughtOptionsCollapse />
+    <SearchThoughtEmojiPickerCollapse />
   </View>
 );
 
