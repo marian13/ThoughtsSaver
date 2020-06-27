@@ -24,3 +24,8 @@ yarn-error.log
 
 # Expo detox
 bin/Exponent.app
+
+# Ignore .env files with sensitive data
+# https://github.com/kerimdzhanov/dotenv-flow#files-under-version-control
+.env.development.local
+.env.production.local

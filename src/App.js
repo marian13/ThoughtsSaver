@@ -1,4 +1,5 @@
 // https://docs.expo.io/versions/latest/sdk/register-root-component/
+
 import registerRootComponent from 'expo/build/launch/registerRootComponent';
 
 import React from 'react';
