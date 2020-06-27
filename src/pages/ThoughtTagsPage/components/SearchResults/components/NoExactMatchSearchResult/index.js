@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
-import IconButton from '@components/IconButton';
-import Text from '@components/Text';
-import View from '@components/View';
+import IconButton from '~/components/IconButton';
+import Text from '~/components/Text';
+import View from '~/components/View';
 
 import {
   doesSearchThoughtTagsHasExactMatchResultSelector,
   searchThoughtTagsTextSelector
-} from '@pages/ThoughtTagsPage/slice';
+} from '~/pages/ThoughtTagsPage/slice';
 
 import createTagThunk from './thunks/createTagThunk';
 

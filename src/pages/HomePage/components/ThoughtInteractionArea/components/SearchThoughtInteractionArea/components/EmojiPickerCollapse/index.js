@@ -1,14 +1,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import InteractionRow from '@components/InteractionRow';
-import EmojiPicker from '@components/EmojiPicker';
+import InteractionRow from '~/components/InteractionRow';
+import EmojiPicker from '~/components/EmojiPicker';
 
-import { isVisibleSelector } from '@modules/VisibilitiesModule/slice';
+import { isVisibleSelector } from '~/modules/VisibilitiesModule/slice';
 
 import addEmojiToSearchTextThunk from './thunks/addEmojiToSearchTextThunk';
 
-import { EMOJI_PICKER_COLLAPSE } from '@pages/HomePage/constants/identifiers';
+import { EMOJI_PICKER_COLLAPSE } from '~/pages/HomePage/constants/identifiers';
 
 const SearchThoughtEmojiPickerCollapse = () => {
   const dispatch = useDispatch();

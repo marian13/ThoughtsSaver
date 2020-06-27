@@ -1,9 +1,9 @@
 import React from 'react';
 
-import View from '@components/View';
-import Text from '@components/Text';
+import View from '~/components/View';
+import Text from '~/components/Text';
 
-import { splitTextIntoWords } from '@utils/text';
+import { splitTextIntoWords } from '~/utils/text';
 
 const ThoughtText = ({ text }) => {
   if (!text) return null;

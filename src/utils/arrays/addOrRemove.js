@@ -1,7 +1,7 @@
-import none from '@utils/arrays/none';
-import extract from '@utils/arrays/extract';
-import remove from '@utils/arrays/remove';
-import addDest from '@utils/arrays/addDest';
+import none from '~/utils/arrays/none';
+import extract from '~/utils/arrays/extract';
+import remove from '~/utils/arrays/remove';
+import addDest from '~/utils/arrays/addDest';
 
 // Do NOT support elements as functions, since it is NOT clear what to add in such cases.
 const addOrRemove = (array, ...elements) => {

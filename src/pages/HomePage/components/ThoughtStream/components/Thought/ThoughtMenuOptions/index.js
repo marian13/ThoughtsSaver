@@ -2,14 +2,14 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
-import OverlayMenuOption from '@components/OverlayMenuOption';
+import OverlayMenuOption from '~/components/OverlayMenuOption';
 
-import { hide } from '@modules/VisibilitiesModule/slice';
+import { hide } from '~/modules/VisibilitiesModule/slice';
 
 import editThoughtThunk from './thunks/editThoughtThunk';
 
-import { getThoughtMenuID } from '@pages/HomePage/constants/identifiers';
-import { THOUGHT_TAGS_PAGE } from '@pages/ThoughtTagsPage/constants/identifiers';
+import { getThoughtMenuID } from '~/pages/HomePage/constants/identifiers';
+import { THOUGHT_TAGS_PAGE } from '~/pages/ThoughtTagsPage/constants/identifiers';
 
 const ThoughtMenuOptions = ({ thought }) => {
   const dispatch = useDispatch();

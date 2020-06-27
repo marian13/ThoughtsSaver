@@ -1,7 +1,7 @@
-import { generateUniqueId } from '@utils/generators';
-import { now } from '@utils/dates';
+import { generateUniqueId } from '~/utils/generators';
+import { now } from '~/utils/dates';
 
-import { tagSeletor, createTag } from '@modules/TagsModule/slice';
+import { tagSeletor, createTag } from '~/modules/TagsModule/slice';
 
 import {
   searchThoughtTagsTextSelector,
@@ -9,7 +9,7 @@ import {
 
   changeSearchThoughtTagsResults,
   addTagToThought
-} from '@pages/ThoughtTagsPage/slice';
+} from '~/pages/ThoughtTagsPage/slice';
 
 const createTagThunk = () => (dispatch, getState) => {
   const text = searchThoughtTagsTextSelector(getState());

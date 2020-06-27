@@ -1,6 +1,6 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { wrap } from '@utils/arrays';
+import { wrap } from '~/utils/arrays';
 
 describe('wrap', () => {
   context('when object is undefined', () => {

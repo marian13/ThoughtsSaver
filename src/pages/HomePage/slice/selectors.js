@@ -4,9 +4,9 @@ import {
   SEARCH_THOUGHT_BY_TEXT_OPTION,
   SEARCH_THOUGHT_BY_TAG_OPTION,
   SEARCH_THOUGHT_FUZZY_OPTION
-} from '@pages/HomePage/constants/identifiers';
+} from '~/pages/HomePage/constants/identifiers';
 
-import { has } from '@utils/arrays';
+import { has } from '~/utils/arrays';
 
 const createHomePageSelector = selector => (
   createSelector(state => state.HomePage, selector)

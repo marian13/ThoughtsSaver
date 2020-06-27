@@ -3,24 +3,23 @@ const path = require('path');
 module.exports = function(api) {
   api.cache(true);
 
+  const rootImportOpts = {
+    paths: [
+      {
+        root: __dirname,
+        rootPathPrefix: '~/',
+        rootPathSuffix: 'src',
+      },
+      {
+        root: __dirname,
+        rootPathPrefix: '#/',
+        rootPathSuffix: 'spec',
+      }
+    ]
+  };
+
   return {
     presets: ['babel-preset-expo'],
-    plugins: [
-      [
-        'module-resolver',
-        {
-          alias: {
-            '@components': './src/components',
-            '@constants': './src/constants',
-            '@images': './src/images',
-            '@modules': './src/modules',
-            '@modals': './src/modals',
-            '@pages': './src/pages',
-            '@utils': './src/utils',
-            '@specHelper': './spec/specHelper'
-          }
-        },
-      ],
-    ],
+    plugins: [['babel-plugin-root-import', rootImportOpts]]
   };
 };

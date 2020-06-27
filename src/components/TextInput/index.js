@@ -2,12 +2,12 @@ import React, { useLayoutEffect, useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { Input } from 'react-native-elements';
 
-import ScrollView from '@components/ScrollView';
-import IconButton from '@components/IconButton';
+import ScrollView from '~/components/ScrollView';
+import IconButton from '~/components/IconButton';
 
-import { fontSizes } from '@constants/fonts';
+import { fontSizes } from '~/constants/fonts';
 
-import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
 
 const styles = StyleSheet.create({
   scrollView: {

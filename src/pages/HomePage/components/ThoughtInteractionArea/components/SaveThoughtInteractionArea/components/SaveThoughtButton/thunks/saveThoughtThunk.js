@@ -1,17 +1,17 @@
-import { generateUniqueId } from '@utils/generators';
-import { now } from '@utils/dates';
+import { generateUniqueId } from '~/utils/generators';
+import { now } from '~/utils/dates';
 
-import { createThought, updateThought } from '@modules/ThoughtsModule/slice';
+import { createThought, updateThought } from '~/modules/ThoughtsModule/slice';
 import {
   isCreateThoughtModeSelector,
 
   thoughtIdSelector,
   thoughtTextSelector,
   resetThought
-} from '@pages/HomePage/slice';
+} from '~/pages/HomePage/slice';
 
-import finishEditThoughtModeThunk from '@pages/HomePage/thunks/finishEditThoughtModeThunk';
-import startCreateThoughtModeThunk from '@pages/HomePage/thunks/startCreateThoughtModeThunk';
+import finishEditThoughtModeThunk from '~/pages/HomePage/thunks/finishEditThoughtModeThunk';
+import startCreateThoughtModeThunk from '~/pages/HomePage/thunks/startCreateThoughtModeThunk';
 
 const create = (dispatch, getState) => {
   const thoughtText = thoughtTextSelector(getState());

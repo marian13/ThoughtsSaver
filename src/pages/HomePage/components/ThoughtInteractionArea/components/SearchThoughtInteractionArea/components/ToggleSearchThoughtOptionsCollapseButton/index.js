@@ -1,14 +1,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import IconButton from '@components/IconButton';
+import IconButton from '~/components/IconButton';
 
-import { isVisibleSelector, show, hide } from '@modules/VisibilitiesModule/slice';
+import { isVisibleSelector, show, hide } from '~/modules/VisibilitiesModule/slice';
 
 import {
   TOGGLE_SEARCH_THOUGHT_OPTIONS_COLLAPSE_BUTTON,
   SEARCH_THOUGHT_OPTIONS_COLLAPSE
-} from '@pages/HomePage/constants/identifiers';
+} from '~/pages/HomePage/constants/identifiers';
 
 const ToggleSearchThoughtOptionsCollapseButton = () => {
   const dispatch = useDispatch();

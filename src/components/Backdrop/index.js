@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import TouchableView from '@components/TouchableView';
+import TouchableView from '~/components/TouchableView';
 
-import { compact } from '@utils/arrays';
-import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+import { compact } from '~/utils/arrays';
+import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
 
 const styles = StyleSheet.create({
   view: {

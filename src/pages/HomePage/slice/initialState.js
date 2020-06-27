@@ -1,4 +1,4 @@
-import { SEARCH_THOUGHT_BY_TEXT_OPTION } from '@pages/HomePage/constants/identifiers';
+import { SEARCH_THOUGHT_BY_TEXT_OPTION } from '~/pages/HomePage/constants/identifiers';
 
 const initialState = {
   isCreateThoughtMode: false,

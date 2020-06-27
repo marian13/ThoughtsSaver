@@ -3,10 +3,10 @@ import { StyleSheet, Text as NativeText } from 'react-native';
 
 import { compact } from 'lodash';
 
-import { fontSizes } from '@constants/fonts';
+import { fontSizes } from '~/constants/fonts';
 
-import { ifProp } from '@utils/props';
-import { createPropTypes, PropTypes } from '@utils/propTypes';
+import { ifProp } from '~/utils/props';
+import { createPropTypes, PropTypes } from '~/utils/propTypes';
 
 const styles = StyleSheet.create({
   white: { color: 'white' },

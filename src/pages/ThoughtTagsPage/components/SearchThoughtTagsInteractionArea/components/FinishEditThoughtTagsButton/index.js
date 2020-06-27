@@ -2,11 +2,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
-import IconButton from '@components/IconButton';
+import IconButton from '~/components/IconButton';
 
 import finishEditThoughtTagsThunk from './thunks/finishEditThoughtTagsThunk';
 
-import { HOME_PAGE } from '@pages/HomePage/constants/identifiers';
+import { HOME_PAGE } from '~/pages/HomePage/constants/identifiers';
 
 const FinishEditThoughtTagsButton = () => {
   const dispatch = useDispatch();

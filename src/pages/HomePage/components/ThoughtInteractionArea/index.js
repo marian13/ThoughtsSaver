@@ -8,7 +8,7 @@ import {
   isCreateThoughtModeSelector,
   isEditThoughtModeSelector,
   isSearchThoughtModeSelector
-} from '@pages/HomePage/slice';
+} from '~/pages/HomePage/slice';
 
 const ThoughtInteractionArea = () => {
   const isCreateThoughtMode = useSelector(isCreateThoughtModeSelector);

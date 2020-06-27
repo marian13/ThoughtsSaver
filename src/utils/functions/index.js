@@ -1,3 +1,3 @@
-import isFunction from '@utils/functions/isFunction';
+import isFunction from '~/utils/functions/isFunction';
 
 export { isFunction };

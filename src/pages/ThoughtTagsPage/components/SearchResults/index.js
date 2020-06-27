@@ -2,13 +2,13 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 
-import FlatList from '@components/FlatList';
-import View from '@components/View';
+import FlatList from '~/components/FlatList';
+import View from '~/components/View';
 
 import SearchResult from './components/SearchResult';
 import NoExactMatchSearchResult from './components/NoExactMatchSearchResult';
 
-import { searchThoughtTagsResultsSelector } from '@pages/ThoughtTagsPage/slice';
+import { searchThoughtTagsResultsSelector } from '~/pages/ThoughtTagsPage/slice';
 
 const styles = StyleSheet.create({
   view: {

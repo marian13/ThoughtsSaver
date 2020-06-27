@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { find, some } from 'lodash';
 
-import { toBool } from '@utils/booleans';
+import { toBool } from '~/utils/booleans';
 
 const createThoughtTagsPageSelector = selector => (
   createSelector(state => state.ThoughtTagsPage, selector)

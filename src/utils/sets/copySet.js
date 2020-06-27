@@ -1,4 +1,4 @@
-import createSet from '@utils/sets/createSet';
+import createSet from '~/utils/sets/createSet';
 
 const copySet = set => createSet(set);
 

@@ -1,6 +1,6 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { add } from '@utils/arrays';
+import { add } from '~/utils/arrays';
 
 describe('add', () => {
   context('when no elements passed', () => {

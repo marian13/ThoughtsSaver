@@ -1,4 +1,4 @@
-import finishSearchThoughtModeThunk from '@pages/HomePage/thunks/finishSearchThoughtModeThunk';
+import finishSearchThoughtModeThunk from '~/pages/HomePage/thunks/finishSearchThoughtModeThunk';
 
 const cancelSearchThoughtThunk = () => dispatch => dispatch(finishSearchThoughtModeThunk());
 

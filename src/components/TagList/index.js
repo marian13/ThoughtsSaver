@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { some } from 'lodash';
 
-import Tag from '@components/Tag';
+import Tag from '~/components/Tag';
 
 const styles = StyleSheet.create({
   view: {

@@ -1,6 +1,6 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { addOrRemove, createSet } from '@utils/sets';
+import { addOrRemove, createSet } from '~/utils/sets';
 
 describe('addOrRemove', () => {
   context('when no elements passed', () => {

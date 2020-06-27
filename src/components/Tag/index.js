@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 
 import { compact } from 'lodash';
 
-import View from '@components/View';
-import Text from '@components/Text';
+import View from '~/components/View';
+import Text from '~/components/Text';
 
 const styles = StyleSheet.create({
   view: {

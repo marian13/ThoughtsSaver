@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import IconButton from '@components/IconButton';
+import IconButton from '~/components/IconButton';
 
-import { isVisibleSelector, show, hide } from '@modules/VisibilitiesModule/slice';
+import { isVisibleSelector, show, hide } from '~/modules/VisibilitiesModule/slice';
 
-import { EMOJI_PICKER_COLLAPSE, TOGGLE_EMOJI_PICKER_COLLAPSE_BUTTON } from '@pages/HomePage/constants/identifiers';
+import { EMOJI_PICKER_COLLAPSE, TOGGLE_EMOJI_PICKER_COLLAPSE_BUTTON } from '~/pages/HomePage/constants/identifiers';
 
-import { ifProp } from '@utils/props';
+import { ifProp } from '~/utils/props';
 
 const ToggleEmojiPickerCollapseButton = () => {
   const dispatch = useDispatch();

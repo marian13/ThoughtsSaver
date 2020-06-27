@@ -1,9 +1,9 @@
 import React from 'react';
 
-import CheckBox from '@components/CheckBox';
-import Text from '@components/Text';
-import TouchableView from '@components/TouchableView';
-import View from '@components/View';
+import CheckBox from '~/components/CheckBox';
+import Text from '~/components/Text';
+import TouchableView from '~/components/TouchableView';
+import View from '~/components/View';
 
 const SearchThoughtOption = ({
   testID,

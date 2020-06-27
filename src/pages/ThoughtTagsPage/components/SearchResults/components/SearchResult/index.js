@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Tag from '@components/Tag';
-import IconButton from '@components/IconButton';
-import CheckBox from '@components/CheckBox';
+import Tag from '~/components/Tag';
+import IconButton from '~/components/IconButton';
+import CheckBox from '~/components/CheckBox';
 
-import View from '@components/View';
-import TouchableView from '@components/TouchableView';
+import View from '~/components/View';
+import TouchableView from '~/components/TouchableView';
 
-import { doesThoughtHasTagSelector } from '@pages/ThoughtTagsPage/slice';
+import { doesThoughtHasTagSelector } from '~/pages/ThoughtTagsPage/slice';
 
 import changeThoughtTagsThunk from './thunks/changeThoughtTagsThunk';
 

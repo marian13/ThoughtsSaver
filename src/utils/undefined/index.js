@@ -1,4 +1,4 @@
-import isUndefined from '@utils/undefined/isUndefined';
+import isUndefined from '~/utils/undefined/isUndefined';
 
 export {
   isUndefined

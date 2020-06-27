@@ -1,4 +1,4 @@
-import { addTagToThought, removeTagFromThought } from '@pages/ThoughtTagsPage/slice';
+import { addTagToThought, removeTagFromThought } from '~/pages/ThoughtTagsPage/slice';
 
 const changeThoughtTagsThunk = ({ selected, tag }) => dispatch => {
   if (selected) {

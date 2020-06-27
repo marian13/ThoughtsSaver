@@ -1,11 +1,11 @@
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 
-import View from '@components/View';
+import View from '~/components/View';
 
-import facebookLogoImage from '@images/facebook-logo-64px.png';
-import googleLogoImage from '@images/google-logo-64px.png';
-import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+import facebookLogoImage from '~/images/facebook-logo-64px.png';
+import googleLogoImage from '~/images/google-logo-64px.png';
+import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
 
 const styles = StyleSheet.create({
   view: {

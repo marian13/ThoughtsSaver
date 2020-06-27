@@ -1,6 +1,6 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { removeDest } from '@utils/arrays';
+import { removeDest } from '~/utils/arrays';
 
 describe('removeDest', () => {
   it('supports element as function', () => {

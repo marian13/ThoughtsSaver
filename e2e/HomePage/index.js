@@ -8,9 +8,9 @@ import {
   START_SEARCH_THOUGHT_OPTION,
 
   SEARCH_THOUGHT_INPUT
-} from '@pages/HomePage/constants/identifiers';
+} from '~/pages/HomePage/constants/identifiers';
 
-import { generateThoughtTestID } from '@utils/generators';
+import { generateThoughtTestID } from '~/utils/generators';
 
 export const createThoughtTextInput = () => element(by.id(CREATE_THOUGHT_TEXT_INPUT));
 export const createThoughtButton = () => element(by.id(CREATE_THOUGHT_BUTTON));

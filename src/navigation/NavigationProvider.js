@@ -4,14 +4,14 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import LoginPage from '@pages/LoginPage';
-import { LOGIN_PAGE } from '@pages/LoginPage/constants/identifiers';
+import LoginPage from '~/pages/LoginPage';
+import { LOGIN_PAGE } from '~/pages/LoginPage/constants/identifiers';
 
-import HomePage from '@pages/HomePage';
-import { HOME_PAGE } from '@pages/HomePage/constants/identifiers';
+import HomePage from '~/pages/HomePage';
+import { HOME_PAGE } from '~/pages/HomePage/constants/identifiers';
 
-import ThoughtTagsPage from '@pages/ThoughtTagsPage';
-import { THOUGHT_TAGS_PAGE } from '@pages/ThoughtTagsPage/constants/identifiers';
+import ThoughtTagsPage from '~/pages/ThoughtTagsPage';
+import { THOUGHT_TAGS_PAGE } from '~/pages/ThoughtTagsPage/constants/identifiers';
 
 const Stack = createStackNavigator();
 

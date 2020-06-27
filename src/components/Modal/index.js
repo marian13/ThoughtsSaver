@@ -1,11 +1,11 @@
 import React from 'react';
 import { Modal as NativeModal, StyleSheet } from 'react-native';
 
-import Backdrop from '@components/Backdrop';
-import Text from '@components/Text';
-import View from '@components/View';
+import Backdrop from '~/components/Backdrop';
+import Text from '~/components/Text';
+import View from '~/components/View';
 
-import { toBool } from '@utils/booleans';
+import { toBool } from '~/utils/booleans';
 
 const styles = StyleSheet.create({
   view: {

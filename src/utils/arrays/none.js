@@ -1,4 +1,4 @@
-import empty from '@utils/arrays/empty';
+import empty from '~/utils/arrays/empty';
 
 const none = array => empty(array);
 

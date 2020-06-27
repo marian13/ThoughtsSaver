@@ -1,6 +1,6 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { addDest } from '@utils/arrays';
+import { addDest } from '~/utils/arrays';
 
 describe('addDest', () => {
   context('when no elements passed', () => {

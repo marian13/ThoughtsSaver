@@ -1,8 +1,8 @@
 import React from 'react';
 
-import IconButton from '@components/IconButton';
+import IconButton from '~/components/IconButton';
 
-import { createPropTypes, PropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes } from '~/utils/propTypes';
 
 const CheckBox = ({ checked, value, onPress }) => (
   <IconButton

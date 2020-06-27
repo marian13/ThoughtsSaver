@@ -6,9 +6,9 @@ import {
   View as NativeView
 } from 'react-native';
 
-import { compact } from '@utils/arrays';
-import { ifProp } from '@utils/props';
-import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+import { compact } from '~/utils/arrays';
+import { ifProp } from '~/utils/props';
+import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
 
 const styles = StyleSheet.create({
   topBorder: {

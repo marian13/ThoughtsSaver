@@ -1,6 +1,6 @@
-import { isVisibleSelector, show, hide } from '@modules/VisibilitiesModule/slice';
+import { isVisibleSelector, show, hide } from '~/modules/VisibilitiesModule/slice';
 
-import { ADVANCED_SAVE_THOUGHT_MODAL } from '@pages/HomePage/constants/identifiers';
+import { ADVANCED_SAVE_THOUGHT_MODAL } from '~/pages/HomePage/constants/identifiers';
 
 const toggleAdvancedSaveThoughModalThunk = () => (dispatch, getState) => {
   const isModalVisible = isVisibleSelector(ADVANCED_SAVE_THOUGHT_MODAL)(getState());

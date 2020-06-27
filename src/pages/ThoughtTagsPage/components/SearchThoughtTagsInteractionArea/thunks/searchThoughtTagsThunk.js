@@ -1,8 +1,8 @@
-import { tagsSelector } from '@modules/TagsModule/slice';
-import { changeSearchThoughtTagsText, changeSearchThoughtTagsResults } from '@pages/ThoughtTagsPage/slice';
+import { tagsSelector } from '~/modules/TagsModule/slice';
+import { changeSearchThoughtTagsText, changeSearchThoughtTagsResults } from '~/pages/ThoughtTagsPage/slice';
 
 import { some } from 'lodash';
-import { size } from '@utils/arrays';
+import { size } from '~/utils/arrays';
 
 const searchThoughtTagsThunk = ({ text: searchText }) => (dispatch, getState) => {
   const tags = tagsSelector(getState());

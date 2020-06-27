@@ -1,4 +1,4 @@
-import { thoughtsSelector } from '@modules/ThoughtsModule/slice';
+import { thoughtsSelector } from '~/modules/ThoughtsModule/slice';
 
 import {
   isSearchThoughtByTextOptionSelectedSelector,
@@ -7,10 +7,10 @@ import {
 
   changeSearchThoughtText,
   changeSearchThoughtResults
-} from '@pages/HomePage/slice';
+} from '~/pages/HomePage/slice';
 
-import { any, filter, compact } from '@utils/arrays';
-import { fuzzySearch } from '@utils/strings';
+import { any, filter, compact } from '~/utils/arrays';
+import { fuzzySearch } from '~/utils/strings';
 
 const createSearchFunction = isFuzzySelected => {
   if (isFuzzySelected) {

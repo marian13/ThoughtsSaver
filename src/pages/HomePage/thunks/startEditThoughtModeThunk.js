@@ -2,7 +2,7 @@ import {
   setThought,
   setThoughtInEdit,
   startEditThoughtMode
-} from '@pages/HomePage/slice';
+} from '~/pages/HomePage/slice';
 
 const startEditThoughtModeThunk = ({ thought }) => dispatch => {
   dispatch(setThought({ thought }));

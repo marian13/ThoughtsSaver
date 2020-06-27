@@ -3,14 +3,14 @@
 
 import { combineReducers } from '@reduxjs/toolkit';
 
-import ThoughtsModuleReducer from '@modules/ThoughtsModule/slice';
-import TagsModuleReducer from '@modules/TagsModule/slice';
+import ThoughtsModuleReducer from '~/modules/ThoughtsModule/slice';
+import TagsModuleReducer from '~/modules/TagsModule/slice';
 
-import FocusesModuleReducer from '@modules/FocusesModule/slice';
-import VisibilitiesModuleReducer from '@modules/VisibilitiesModule/slice';
+import FocusesModuleReducer from '~/modules/FocusesModule/slice';
+import VisibilitiesModuleReducer from '~/modules/VisibilitiesModule/slice';
 
-import HomePageReducer from '@pages/HomePage/slice';
-import ThoughtTagsPageReducer from '@pages/ThoughtTagsPage/slice';
+import HomePageReducer from '~/pages/HomePage/slice';
+import ThoughtTagsPageReducer from '~/pages/ThoughtTagsPage/slice';
 
 const rootReducer = combineReducers({
   ThoughtsModule: ThoughtsModuleReducer,

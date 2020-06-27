@@ -1,4 +1,4 @@
-import { startSearchThoughtMode } from '@pages/HomePage/slice';
+import { startSearchThoughtMode } from '~/pages/HomePage/slice';
 
 const startSearchThoughtModeThunk = () => dispatch => dispatch(startSearchThoughtMode());
 

@@ -1,6 +1,6 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { copySet, createSet } from '@utils/sets';
+import { copySet, createSet } from '~/utils/sets';
 
 describe('copySet', () => {
   it('returns copy of original set', () => {

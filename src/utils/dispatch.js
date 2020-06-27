@@ -1,4 +1,4 @@
-import { focus } from '@modules/FocusesModule/slice';
+import { focus } from '~/modules/FocusesModule/slice';
 
 // HACK
 // setTimeout can be very slow if `Debug Remote JS` is enabled.

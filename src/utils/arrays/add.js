@@ -1,4 +1,4 @@
-import none from '@utils/arrays/none';
+import none from '~/utils/arrays/none';
 
 const add = (array, ...elements) => {
   if (none(elements)) return array;

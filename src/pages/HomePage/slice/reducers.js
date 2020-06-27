@@ -1,4 +1,4 @@
-import { toString } from '@utils/strings';
+import { toString } from '~/utils/strings';
 import { clone } from 'lodash';
 
 import initialState from './initialState';

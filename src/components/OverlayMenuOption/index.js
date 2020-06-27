@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import TouchableView from '@components/TouchableView';
-import Icon from '@components/Icon';
-import Text from '@components/Text';
-import View from '@components/View';
+import TouchableView from '~/components/TouchableView';
+import Icon from '~/components/Icon';
+import Text from '~/components/Text';
+import View from '~/components/View';
 
-import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
 
 const styles = StyleSheet.create({
   touchable: {

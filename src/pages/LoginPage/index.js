@@ -2,11 +2,11 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import Page from '@components/Page';
-import View from '@components/View';
-import Button from '@components/Button';
+import Page from '~/components/Page';
+import View from '~/components/View';
+import Button from '~/components/Button';
 
-import { HOME_PAGE } from '@pages/HomePage/constants/identifiers';
+import { HOME_PAGE } from '~/pages/HomePage/constants/identifiers';
 
 const styles = StyleSheet.create({
   page: {

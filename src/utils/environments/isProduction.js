@@ -1,6 +1,6 @@
 // https://docs.expo.io/workflow/development-mode/
 
-import toBool from '@utils/booleans/toBool';
+import toBool from '~/utils/booleans/toBool';
 
 const isProduction = () => toBool(__DEV__);
 

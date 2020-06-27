@@ -2,11 +2,11 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Button as NativeElementsButton } from 'react-native-elements';
 
-import Icon from '@components/Icon';
+import Icon from '~/components/Icon';
 
-import { fontSizes } from '@constants/fonts';
-import { ifProp } from '@utils/props';
-import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+import { fontSizes } from '~/constants/fonts';
+import { ifProp } from '~/utils/props';
+import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
 
 const styles = StyleSheet.create({
   title: {

@@ -4,10 +4,10 @@ import registerRootComponent from 'expo/build/launch/registerRootComponent';
 
 import React from 'react';
 
-import './globals';
+import '~/globals';
 
-import Text from './components/Text';
-import View from './components/View';
+import Text from '~/components/Text';
+import View from '~/components/View';
 
 const REPL = () => (
   <View fullWidth fullHeight centered>

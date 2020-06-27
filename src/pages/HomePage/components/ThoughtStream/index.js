@@ -2,19 +2,19 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useSelector } from 'react-redux';
 
-import FlatList from '@components/FlatList';
+import FlatList from '~/components/FlatList';
 
 import Thought from './components/Thought';
 
-import { thoughtsSelector } from '@modules/ThoughtsModule/slice';
+import { thoughtsSelector } from '~/modules/ThoughtsModule/slice';
 import {
   isSearchThoughtModeSelector,
   searchThoughtTextSelector,
 
   searchThoughtResultsSelector
-} from '@pages/HomePage/slice';
+} from '~/pages/HomePage/slice';
 
-import { THOUGHT_STREAM } from '@pages/HomePage/constants/identifiers';
+import { THOUGHT_STREAM } from '~/pages/HomePage/constants/identifiers';
 
 const styles = StyleSheet.create({
   view: {

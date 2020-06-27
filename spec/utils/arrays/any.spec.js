@@ -1,7 +1,7 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { any } from '@utils/arrays';
-import { AnyFunctionError } from '@utils/arrays/any';
+import { any } from '~/utils/arrays';
+import { AnyFunctionError } from '~/utils/arrays/any';
 
 describe('any', () => {
   context('when no function passed', () => {

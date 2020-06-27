@@ -1,6 +1,6 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { addOrRemove } from '@utils/arrays';
+import { addOrRemove } from '~/utils/arrays';
 
 describe('addOrRemove', () => {
   context('when no elements passed', () => {

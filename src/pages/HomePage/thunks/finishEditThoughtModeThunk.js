@@ -1,4 +1,4 @@
-import { resetThoughtInEdit, finishEditThoughtMode } from '@pages/HomePage/slice';
+import { resetThoughtInEdit, finishEditThoughtMode } from '~/pages/HomePage/slice';
 
 const finishEditThoughtModeThunk = () => dispatch => {
   dispatch(resetThoughtInEdit());

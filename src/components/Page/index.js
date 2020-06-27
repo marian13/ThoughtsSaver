@@ -1,8 +1,8 @@
 import React from 'react';
 
-import View from '@components/View';
+import View from '~/components/View';
 
-import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
 
 const Page = ({ children, style }) => (
   <View fullWidth fullHeight style={style}>

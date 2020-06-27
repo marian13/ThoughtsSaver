@@ -3,7 +3,7 @@ import {
 
   setThoughtInCreate,
   finishCreateThoughtMode
-} from '@pages/HomePage/slice';
+} from '~/pages/HomePage/slice';
 
 const finishCreateThoughtModeThunk = () => (dispatch, getState) => {
   const thought = thoughtSelector(getState());

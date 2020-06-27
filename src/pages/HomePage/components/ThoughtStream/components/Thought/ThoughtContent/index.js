@@ -6,10 +6,10 @@ import some from 'lodash/some';
 import ThoughtText from './ThoughtText';
 import Time from './Time';
 
-import TagList from '@components/TagList';
-import View from '@components/View';
+import TagList from '~/components/TagList';
+import View from '~/components/View';
 
-import { renderBlocksAsSingleRow, renderBlocksAsSeparateRows } from '@utils/rendering';
+import { renderBlocksAsSingleRow, renderBlocksAsSeparateRows } from '~/utils/rendering';
 
 const styles = StyleSheet.create({
   outerView: {

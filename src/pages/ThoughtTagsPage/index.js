@@ -3,14 +3,14 @@ import { StyleSheet } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { useRoute } from '@react-navigation/native';
 
-import Page from '@components/Page';
+import Page from '~/components/Page';
 
-import SearchResults from '@pages/ThoughtTagsPage/components/SearchResults';
-import SearchThoughtTagsInteractionArea from '@pages/ThoughtTagsPage/components/SearchThoughtTagsInteractionArea';
+import SearchResults from '~/pages/ThoughtTagsPage/components/SearchResults';
+import SearchThoughtTagsInteractionArea from '~/pages/ThoughtTagsPage/components/SearchThoughtTagsInteractionArea';
 
 import initThunk from './thunks/initThunk';
 
-import { useMountEffect } from '@utils/hooks';
+import { useMountEffect } from '~/utils/hooks';
 
 const styles = StyleSheet.create({
   page: {

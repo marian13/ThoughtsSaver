@@ -2,15 +2,15 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
-import OverlayMenu from '@components/OverlayMenu';
+import OverlayMenu from '~/components/OverlayMenu';
 
 import ThoughtContent from './ThoughtContent';
 import ThoughtMenuOptions from './ThoughtMenuOptions';
 
-import { isVisibleSelector, show, hide } from '@modules/VisibilitiesModule/slice';
+import { isVisibleSelector, show, hide } from '~/modules/VisibilitiesModule/slice';
 
-import { getThoughtID } from '@constants/identifiers';
-import { getThoughtMenuID } from '@pages/HomePage/constants/identifiers';
+import { getThoughtID } from '~/constants/identifiers';
+import { getThoughtMenuID } from '~/pages/HomePage/constants/identifiers';
 
 const styles = StyleSheet.create({
   overlayMenuContainer: {

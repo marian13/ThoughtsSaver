@@ -1,11 +1,11 @@
-import { hide } from '@modules/VisibilitiesModule/slice';
+import { hide } from '~/modules/VisibilitiesModule/slice';
 
-import finishCreateThoughtModeThunk from '@pages/HomePage/thunks/finishCreateThoughtModeThunk';
-import startEditThoughtModeThunk from '@pages/HomePage/thunks/startEditThoughtModeThunk';
+import finishCreateThoughtModeThunk from '~/pages/HomePage/thunks/finishCreateThoughtModeThunk';
+import startEditThoughtModeThunk from '~/pages/HomePage/thunks/startEditThoughtModeThunk';
 
-import { dispatchFocus } from '@utils/dispatch';
+import { dispatchFocus } from '~/utils/dispatch';
 
-import { THOUGHT_TEXT_INPUT, getThoughtMenuID } from '@pages/HomePage/constants/identifiers';
+import { THOUGHT_TEXT_INPUT, getThoughtMenuID } from '~/pages/HomePage/constants/identifiers';
 
 const editThoughtThunk = ({ thought }) => dispatch => {
   dispatch(hide(getThoughtMenuID(thought)));

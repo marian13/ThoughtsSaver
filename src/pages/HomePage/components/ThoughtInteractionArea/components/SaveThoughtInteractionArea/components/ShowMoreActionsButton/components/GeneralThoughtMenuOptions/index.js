@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import OverlayMenuOption from '@components/OverlayMenuOption';
+import OverlayMenuOption from '~/components/OverlayMenuOption';
 
 import selectSearchThoughtOptionThunk from './thunks/selectSearchThoughtOptionThunk';
 
-import { START_SEARCH_THOUGHT_OPTION } from '@pages/HomePage/constants/identifiers';
+import { START_SEARCH_THOUGHT_OPTION } from '~/pages/HomePage/constants/identifiers';
 
 const GeneralThoughtMenuOptions = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { toBool } from '@utils/booleans';
+import { toBool } from '~/utils/booleans';
 
 const createVisibilitiesModuleSelector = selector => (
   createSelector(state => state.VisibilitiesModule, selector)

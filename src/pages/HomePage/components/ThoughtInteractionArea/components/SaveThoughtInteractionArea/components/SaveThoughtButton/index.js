@@ -1,15 +1,15 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import IconButton from '@components/IconButton';
+import IconButton from '~/components/IconButton';
 
-import { isCreateThoughtModeSelector, thoughtTextSelector } from '@pages/HomePage/slice';
+import { isCreateThoughtModeSelector, thoughtTextSelector } from '~/pages/HomePage/slice';
 
 import saveThoughtThunk from './thunks/saveThoughtThunk';
 
-import { toBool } from '@utils/booleans';
+import { toBool } from '~/utils/booleans';
 
-import { SAVE_THOUGHT_BUTTON } from '@pages/HomePage/constants/identifiers';
+import { SAVE_THOUGHT_BUTTON } from '~/pages/HomePage/constants/identifiers';
 
 const SaveThoughtButton = () => {
   const dispatch = useDispatch();

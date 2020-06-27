@@ -1,8 +1,8 @@
-import { now } from '@utils/dates';
+import { now } from '~/utils/dates';
 
-import { updateThought } from '@modules/ThoughtsModule/slice';
+import { updateThought } from '~/modules/ThoughtsModule/slice';
 
-import { thoughtTagsSelector, thoughtInEditIdSelector } from '@pages/ThoughtTagsPage/slice';
+import { thoughtTagsSelector, thoughtInEditIdSelector } from '~/pages/ThoughtTagsPage/slice';
 
 import searchThoughtTagsThunk from '../../../thunks/searchThoughtTagsThunk';
 

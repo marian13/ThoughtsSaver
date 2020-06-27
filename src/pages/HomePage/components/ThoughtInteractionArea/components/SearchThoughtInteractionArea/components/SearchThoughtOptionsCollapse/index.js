@@ -2,18 +2,18 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
-import InteractionRow from '@components/InteractionRow';
-import Text from '@components/Text';
-import View from '@components/View';
+import InteractionRow from '~/components/InteractionRow';
+import Text from '~/components/Text';
+import View from '~/components/View';
 
 import SearchThoughtOption from './components/SearchThoughtOption';
 
-import { isVisibleSelector } from '@modules/VisibilitiesModule/slice';
+import { isVisibleSelector } from '~/modules/VisibilitiesModule/slice';
 import {
   isSearchThoughtByTextOptionSelectedSelector,
   isSearchThoughtByTagOptionSelectedSelector,
   isSearchThoughtFuzzyOptionSelectedSelector
-} from '@pages/HomePage/slice';
+} from '~/pages/HomePage/slice';
 
 import changeSearchThoughtOptionsThunk from './thunks/changeSearchThoughtOptionsThunk';
 
@@ -22,7 +22,7 @@ import {
   SEARCH_THOUGHT_BY_TEXT_OPTION,
   SEARCH_THOUGHT_BY_TAG_OPTION,
   SEARCH_THOUGHT_FUZZY_OPTION
-} from '@pages/HomePage/constants/identifiers';
+} from '~/pages/HomePage/constants/identifiers';
 
 const styles = StyleSheet.create({
   outerView: {

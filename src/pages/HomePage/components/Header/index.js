@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet,  View } from 'react-native';
 import { Header as NativeHeader } from 'react-native-elements';
 
-import Text from '@components/Text';
+import Text from '~/components/Text';
 
 const styles = StyleSheet.create({
   view: { width: '100%' }

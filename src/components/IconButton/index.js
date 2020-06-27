@@ -1,9 +1,9 @@
 import React from 'react';
 
-import TouchableView from '@components/TouchableView';
-import Icon from '@components/Icon';
+import TouchableView from '~/components/TouchableView';
+import Icon from '~/components/Icon';
 
-import { createPropTypes, PropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes } from '~/utils/propTypes';
 
 const IconButton = ({
   testID,

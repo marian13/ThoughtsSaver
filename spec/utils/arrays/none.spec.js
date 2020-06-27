@@ -1,6 +1,6 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { none } from '@utils/arrays';
+import { none } from '~/utils/arrays';
 
 describe('none', () => {
   context('when array is empty', () => {

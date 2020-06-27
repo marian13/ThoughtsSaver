@@ -1,6 +1,6 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { extract } from '@utils/arrays';
+import { extract } from '~/utils/arrays';
 
 describe('extract', () => {
   it('supports element as function', () => {

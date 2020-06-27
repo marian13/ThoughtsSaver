@@ -3,7 +3,7 @@ import {
   resetThoughtInEdit,
   resetSearchThoughtTagsText,
   resetSearchThoughtTagsResults
-} from '@pages/ThoughtTagsPage/slice';
+} from '~/pages/ThoughtTagsPage/slice';
 
 const resetThunk = () => dispatch => {
   dispatch(resetThought());

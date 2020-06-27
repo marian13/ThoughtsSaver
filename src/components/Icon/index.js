@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Icon as NativeElementsIcon } from 'react-native-elements';
 
-import View from '@components/View';
+import View from '~/components/View';
 import SocialIcon from './SocialIcon';
 
-import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
 
 const styles = StyleSheet.create({
   view: {

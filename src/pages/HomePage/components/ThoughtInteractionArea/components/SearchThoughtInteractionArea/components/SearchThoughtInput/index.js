@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
-import TextInput from '@components/TextInput';
+import TextInput from '~/components/TextInput';
 
-import { isFocusedSelector, focus, blur } from '@modules/FocusesModule/slice';
-import { searchThoughtTextSelector } from '@pages/HomePage/slice';
+import { isFocusedSelector, focus, blur } from '~/modules/FocusesModule/slice';
+import { searchThoughtTextSelector } from '~/pages/HomePage/slice';
 
-import { SEARCH_THOUGHT_INPUT } from '@pages/HomePage/constants/identifiers';
+import { SEARCH_THOUGHT_INPUT } from '~/pages/HomePage/constants/identifiers';
 
-import changeSearchThoughtTextThunk from '@pages/HomePage/components/ThoughtInteractionArea/components/SearchThoughtInteractionArea/thunks/changeSearchThoughtTextThunk';
+import changeSearchThoughtTextThunk from '~/pages/HomePage/components/ThoughtInteractionArea/components/SearchThoughtInteractionArea/thunks/changeSearchThoughtTextThunk';
 
 const styles = StyleSheet.create({
   textInputContainerStyle: {

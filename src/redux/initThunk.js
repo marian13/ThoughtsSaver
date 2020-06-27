@@ -1,4 +1,4 @@
-import startCreateThoughtModeThunk from '@pages/HomePage/thunks/startCreateThoughtModeThunk';
+import startCreateThoughtModeThunk from '~/pages/HomePage/thunks/startCreateThoughtModeThunk';
 
 const initThunk = () => dispatch => dispatch(startCreateThoughtModeThunk());
 

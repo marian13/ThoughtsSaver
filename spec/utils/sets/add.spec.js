@@ -1,6 +1,6 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { add, createSet } from '@utils/sets';
+import { add, createSet } from '~/utils/sets';
 
 describe('add', () => {
   context('when no elements passed', () => {

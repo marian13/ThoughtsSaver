@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import InteractionRow from '@components/InteractionRow';
-import Modal from '@components/Modal';
-import View from '@components/View';
+import InteractionRow from '~/components/InteractionRow';
+import Modal from '~/components/Modal';
+import View from '~/components/View';
 
 import ToggleEmojiPickerCollapseButton from '../../../ToggleEmojiPickerCollapseButton';
 
@@ -15,9 +15,9 @@ import AttachPhotoToThoughtButton from '../AttachPhotoToThoughtButton';
 import ShowMoreActionsButton from '../ShowMoreActionsButton';
 import EmojiPickerCollapse from '../EmojiPickerCollapse';
 
-import { isVisibleSelector, hide } from '@modules/VisibilitiesModule/slice';
+import { isVisibleSelector, hide } from '~/modules/VisibilitiesModule/slice';
 
-import { ADVANCED_SAVE_THOUGHT_MODAL } from '@pages/HomePage/constants/identifiers';
+import { ADVANCED_SAVE_THOUGHT_MODAL } from '~/pages/HomePage/constants/identifiers';
 
 const AdvancedSaveThoughtModal = () => {
   const dispatch = useDispatch();

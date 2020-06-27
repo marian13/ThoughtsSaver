@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import View from '@components/View';
+import View from '~/components/View';
 
-import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
 
 const styles = StyleSheet.create({
   outerView: {

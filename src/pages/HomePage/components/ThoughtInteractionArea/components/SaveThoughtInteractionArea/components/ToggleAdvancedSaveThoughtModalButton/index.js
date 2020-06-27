@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import IconButton from '@components/IconButton';
+import IconButton from '~/components/IconButton';
 
 import toggleAdvancedSaveThoughtModalThunk from './thunks/toggleAdvancedSaveThoughtModalThunk';
 

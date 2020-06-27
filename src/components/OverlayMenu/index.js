@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Dimensions, Modal } from 'react-native';
 
-import Backdrop from '@components/Backdrop';
-import TouchableView from '@components/TouchableView';
+import Backdrop from '~/components/Backdrop';
+import TouchableView from '~/components/TouchableView';
 
 import Menu from './Menu';
 
-import { percentStringToNumber, isPercentString } from '@utils/percents';
-import { toBool } from '@utils/booleans';
+import { percentStringToNumber, isPercentString } from '~/utils/percents';
+import { toBool } from '~/utils/booleans';
 
-import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
 
 const calculateWidth = (menu, window) => {
   if (isPercentString(menu.width)) {

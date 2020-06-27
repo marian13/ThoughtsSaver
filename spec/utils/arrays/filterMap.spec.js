@@ -1,6 +1,6 @@
-import '@specHelper';
+import '#/specHelper';
 
-import { filterMap } from '@utils/arrays';
+import { filterMap } from '~/utils/arrays';
 
 describe('filterMap', () => {
   context('when array is empty', () => {

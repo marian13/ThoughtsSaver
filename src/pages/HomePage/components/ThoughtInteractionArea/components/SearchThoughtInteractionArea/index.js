@@ -1,7 +1,7 @@
 import React from 'react';
 
-import InteractionRow from '@components/InteractionRow';
-import View from '@components/View';
+import InteractionRow from '~/components/InteractionRow';
+import View from '~/components/View';
 
 import ToggleEmojiPickerCollapseButton from '../ToggleEmojiPickerCollapseButton';
 

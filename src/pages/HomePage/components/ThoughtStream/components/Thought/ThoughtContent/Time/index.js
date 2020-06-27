@@ -1,9 +1,9 @@
 import React from 'react';
 
-import View from '@components/View';
-import Text from '@components/Text';
+import View from '~/components/View';
+import Text from '~/components/Text';
 
-import { hoursAndMinutes } from '@utils/dates';
+import { hoursAndMinutes } from '~/utils/dates';
 
 const Time = ({ createdAt, style }) => (
   <View style={style}>

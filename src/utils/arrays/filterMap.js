@@ -1,5 +1,5 @@
-import empty from '@utils/arrays/empty';
-import addDest from '@utils/arrays/addDest';
+import empty from '~/utils/arrays/empty';
+import addDest from '~/utils/arrays/addDest';
 
 const createFilterMapReducer = filterMapFunction => (memo, element, index) => {
   const result = filterMapFunction(element, index);

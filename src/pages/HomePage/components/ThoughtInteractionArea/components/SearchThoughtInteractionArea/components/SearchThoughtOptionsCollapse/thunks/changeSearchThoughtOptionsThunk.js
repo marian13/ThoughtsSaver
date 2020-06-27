@@ -3,11 +3,11 @@ import {
   searchThoughtTextSelector,
 
   changeSearchThoughtOptions
-} from '@pages/HomePage/slice';
+} from '~/pages/HomePage/slice';
 
-import changeSearchThoughtTextThunk from '@pages/HomePage/components/ThoughtInteractionArea/components/SearchThoughtInteractionArea/thunks/changeSearchThoughtTextThunk';
+import changeSearchThoughtTextThunk from '~/pages/HomePage/components/ThoughtInteractionArea/components/SearchThoughtInteractionArea/thunks/changeSearchThoughtTextThunk';
 
-import { addOrRemove } from '@utils/arrays';
+import { addOrRemove } from '~/utils/arrays';
 
 const changeSearchThoughtOptionsThunk = ({ option }) => (dispatch, getState) => {
   const options = searchThoughtOptionsSelector(getState());

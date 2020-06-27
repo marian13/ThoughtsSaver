@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { View, FlatList as NativeFlatList } from 'react-native';
 
-import { createPropTypes, PropTypes } from '@utils/propTypes';
+import { createPropTypes, PropTypes } from '~/utils/propTypes';
 
 const FlatList = ({
   scrollToBottomOnChange,

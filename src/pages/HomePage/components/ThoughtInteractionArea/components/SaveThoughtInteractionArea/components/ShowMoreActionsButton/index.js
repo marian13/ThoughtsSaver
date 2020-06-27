@@ -1,14 +1,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Icon from '@components/Icon';
-import OverlayMenu from '@components/OverlayMenu';
+import Icon from '~/components/Icon';
+import OverlayMenu from '~/components/OverlayMenu';
 
 import GeneralThoughtMenuOptions from './components/GeneralThoughtMenuOptions';
 
-import { isVisibleSelector, show, hide } from '@modules/VisibilitiesModule/slice';
+import { isVisibleSelector, show, hide } from '~/modules/VisibilitiesModule/slice';
 
-import { GENERAL_THOUGHT_OPTIONS_BUTTON, GENERAL_THOUGHT_OPTIONS_MENU } from '@pages/HomePage/constants/identifiers';
+import { GENERAL_THOUGHT_OPTIONS_BUTTON, GENERAL_THOUGHT_OPTIONS_MENU } from '~/pages/HomePage/constants/identifiers';
 
 const ShowMoreActionsButton = () => {
   const dispatch = useDispatch();

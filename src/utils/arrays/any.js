@@ -1,6 +1,6 @@
-import isFunction from '@utils/functions/isFunction';
-import toBool from '@utils/booleans/toBool';
-import isUndefined from '@utils/undefined/isUndefined';
+import isFunction from '~/utils/functions/isFunction';
+import toBool from '~/utils/booleans/toBool';
+import isUndefined from '~/utils/undefined/isUndefined';
 
 export class AnyFunctionError extends Error {};
 

@@ -4,10 +4,10 @@ import registerRootComponent from 'expo/build/launch/registerRootComponent';
 
 import React from 'react';
 
-import './globals';
+import '~/globals';
 
-import ReduxProvider from './redux/ReduxProvider';
-import NavigationProvider from './navigation/NavigationProvider';
+import ReduxProvider from '~/redux/ReduxProvider';
+import NavigationProvider from '~/navigation/NavigationProvider';
 
 const App = () => (
   <ReduxProvider>

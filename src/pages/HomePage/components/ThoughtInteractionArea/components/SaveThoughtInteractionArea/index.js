@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import InteractionRow from '@components/InteractionRow';
-import View from '@components/View';
+import InteractionRow from '~/components/InteractionRow';
+import View from '~/components/View';
 
 import ToggleEmojiPickerCollapseButton from '../ToggleEmojiPickerCollapseButton';
 
@@ -23,7 +23,7 @@ import AdvancedSaveThoughtModal from './components/AdvancedSaveThoughtModal';
 import EditThougthInfo from './components/EditThougthInfo';
 import CancelEditThoughtButton from './components/CancelEditThoughtButton';
 
-import { isEditThoughtModeSelector } from '@pages/HomePage/slice';
+import { isEditThoughtModeSelector } from '~/pages/HomePage/slice';
 
 const SaveThoughtInteractionArea = () => {
   const isEditThoughtMode = useSelector(isEditThoughtModeSelector);

@@ -1,10 +1,10 @@
 import React from 'react';
 import Touchable from 'react-native-touchable-safe';
 
-import View from '@components/View';
+import View from '~/components/View';
 
-import { ifProp } from '@utils/props';
-import { createPropTypes, PropTypes, ViewPropTypes } from '@utils/propTypes';
+import { ifProp } from '~/utils/props';
+import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
 
 const withoutFeedbackProp = { all: 'without' };
 
