@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 // https://stackoverflow.com/a/57792001/12201472
 export const useComponentSize = () => {
@@ -12,3 +12,5 @@ export const useComponentSize = () => {
 
   return [size, onLayout];
 };
+
+export const useMountEffect = (effectFunc) => useEffect(effectFunc, []);

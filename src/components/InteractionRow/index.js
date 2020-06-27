@@ -27,7 +27,7 @@ const InteractionRow = ({ isVisible, children, style }) => (
 
 [InteractionRow.propTypes, InteractionRow.defaultProps] = createPropTypes({
   isVisible: [PropTypes.bool, true],
-  children: PropTypes.node,
+  children: PropTypes.any,
   style: ViewPropTypes.style
 });
 

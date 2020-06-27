@@ -14,7 +14,7 @@ import FinishSearchThoughtButton from './components/FinishSearchThoughtButton';
 import ToggleSearchThoughtOptionsCollapseButton from './components/ToggleSearchThoughtOptionsCollapseButton';
 
 import SearchThoughtOptionsCollapse from './components/SearchThoughtOptionsCollapse';
-import SearchThoughtEmojiPickerCollapse from './components/SearchThoughtEmojiPickerCollapse';
+import EmojiPickerCollapse from './components/EmojiPickerCollapse';
 
 const SearchThoughtInteractionArea = () => (
   <View avoidKeyboard>
@@ -36,7 +36,7 @@ const SearchThoughtInteractionArea = () => (
     </InteractionRow>
 
     <SearchThoughtOptionsCollapse />
-    <SearchThoughtEmojiPickerCollapse />
+    <EmojiPickerCollapse />
   </View>
 );
 

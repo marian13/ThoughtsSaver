@@ -5,15 +5,15 @@ import InteractionRow from '@components/InteractionRow';
 import Modal from '@components/Modal';
 import View from '@components/View';
 
-import EmojiPickerCollapse from '@pages/HomePage/components/ThoughtInteractionArea/components/EmojiPickerCollapse';
 import ToggleEmojiPickerCollapseButton from '../../../ToggleEmojiPickerCollapseButton';
 
-import ToggleModeOptionsCollapseButton from '../ToggleModeOptionsCollapseButton';
+import ToggleSaveThoughtOptionsCollapseButton from '../ToggleSaveThoughtOptionsCollapseButton';
 import AttachFileToThoughtButton from '../AttachFileToThoughtButton';
 import ToggleAdvancedSaveThoughtModalButton from '../ToggleAdvancedSaveThoughtModalButton';
 import AttachRecordingToThoughtButton from '../AttachRecordingToThoughtButton';
 import AttachPhotoToThoughtButton from '../AttachPhotoToThoughtButton';
-import ShowGeneralThoughtOptionsButton from '../ShowGeneralThoughtOptionsButton';
+import ShowMoreActionsButton from '../ShowMoreActionsButton';
+import EmojiPickerCollapse from '../EmojiPickerCollapse';
 
 import { isVisibleSelector, hide } from '@modules/VisibilitiesModule/slice';
 
@@ -30,7 +30,7 @@ const AdvancedSaveThoughtModal = () => {
     <Modal isVisible={isVisible} onBackdropPress={handleBackdropPress}>
       <InteractionRow>
         <View horizontal>
-          <ToggleModeOptionsCollapseButton />
+          <ToggleSaveThoughtOptionsCollapseButton />
           <ToggleEmojiPickerCollapseButton />
           <AttachFileToThoughtButton />
           <ToggleAdvancedSaveThoughtModalButton />
@@ -39,7 +39,7 @@ const AdvancedSaveThoughtModal = () => {
         <View horizontal>
           <AttachRecordingToThoughtButton />
           <AttachPhotoToThoughtButton />
-          <ShowGeneralThoughtOptionsButton />
+          <ShowMoreActionsButton />
         </View>
       </InteractionRow>
 

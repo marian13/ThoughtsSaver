@@ -17,6 +17,7 @@ export const {
 } = ThoughtsModuleSlice.actions;
 
 export const {
+  thoughtByIdSelector,
   thoughtsSelector
 } = selectors;
 

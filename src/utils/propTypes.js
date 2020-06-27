@@ -12,7 +12,11 @@ const defaultDefaultPropForPropType = propType => {
     case PropTypes.object: return {};
     case PropTypes.func: return () => {};
     case PropTypes.node: return null;
+    case PropTypes.elementType: return null;
+    case PropTypes.any: return null;
     case ViewPropTypes.style: return {};
+    // TODO throw on Unknown PropType with reasonable message.
+    // default: throw `Unknown PropType ${propType}. Please, check createPropTypes call.`;
   }
 };
 

@@ -4,8 +4,8 @@ const createThoughtsModuleSelector = selector => (
   createSelector(state => state.ThoughtsModule, selector)
 );
 
-export const thoughtsSelector = createThoughtsModuleSelector(state => {
-  const { thoughts } = state;
+export const thoughtsSelector = createThoughtsModuleSelector(state => state.thoughts);
 
-  return thoughts;
-});
+export const thoughtByIdSelector = thoughtId => createThoughtsModuleSelector(state => (
+  state.thoughts.find(thought => thought.id === thoughtId)
+));

@@ -114,7 +114,7 @@ const View = ({
   fullWidth: PropTypes.bool,
   fullHeight: PropTypes.bool,
   horizontal: PropTypes.bool,
-  children: PropTypes.node,
+  children: PropTypes.any,
   style: ViewPropTypes.style
 });
 

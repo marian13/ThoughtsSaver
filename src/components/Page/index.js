@@ -11,7 +11,7 @@ const Page = ({ children, style }) => (
 );
 
 [Page.propTypes, Page.defaultProps] = createPropTypes({
-  children: PropTypes.node,
+  children: PropTypes.any,
   style: ViewPropTypes.style
 });
 

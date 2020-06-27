@@ -48,7 +48,7 @@ const Text = ({
   small: PropTypes.bool,
   medium: [PropTypes.bool, true],
   large: PropTypes.bool,
-  children: PropTypes.node,
+  children: PropTypes.any,
   style: NativeText.propTypes.style
 });
 

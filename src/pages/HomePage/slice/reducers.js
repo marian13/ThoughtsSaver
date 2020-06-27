@@ -1,11 +1,12 @@
 import { toString } from '@utils/strings';
+import { clone } from 'lodash';
 
 import initialState from './initialState';
 
 export const setThought = (state, action) => {
   const { thought } = action.payload;
 
-  state.thought = thought;
+  state.thought = clone(thought);
 };
 
 export const resetThought = state => {

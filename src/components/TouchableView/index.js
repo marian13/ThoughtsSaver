@@ -42,7 +42,7 @@ const TouchableView = ({
   horizontal: PropTypes.bool,
   centered: PropTypes.bool,
   withoutFeedback: PropTypes.bool,
-  children: PropTypes.node,
+  children: PropTypes.any,
   onPress: PropTypes.func,
   style: ViewPropTypes.style,
   containerStyle: ViewPropTypes.style

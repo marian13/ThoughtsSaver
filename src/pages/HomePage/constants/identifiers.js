@@ -1,25 +1,30 @@
-export const THOUGHT_TEXT_INPUT = 'thoughtTextInput';
-export const SAVE_THOUGHT_BUTTON = 'createThoughtButton';
+const createIdentifier = key => `${HOME_PAGE}-${key}`;
+const getIdentifier = key => `${HOME_PAGE}-${key}`;
 
-export const THOUGHT_STREAM = 'thoughtStream';
+export const HOME_PAGE = 'homePage';
 
-export const GENERAL_THOUGHT_OPTIONS_BUTTON = 'generalThoughtOptionsButton';
-export const GENERAL_THOUGHT_OPTIONS_MENU = 'generalThoughtOptionsMenu';
+export const THOUGHT_TEXT_INPUT = createIdentifier('thoughtTextInput');
+export const SAVE_THOUGHT_BUTTON = createIdentifier('createThoughtButton');
 
-export const START_SEARCH_THOUGHT_OPTION = 'startSearchThoughtOption';
+export const THOUGHT_STREAM = createIdentifier('thoughtStream');
 
-export const SEARCH_THOUGHT_INPUT = 'searchThoughtInput';
+export const GENERAL_THOUGHT_OPTIONS_BUTTON = createIdentifier('generalThoughtOptionsButton');
+export const GENERAL_THOUGHT_OPTIONS_MENU = createIdentifier('generalThoughtOptionsMenu');
 
-export const TOGGLE_SEARCH_THOUGHT_OPTIONS_COLLAPSE_BUTTON = 'toggleSearchThoughtOptionsCollapseButton';
-export const SEARCH_THOUGHT_OPTIONS_COLLAPSE = 'searchThoughtOptionsCollapse';
+export const START_SEARCH_THOUGHT_OPTION = createIdentifier('startSearchThoughtOption');
 
-export const SEARCH_THOUGHT_BY_TEXT_OPTION = 'searchThoughtByTextOption';
-export const SEARCH_THOUGHT_BY_TAG_OPTION = 'searchThoughtByTagOption';
-export const SEARCH_THOUGHT_FUZZY_OPTION = 'searchThoughtFuzzyOption';
+export const SEARCH_THOUGHT_INPUT = createIdentifier('searchThoughtInput');
 
-export const TOGGLE_EMOJI_PICKER_COLLAPSE_BUTTON = 'toggleEmojiPickerButton';
-export const EMOJI_PICKER_COLLAPSE = 'emojiPickerCollapse';
+export const TOGGLE_SEARCH_THOUGHT_OPTIONS_COLLAPSE_BUTTON = createIdentifier('toggleSearchThoughtOptionsCollapseButton');
+export const SEARCH_THOUGHT_OPTIONS_COLLAPSE = createIdentifier('searchThoughtOptionsCollapse');
 
-export const ADVANCED_SAVE_THOUGHT_MODAL = 'advancedSaveThoughtModal';
+export const SEARCH_THOUGHT_BY_TEXT_OPTION = createIdentifier('searchThoughtByTextOption');
+export const SEARCH_THOUGHT_BY_TAG_OPTION = createIdentifier('searchThoughtByTagOption');
+export const SEARCH_THOUGHT_FUZZY_OPTION = createIdentifier('searchThoughtFuzzyOption');
 
-export const getThoughtMenuID = thought => `thoughtMenu-${thought.id}`;
+export const TOGGLE_EMOJI_PICKER_COLLAPSE_BUTTON = createIdentifier('toggleEmojiPickerButton');
+export const EMOJI_PICKER_COLLAPSE = createIdentifier('emojiPickerCollapse');
+
+export const ADVANCED_SAVE_THOUGHT_MODAL = createIdentifier('advancedSaveThoughtModal');
+
+export const getThoughtMenuID = thought => getIdentifier(`thoughtMenu-${thought.id}`);

@@ -9,15 +9,15 @@ import ToggleEmojiPickerCollapseButton from '../ToggleEmojiPickerCollapseButton'
 import ThoughtTextInput from './components/ThoughtTextInput';
 import SaveThoughtButton from './components/SaveThoughtButton';
 
-import ToggleModeOptionsCollapseButton from './components/ToggleModeOptionsCollapseButton';
+import ToggleSaveThoughtOptionsCollapseButton from './components/ToggleSaveThoughtOptionsCollapseButton';
 import AttachFileToThoughtButton from './components/AttachFileToThoughtButton';
 import ToggleAdvancedSaveThoughtModalButton from './components/ToggleAdvancedSaveThoughtModalButton';
 
 import AttachRecordingToThoughtButton from './components/AttachRecordingToThoughtButton';
 import AttachPhotoToThoughtButton from './components/AttachPhotoToThoughtButton';
-import ShowGeneralThoughtOptionsButton from './components/ShowGeneralThoughtOptionsButton';
+import ShowMoreActionsButton from './components/ShowMoreActionsButton';
 
-import SaveThoughtEmojiPickerCollapse from './components/SaveThoughtEmojiPickerCollapse';
+import EmojiPickerCollapse from './components/EmojiPickerCollapse';
 import AdvancedSaveThoughtModal from './components/AdvancedSaveThoughtModal';
 
 import EditThougthInfo from './components/EditThougthInfo';
@@ -42,7 +42,7 @@ const SaveThoughtInteractionArea = () => {
 
       <InteractionRow>
         <View horizontal>
-          <ToggleModeOptionsCollapseButton />
+          <ToggleSaveThoughtOptionsCollapseButton />
           <ToggleEmojiPickerCollapseButton />
           <AttachFileToThoughtButton />
           <ToggleAdvancedSaveThoughtModalButton />
@@ -51,11 +51,11 @@ const SaveThoughtInteractionArea = () => {
         <View horizontal>
           <AttachRecordingToThoughtButton />
           <AttachPhotoToThoughtButton />
-          <ShowGeneralThoughtOptionsButton />
+          <ShowMoreActionsButton />
         </View>
       </InteractionRow>
 
-      <SaveThoughtEmojiPickerCollapse />
+      <EmojiPickerCollapse />
       <AdvancedSaveThoughtModal />
     </View>
   );

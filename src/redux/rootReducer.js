@@ -10,8 +10,7 @@ import FocusesModuleReducer from '@modules/FocusesModule/slice';
 import VisibilitiesModuleReducer from '@modules/VisibilitiesModule/slice';
 
 import HomePageReducer from '@pages/HomePage/slice';
-
-import AddThoughtTagsModalReducer from '@modals/AddThoughtTagsModal/slice';
+import ThoughtTagsPageReducer from '@pages/ThoughtTagsPage/slice';
 
 const rootReducer = combineReducers({
   ThoughtsModule: ThoughtsModuleReducer,
@@ -21,8 +20,7 @@ const rootReducer = combineReducers({
   VisibilitiesModule: VisibilitiesModuleReducer,
 
   HomePage: HomePageReducer,
-
-  AddThoughtTagsModal: AddThoughtTagsModalReducer
+  ThoughtTagsPage: ThoughtTagsPageReducer
 });
 
 export default rootReducer;
