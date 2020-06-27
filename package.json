@@ -1,10 +1,13 @@
 {
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
+    "start:android": "expo start --android",
+    "start:ios": "expo start --ios",
+    "start:web": "expo start --web",
     "repl": "REPL=true expo start",
+    "repl:android": "REPL=true expo start --android",
+    "repl:ios": "REPL=true expo start --ios",
+    "repl:web": "REPL=true expo start --web",
     "spec:unit": "node_modules/.bin/jest 'preventNoParemetersHack'",
     "spec:unit:all": "node_modules/.bin/jest spec/.*.spec.js",
     "spec:e2e": "detox test 'preventNoParemetersHack'",
