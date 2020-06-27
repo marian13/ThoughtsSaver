@@ -1,10 +1,10 @@
 {
-  "main": "src/App.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "repl": "REPL=true expo start",
     "spec:unit": "node_modules/.bin/jest 'preventNoParemetersHack'",
     "spec:unit:all": "node_modules/.bin/jest spec/.*.spec.js",
     "spec:e2e": "detox test 'preventNoParemetersHack'",
@@ -20,6 +20,7 @@
     "buffer": "^5.5.0",
     "cross-var": "^1.1.0",
     "dotenv": "^8.2.0",
+    "dotenv-flow": "^3.2.0",
     "emoji-datasource-apple": "^5.0.1",
     "emoji-datasource-google": "^5.0.1",
     "emoji-mart-native": "^0.5.0-beta",
