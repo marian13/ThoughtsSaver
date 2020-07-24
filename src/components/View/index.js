@@ -9,7 +9,7 @@ import {
 import { compact } from '~/utils/arrays';
 import { ifProp } from '~/utils/props';
 import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
-import { isIOS } from '~/utils/platforms';
+import { isAndroid, isIOS } from '~/utils/platforms';
 
 import { useHeaderHeight } from '@react-navigation/stack';
 
@@ -60,13 +60,13 @@ const styles = StyleSheet.create({
 });
 
 const avoidKeyboardProp = ({ headerHeight }) => {
-  const props = {
-    behavior: isIOS() ? 'padding' : 'height'
+  // https://stackoverflow.com/a/62209688/12201472
+  if (isAndroid()) return {};
+
+  if (isIOS()) return {
+    behavior: 'padding',
+    keyboardVerticalOffset: headerHeight
   };
-
-  if (isIOS()) props.keyboardVerticalOffset = headerHeight;
-
-  return props;
 };
 
 const disallowChildrenTouchesProp = { onStartShouldSetResponderCapture: () => true };
