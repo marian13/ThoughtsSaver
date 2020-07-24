@@ -9,6 +9,9 @@ import {
 import { compact } from '~/utils/arrays';
 import { ifProp } from '~/utils/props';
 import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
+import { isIOS } from '~/utils/platforms';
+
+import { useHeaderHeight } from '@react-navigation/stack';
 
 const styles = StyleSheet.create({
   topBorder: {
@@ -56,7 +59,16 @@ const styles = StyleSheet.create({
   }
 });
 
-const avoidKeyboardProp = { behavior: Platform.OS === 'ios' ? 'padding' : 'height' };
+const avoidKeyboardProp = ({ headerHeight }) => {
+  const props = {
+    behavior: isIOS() ? 'padding' : 'height'
+  };
+
+  if (isIOS()) props.keyboardVerticalOffset = headerHeight;
+
+  return props;
+};
+
 const disallowChildrenTouchesProp = { onStartShouldSetResponderCapture: () => true };
 
 const View = ({
@@ -77,12 +89,16 @@ const View = ({
 }) => {
   if (!displayed) return null;
 
+  // Hack Avoid keyboard in ios with React Navigation
+  // https://github.com/react-navigation/react-navigation/issues/2411#issuecomment-573331331
+  const headerHeight = useHeaderHeight();
+
   const Component = avoidKeyboard ? KeyboardAvoidingView : NativeView;
 
   return (
     <Component
       {...rest}
-      {...ifProp(avoidKeyboard && avoidKeyboardProp)}
+      {...ifProp(avoidKeyboard && avoidKeyboardProp({ headerHeight }))}
       {...ifProp(disallowChildrenTouches && disallowChildrenTouchesProp) }
       {...ifProp(hidden && disallowChildrenTouchesProp) }
       style={compact([
