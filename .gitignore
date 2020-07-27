@@ -1,0 +1,23 @@
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+web-report/
+
+# macOS
+.DS_Store
+
+# react-native-elements possible icon names
+react-native-elements-possible-icon-names.js
+
+# meta
+meta/
+
+# yarn
+yarn-error.log
