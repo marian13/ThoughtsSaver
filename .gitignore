@@ -29,3 +29,6 @@ bin/Exponent.app
 # https://github.com/kerimdzhanov/dotenv-flow#files-under-version-control
 .env.development.local
 .env.production.local
+
+# Expo shared
+.expo-shared
