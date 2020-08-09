@@ -1,25 +1,28 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-
-import { some } from 'lodash';
+import { StyleSheet } from 'react-native';
 
 import Tag from '~/components/Tag';
+import View from '~/components/View';
 
 const styles = StyleSheet.create({
-  view: {
-    paddingTop: 2,
+  tagContainer: {
     paddingRight: 2
   }
 });
 
 const TagList = ({ small, tags }) => {
-  if (!some(tags)) return null;
-
-  return tags.map(tag => (
-    <View key={tag.id} style={styles.view}>
-      <Tag small={small} text={tag.text} />
+  return (
+    <View horizontal>
+      {tags.map(tag => (
+        <Tag
+          key={tag.id}
+          small={small}
+          text={tag.text}
+          containerStyle={styles.tagContainer}
+        />
+      ))}
     </View>
-  ));
+  );
 };
 
 export default TagList;
