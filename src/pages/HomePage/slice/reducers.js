@@ -90,3 +90,11 @@ export const changeSearchThoughtOptions = (state, action) => {
 
   state.searchThoughtOptions = options;
 };
+
+export const startThoughtPreviewMode = state => {
+  state.isThoughtPreviewMode = true;
+};
+
+export const finishThoughtPreviewMode = state => {
+  state.isThoughtPreviewMode = false;
+};

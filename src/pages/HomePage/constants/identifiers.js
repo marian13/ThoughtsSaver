@@ -25,6 +25,4 @@ export const SEARCH_THOUGHT_FUZZY_OPTION = createIdentifier('searchThoughtFuzzyO
 export const TOGGLE_EMOJI_PICKER_COLLAPSE_BUTTON = createIdentifier('toggleEmojiPickerButton');
 export const EMOJI_PICKER_COLLAPSE = createIdentifier('emojiPickerCollapse');
 
-export const ADVANCED_SAVE_THOUGHT_MODAL = createIdentifier('advancedSaveThoughtModal');
-
 export const getThoughtMenuID = thought => getIdentifier(`thoughtMenu-${thought.id}`);

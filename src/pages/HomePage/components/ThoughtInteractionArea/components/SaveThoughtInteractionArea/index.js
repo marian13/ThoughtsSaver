@@ -11,14 +11,13 @@ import SaveThoughtButton from './components/SaveThoughtButton';
 
 import ToggleSaveThoughtOptionsCollapseButton from './components/ToggleSaveThoughtOptionsCollapseButton';
 import AttachFileToThoughtButton from './components/AttachFileToThoughtButton';
-import ToggleAdvancedSaveThoughtModalButton from './components/ToggleAdvancedSaveThoughtModalButton';
+import ToggleThoughtPreviewModeButton from './components/ToggleThoughtPreviewModeButton';
 
 import AttachRecordingToThoughtButton from './components/AttachRecordingToThoughtButton';
 import AttachPhotoToThoughtButton from './components/AttachPhotoToThoughtButton';
 import ShowMoreActionsButton from './components/ShowMoreActionsButton';
 
 import EmojiPickerCollapse from './components/EmojiPickerCollapse';
-import AdvancedSaveThoughtModal from './components/AdvancedSaveThoughtModal';
 
 import EditThougthInfo from './components/EditThougthInfo';
 import CancelEditThoughtButton from './components/CancelEditThoughtButton';
@@ -45,7 +44,7 @@ const SaveThoughtInteractionArea = () => {
           <ToggleSaveThoughtOptionsCollapseButton />
           <ToggleEmojiPickerCollapseButton />
           <AttachFileToThoughtButton />
-          <ToggleAdvancedSaveThoughtModalButton />
+          <ToggleThoughtPreviewModeButton />
         </View>
 
         <View horizontal>
@@ -56,7 +55,6 @@ const SaveThoughtInteractionArea = () => {
       </InteractionRow>
 
       <EmojiPickerCollapse />
-      <AdvancedSaveThoughtModal />
     </View>
   );
 };

@@ -30,7 +30,7 @@ const Thought = ({ thought }) => {
       isVisible={isMenuVisible}
       onContentPress={handleContentPress}
       onBackdropPress={handleMenuBackdropPress}
-      renderContent={() => <ThoughtContent testID={getThoughtID(thought)} {...thought} />}
+      renderContent={() => <ThoughtContent testID={getThoughtID(thought)} thought={thought} />}
       renderOptions={() => <ThoughtMenuOptions thought={thought} />}
       height={100}
       width="50%"

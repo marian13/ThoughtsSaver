@@ -40,3 +40,4 @@ export const searchThoughtTextSelector = createHomePageSelector(state => state.s
 export const searchThoughtResultsSelector = createHomePageSelector(state => state.searchThoughtResults);
 export const searchThoughtOptionsSelector = createHomePageSelector(state => state.searchThoughtOptions);
 
+export const isThoughtPreviewModeSelector = createHomePageSelector(state => state.isThoughtPreviewMode);

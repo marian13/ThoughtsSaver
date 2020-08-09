@@ -4,13 +4,15 @@ import { now } from '~/utils/dates';
 import { createThought, updateThought } from '~/modules/ThoughtsModule/slice';
 import {
   isCreateThoughtModeSelector,
+  isThoughtPreviewModeSelector,
 
   thoughtIdSelector,
   thoughtTextSelector,
-  resetThought
+  resetThought,
 } from '~/pages/HomePage/slice';
 
 import finishEditThoughtModeThunk from '~/pages/HomePage/thunks/finishEditThoughtModeThunk';
+import finishThoughtPreviewModeThunk from '~/pages/HomePage/thunks/finishThoughtPreviewModeThunk';
 import startCreateThoughtModeThunk from '~/pages/HomePage/thunks/startCreateThoughtModeThunk';
 
 const create = (dispatch, getState) => {
@@ -49,6 +51,9 @@ const update = (dispatch, getState) => {
 
 const saveThoughtThunk = () => (dispatch, getState) => {
   const isCreateMode = isCreateThoughtModeSelector(getState());
+  const isAdvancedSaveMode = isThoughtPreviewModeSelector(getState());
+
+  if (isAdvancedSaveMode) dispatch(finishThoughtPreviewModeThunk());
 
   isCreateMode ? create(dispatch, getState) : update(dispatch, getState);
 };

@@ -33,7 +33,10 @@ export const {
   changeSearchThoughtText,
   addEmojiToSearchThoughtText,
   changeSearchThoughtResults,
-  changeSearchThoughtOptions
+  changeSearchThoughtOptions,
+
+  startThoughtPreviewMode,
+  finishThoughtPreviewMode
 } = HomePageSlice.actions;
 
 export const {
@@ -55,7 +58,9 @@ export const {
   isSearchThoughtFuzzyOptionSelectedSelector,
   searchThoughtTextSelector,
   searchThoughtResultsSelector,
-  searchThoughtOptionsSelector
+  searchThoughtOptionsSelector,
+
+  isThoughtPreviewModeSelector
 } = selectors;
 
 export default HomePageSlice.reducer;

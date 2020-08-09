@@ -1,7 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
-
-import some from 'lodash/some';
 
 import ThoughtText from './ThoughtText';
 import Time from './Time';
@@ -9,71 +7,29 @@ import Time from './Time';
 import TagList from '~/components/TagList';
 import View from '~/components/View';
 
-import { renderBlocksAsSingleRow, renderBlocksAsSeparateRows } from '~/utils/rendering';
-
 const styles = StyleSheet.create({
   outerView: {
-    alignSelf: 'flex-end',
+    alignItems: 'flex-end',
     paddingRight: 5,
     paddingLeft: 5,
     paddingBottom: 5
   },
-  container: {
+  innerView: {
     borderRadius: 5,
     borderWidth: 1,
     borderColor: 'grey',
-    padding: 5,
-  },
-  singleRow: {
-    flexWrap: 'wrap'
-  },
-  firstRow: {
-    flexWrap: 'wrap',
-  },
-  secondRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap'
-  },
-  time: {
-    // borderWidth: 1,
-    flexGrow: 1,
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end'
+    padding: 5
   }
 });
 
-const renderSingeRow = ({ thought }) => (
-  renderBlocksAsSingleRow({
-    containerStyle: [styles.container, styles.singleRow],
-    blocks: [
-      <ThoughtText key={0} text={thought.text} />,
-      <Time key={1} createdAt={thought.createdAt} style={styles.time} />
-    ]
-  })
-);
-
-const renderSeparateRows = ({ thought }) => (
-  renderBlocksAsSeparateRows({
-    containerStyle: styles.container,
-    blocks: [{
-      rowContainerStyle: styles.firstRow,
-      block: <ThoughtText key={0} text={thought.text} />
-    }, {
-      rowContainerStyle: styles.secondRow,
-      block: (
-        <Fragment key={1}>
-          <TagList small tags={thought.tags} />
-          <Time createdAt={thought.createdAt} style={styles.time}/>
-        </Fragment>
-      )
-    }]
-  })
-);
-
-const ThoughtContent = ({ testID, ...thought }) => {
+const ThoughtContent = ({ testID, thought }) => {
   return (
-    <View testID={testID} style={styles.outerView} >
-      {some(thought.tags) ? renderSeparateRows({ thought }) : renderSingeRow({ thought })}
+    <View testID={testID} style={styles.outerView}>
+      <View style={styles.innerView}>
+        <ThoughtText text={thought.text} />
+        <TagList small tags={thought.tags} />
+        <Time createdAt={thought.createdAt} />
+      </View>
     </View>
   );
 };

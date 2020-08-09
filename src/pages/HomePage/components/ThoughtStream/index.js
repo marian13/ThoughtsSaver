@@ -1,18 +1,13 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 
-import FlatList from '~/components/FlatList';
+import View from '~/components/View';
 
-import Thought from './components/Thought';
+import ThoughtList from './components/ThoughtList';
+import ThoughtPreview from './components/ThoughtPreview';
 
-import { thoughtsSelector } from '~/modules/ThoughtsModule/slice';
-import {
-  isSearchThoughtModeSelector,
-  searchThoughtTextSelector,
-
-  searchThoughtResultsSelector
-} from '~/pages/HomePage/slice';
+import { isThoughtPreviewModeSelector, thoughtSelector } from '~/pages/HomePage/slice';
 
 import { THOUGHT_STREAM } from '~/pages/HomePage/constants/identifiers';
 
@@ -24,18 +19,12 @@ const styles = StyleSheet.create({
 });
 
 const ThoughtStream = () => {
-  const isSearchMode = useSelector(isSearchThoughtModeSelector);
-  const searchInputText = useSelector(searchThoughtTextSelector);
-
-  const thoughts = useSelector(thoughtsSelector);
-  const searchResults = useSelector(searchThoughtResultsSelector);
-
-  const items = isSearchMode && searchInputText ? searchResults : thoughts;
-  const renderItem = ({ item }) => <Thought thought={item} />;
+  const isThoughtPreviewMode = useSelector(isThoughtPreviewModeSelector);
+  const thought = useSelector(thoughtSelector);
 
   return (
     <View testID={THOUGHT_STREAM} style={styles.view}>
-      <FlatList scrollToBottomOnChange items={items} renderItem={renderItem} />
+      {isThoughtPreviewMode ? <ThoughtPreview thought={thought} /> : <ThoughtList />}
     </View>
   );
 };

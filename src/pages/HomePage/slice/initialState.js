@@ -4,6 +4,7 @@ const initialState = {
   isCreateThoughtMode: false,
   isEditThoughtMode: false,
   isSearchThoughtMode: false,
+  isThoughtPreviewMode: false,
 
   thought: {},
   thoughtInCreate: {},
