@@ -7,27 +7,26 @@ import View from '~/components/View';
 import Text from '~/components/Text';
 
 const styles = StyleSheet.create({
-  view: {
+  innerView: {
     backgroundColor: 'rgb(32,150,243)',
     borderRadius: 15,
     paddingHorizontal: 10,
     paddingVertical: 5
   },
-  // WARNING fragile code #1
-  // ThoughtTextInputSection InteracitionArea Content and
-  // ThoughtsTagsSearchSections InteracitionArea Content depend on small styles
-  smallView: {
+  small: {
     borderRadius: 5,
     paddingHorizontal: 2,
     paddingVertical: 1
   }
 });
 
-const Tag = ({ small, text }) => (
-  <View hasShadow style={compact([styles.view, small && styles.smallView])}>
-    <Text white small={small} large={!small}>
-      {text}
-    </Text>
+const Tag = ({ small, text, containerStyle }) => (
+  <View style={containerStyle}>
+    <View hasShadow style={compact([styles.innerView, small && styles.small])}>
+      <Text white small={small} large={!small}>
+        {text}
+      </Text>
+    </View>
   </View>
 );
 
