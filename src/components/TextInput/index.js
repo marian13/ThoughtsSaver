@@ -2,12 +2,15 @@ import React, { useLayoutEffect, useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { Input } from 'react-native-elements';
 
+import { isEmpty } from 'lodash';
+
 import ScrollView from '~/components/ScrollView';
 import IconButton from '~/components/IconButton';
 
 import { fontSizes } from '~/constants/fonts';
 
 import { createPropTypes, PropTypes, ViewPropTypes } from '~/utils/propTypes';
+import { useIsStringEndChanged, useFocus } from '~/utils/hooks';
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -48,16 +51,17 @@ const TextInput = ({
 }) => {
   const inputRef = useRef(null);
 
-  useLayoutEffect(() => {
-    isFocused ? inputRef.current.focus() : inputRef.current.blur();
-  }, [isFocused]);
+  const isTextEndChanged = useIsStringEndChanged(text);
+  useFocus(isFocused, inputRef);
 
   const handleClearButtonPress = () => onTextChange('');
 
-  const hasText = !!text;
-
   return (
-    <ScrollView keyboardShouldPersistTaps="always" style={[styles.scrollView, containerStyle]}>
+    <ScrollView
+      keyboardShouldPersistTaps="always"
+      scrollToBottomOnChange={isTextEndChanged}
+      style={[styles.scrollView, containerStyle]}
+    >
       <Input
         testID={testID}
         ref={inputRef}
@@ -73,7 +77,7 @@ const TextInput = ({
         inputContainerStyle={styles.inputContainerStyle}
       />
 
-      {hasText && (
+      {!isEmpty(text) && (
         <IconButton
           iconName='close'
           iconType='material'
