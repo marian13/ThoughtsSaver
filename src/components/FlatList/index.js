@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { View, FlatList as NativeFlatList } from 'react-native';
 
+import { useScrollToBottom } from '~/utils/hooks';
+
 import { createPropTypes, PropTypes } from '~/utils/propTypes';
 
 const FlatList = ({
@@ -10,9 +12,9 @@ const FlatList = ({
   renderItem,
   ListFooterComponent
 }) => {
-  const scrollViewRef = useRef(null);
+  const flatListRef = useRef(null);
 
-  const handleContentSizeChange = () => scrollToBottomOnChange && scrollViewRef.current.scrollToEnd();
+  const maybeScrollToBottom = useScrollToBottom(scrollToBottomOnChange, flatListRef);
 
   const keyExtractor = item => (item[keyName] || item['id']).toString();
 
@@ -20,8 +22,8 @@ const FlatList = ({
   return (
     <View>
       <NativeFlatList
-        ref={scrollViewRef}
-        onContentSizeChange={handleContentSizeChange}
+        ref={flatListRef}
+        onContentSizeChange={maybeScrollToBottom}
         data={items}
         renderItem={renderItem}
         keyExtractor={keyExtractor}

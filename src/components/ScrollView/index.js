@@ -1,12 +1,14 @@
 import React, { useRef } from 'react';
 import { ScrollView as NativeScrollView } from 'react-native';
 
+import { useScrollToBottom } from '~/utils/hooks';
+
 const ScrollView = ({ scrollToBottomOnChange, ...rest }) => {
   const scrollViewRef = useRef(null);
 
-  const handleContentSizeChange = () => scrollToBottomOnChange && scrollViewRef.current.scrollToEnd();
+  const maybeScrollToBottom = useScrollToBottom(scrollToBottomOnChange, scrollViewRef);
 
-  return <NativeScrollView onContentSizeChange={handleContentSizeChange} {...rest} />;
+  return <NativeScrollView ref={scrollViewRef} onContentSizeChange={maybeScrollToBottom} {...rest} />;
 };
 
 export default ScrollView;
